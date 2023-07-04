@@ -1,5 +1,5 @@
 import './App.css';
-import Media from '../src/Hooks/apiFetch'; // Assuming Media is in the same directory
+import Media from '../src/Hooks/apiFetch'; 
 
 function App() {
   return (
