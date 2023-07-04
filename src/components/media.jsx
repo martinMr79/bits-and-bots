@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import useFetch from '../hooks/useFetch';
 
 function Media() {
-  const [Images, setImages] = useState([]);
+  const { data: Images, loading, error } = useFetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/media');
 
-  useEffect(() => {
-    axios.get('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/media')
-      .then(response => setImages(response.data))
-      .catch((error) => console.error(error));
-  }, []);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
   return (
     <div>
@@ -25,4 +22,5 @@ function Media() {
 }
 
 export default Media;
+
 
