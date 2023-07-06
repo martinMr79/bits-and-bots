@@ -1,13 +1,15 @@
-import './App.css';
-import Media from './components/media'; 
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Your Site</h1>
-      <Media />
-      
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        {/* define other routes here */}
+      </Routes>
+    </Router>
   );
 }
 
