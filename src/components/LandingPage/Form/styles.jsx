@@ -5,9 +5,9 @@ export const RegisterForm = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 300px;
-  padding: 0rem 2rem 2rem;
+  
+  width: 300px;
+  padding: 2rem;
   background: rgba(39, 40, 46, 0.7);
   border-radius: 5px;
 `;
@@ -32,3 +32,13 @@ export const InputField = styled.input`
   
 `;
 
+export const TabContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 364px;
+`;
+
+export const FormWrapper = styled.div`
+  width: 300px;
+  padding: 0rem 2rem;
+`;
