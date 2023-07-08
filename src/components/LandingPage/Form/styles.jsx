@@ -7,8 +7,8 @@ export const RegisterForm = styled.form`
   justify-content: center;
   width: 100%;
   max-width: 300px;
+  padding: 0rem 2rem 2rem;
   background: rgba(39, 40, 46, 0.7);
-  padding: 20px;
   border-radius: 5px;
 `;
 
@@ -26,6 +26,9 @@ export const SignUpButton = styled.button`
 export const InputField = styled.input`
   width: 100%;
   margin: 5px 0;
-  padding: 8px;
+  
   border-radius: 8px;
+  padding: 10px 0px;
+  
 `;
+
