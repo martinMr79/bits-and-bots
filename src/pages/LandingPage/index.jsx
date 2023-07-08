@@ -2,6 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import useFetch from '../../hooks/useFetch';
+import Register from '../../components/LandingPage/Form/register';
+import styled from 'styled-components';
+
+// Define a styled component to set the positioning of the Register form
+const RegisterWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
 
 const LandingPage = () => {
     const { data: posts, loading, error } = useFetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/posts');
@@ -25,7 +35,7 @@ const LandingPage = () => {
     if (error) return <p>Error: {error.message}</p>;
 
     return (
-        <>
+        <div style={{ position: 'relative' }}>
             {imageUrls.length > 0 && (
                 <Carousel autoPlay infiniteLoop showThumbs={false} showArrows={false} showStatus={false} showIndicators={false}>
                     {imageUrls.map((imageUrl, index) => (
@@ -35,7 +45,10 @@ const LandingPage = () => {
                     ))}
                 </Carousel>
             )}
-        </>
+            <RegisterWrapper>
+                <Register />
+            </RegisterWrapper>
+        </div>
     );
 }
   
