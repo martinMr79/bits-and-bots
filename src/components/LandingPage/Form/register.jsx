@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RegisterForm, RegisterButton } from './styles';
+import { RegisterForm, SignUpButton, InputField } from './styles';
 
 const Register = () => {
     const [email, setEmail] = useState("");
@@ -17,22 +17,23 @@ const Register = () => {
     }
 
     return (
-        <RegisterForm onSubmit={handleSubmit}>
-            <input 
-                type="email" 
-                placeholder="Email Address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <input 
-                type="password" 
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            <RegisterButton type="submit">Register</RegisterButton>
-        </RegisterForm>
-    );
+      <RegisterForm onSubmit={handleSubmit}>
+          <InputField 
+              type="email" 
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+          />
+          <InputField 
+              type="password" 
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+          />
+          <SignUpButton type="submit">Sign up</SignUpButton>
+          <p>Already have an account? <a href="">Log in!</a></p>
+      </RegisterForm>
+  );
 }
 
 export default Register;

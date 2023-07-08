@@ -12,11 +12,20 @@ export const RegisterForm = styled.form`
   border-radius: 5px;
 `;
 
-export const RegisterButton = styled.button`
+export const SignUpButton = styled.button`
   color: #000;
   background: #CCFF00;
   border: none;
   padding: 10px 20px;
   margin-top: 10px;
   cursor: pointer;
+  width: 100%;
+  border-radius: 8px; 
+`;
+
+export const InputField = styled.input`
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 8px;
 `;
