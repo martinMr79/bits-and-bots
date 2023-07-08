@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Carousel from 'react-material-ui-carousel';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import useFetch from '../../hooks/useFetch';
-import {HiddenIndicator, Paper} from "./styles"
 
 const LandingPage = () => {
     const { data: posts, loading, error } = useFetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/posts');
@@ -21,28 +21,23 @@ const LandingPage = () => {
         }
     }, [posts]);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            const elements = document.querySelectorAll('.MuiPaper-root');
-            elements.forEach(el => el.removeAttribute('tabIndex'));
-        }, 0);
-        return () => clearTimeout(timer);
-    }, [imageUrls]);
-
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
     return (
-      <HiddenIndicator>
-        <Carousel navButtonsAlwaysInvisible={true}>
-          {imageUrls.map((imageUrl, index) => (
-            <Paper key={index} style={{ height: '100vh', overflow: 'hidden' }}>
-              <img src={imageUrl} alt={`slide-${index}`} style={{ width: '100%', height: '100vh', objectFit: 'cover' }} />
-            </Paper>
-          ))}
-        </Carousel>
-      </HiddenIndicator>
+        <>
+            {imageUrls.length > 0 && (
+                <Carousel autoPlay infiniteLoop showThumbs={false} showArrows={false} showStatus={false} showIndicators={false}>
+                    {imageUrls.map((imageUrl, index) => (
+                        <div key={index} style={{ height: '100vh', overflow: 'hidden' }}>
+                            <img src={imageUrl} alt={`slide-${index}`} style={{ width: '100%', height: '100vh', objectFit: 'cover' }} />
+                        </div>
+                    ))}
+                </Carousel>
+            )}
+        </>
     );
 }
   
 export default LandingPage;
+
