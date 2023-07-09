@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyledTabs, StyledTab } from './tabStyles'
-import { RegisterForm, SignUpButton, InputField, TabContainer } from './styles';
+import { RegisterForm, SignUpButton, InputField, TabContainer, StyledParagraph } from './styles';
 
 const Register = () => {
     const [email, setEmail] = useState("");
@@ -44,7 +44,7 @@ const Register = () => {
                 onChange={(e) => setPassword(e.target.value)}
             />
             <SignUpButton type="submit">Sign up</SignUpButton>
-            <p>Already have an account? <a href="">Log in!</a></p>
+            <StyledParagraph>Already have an account? <a href="">Log in!</a></StyledParagraph>
         </RegisterForm>
       </>
     );

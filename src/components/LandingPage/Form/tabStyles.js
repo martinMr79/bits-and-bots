@@ -4,7 +4,7 @@ import { Tabs, Tab } from "@material-ui/core";
 export const StyledTabs = withStyles({
   root: {
     width: "100%",
-    overflow: "visible", // add this line
+    borderRadius: "5px 5px 0 0",
   },
   indicator: {
     backgroundColor: "#CCFF00",
