@@ -7,7 +7,7 @@ export const RegisterForm = styled.form`
   justify-content: center;
   
   width: 300px;
-  padding: 3rem;
+  padding: 4rem;
   background: rgba(39, 40, 46, 0.7);
   border-radius: 0 0 5px 5px; 
 `;
@@ -66,7 +66,7 @@ export const StyledInput = styled.input`
 export const TabContainer = styled.div`
   display: flex;
   justify-content: center;
-  width: 396px;
+  width: 428px;
 `;
 
 export const StyledParagraph = styled.p`
