@@ -23,14 +23,45 @@ export const SignUpButton = styled.button`
   border-radius: 5px; 
 `;
 
-export const InputField = styled.input`
+
+export const InputWrapper = styled.div`
   width: 100%;
-  margin: 8px 0;
-  
+  margin: 5px 0;
   border-radius: 8px;
   padding: 10px 0px;
-  
+  background-color: #27282E;
+  color: #FFFFFF;
 `;
+
+export const StyledInput = styled.input`
+  background: none;
+  border: none;
+  width: 100%;
+  color: #FFFFFF;
+  padding-left: 1rem;
+
+  &::-webkit-input-placeholder {
+    color: #FFFFFF;
+  }
+  &::-moz-placeholder {
+    color: #FFFFFF;
+  }
+  &:-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+  &::-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+  &::placeholder {
+    color: #FFFFFF;
+  }
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+
 
 export const TabContainer = styled.div`
   display: flex;
