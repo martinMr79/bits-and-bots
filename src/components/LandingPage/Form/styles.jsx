@@ -10,7 +10,13 @@ export const RegisterForm = styled.form`
   padding: 4rem;
   background: rgba(39, 40, 46, 0.7);
   border-radius: 0 0 5px 5px; 
+
+  @media (max-width: 600px) {
+    padding: 1rem;
+    width: 280px;
+  }
 `;
+
 
 export const SignUpButton = styled.button`
   color: #000;
@@ -67,6 +73,10 @@ export const TabContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 428px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const StyledParagraph = styled.p`
