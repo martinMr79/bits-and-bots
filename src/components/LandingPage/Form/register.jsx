@@ -14,6 +14,7 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [tabValue, setTabValue] = useState(0);
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -21,13 +22,13 @@ const Register = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // validate inputs and write to localStorage
 
     const user = {
       email: email,
       password: password,
     };
     localStorage.setItem('user', JSON.stringify(user));
+    setSuccessMessage('Successfully registered! You can now log in.');
   };
 
   return (
@@ -59,6 +60,7 @@ const Register = () => {
             />
           </InputWrapper>
           <SignUpButton type="submit">Sign up</SignUpButton>
+          {successMessage && <StyledParagraph>{successMessage}</StyledParagraph>}
           <StyledParagraph>
             Already have an account? <a href="">Log in!</a>
           </StyledParagraph>
@@ -69,4 +71,5 @@ const Register = () => {
 };
 
 export default Register;
+
 
