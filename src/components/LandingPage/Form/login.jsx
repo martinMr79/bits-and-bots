@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import {
     RegisterForm,
@@ -14,7 +13,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,7 +23,7 @@ const Login = () => {
     // Validate inputs against stored user
     if (storedUser && storedUser.email === email && storedUser.password === password) {
       // If inputs match stored user, redirect to the browse page
-      history.push('/browse');
+      navigate.push('/browse');
     } else {
       // If inputs don't match stored user, show an error message
       setErrorMessage('Incorrect username or password');
