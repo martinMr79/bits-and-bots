@@ -4,8 +4,8 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import useFetch from '../../hooks/useFetch';
 import Register from '../../components/LandingPage/Form/register';
 import styled from 'styled-components';
+import Loading from '../../components/Loading/loading.js'; 
 
-// Define a styled component to set the positioning of the Register form
 const RegisterWrapper = styled.div`
   position: absolute;
   top: 50%;
@@ -37,7 +37,7 @@ const LandingPage = () => {
     }
   }, [posts]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />; 
   if (error) return <p>Error: {error.message}</p>;
 
   return (
@@ -70,3 +70,4 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
