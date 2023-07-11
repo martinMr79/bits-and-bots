@@ -5,11 +5,11 @@ export const RegisterForm = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+
   width: 300px;
   padding: 4rem;
   background: rgba(39, 40, 46, 0.7);
-  border-radius: 0 0 5px 5px; 
+  border-radius: 0 0 5px 5px;
 
   @media (max-width: 600px) {
     padding: 1rem;
@@ -17,57 +17,53 @@ export const RegisterForm = styled.form`
   }
 `;
 
-
 export const SignUpButton = styled.button`
   color: #000;
-  background: #CCFF00;
+  background: #ccff00;
   border: none;
   padding: 10px 20px;
   margin-top: 10px;
   cursor: pointer;
   width: 100%;
-  border-radius: 5px; 
+  border-radius: 5px;
 `;
-
 
 export const InputWrapper = styled.div`
   width: 100%;
   margin: 5px 0;
   border-radius: 8px;
   padding: 10px 0px;
-  background-color: #27282E;
-  color: #FFFFFF;
+  background-color: #27282e;
+  color: #ffffff;
 `;
 
 export const StyledInput = styled.input`
   background: none;
   border: none;
   width: 100%;
-  color: #FFFFFF;
+  color: #ffffff;
   padding-left: 1rem;
 
   &::-webkit-input-placeholder {
-    color: #FFFFFF;
+    color: #ffffff;
   }
   &::-moz-placeholder {
-    color: #FFFFFF;
+    color: #ffffff;
   }
   &:-ms-input-placeholder {
-    color: #FFFFFF;
+    color: #ffffff;
   }
   &::-ms-input-placeholder {
-    color: #FFFFFF;
+    color: #ffffff;
   }
   &::placeholder {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   &:focus {
     outline: none;
   }
 `;
-
-
 
 export const TabContainer = styled.div`
   display: flex;
@@ -82,12 +78,25 @@ export const TabContainer = styled.div`
 export const StyledParagraph = styled.p`
   color: white;
 
-  a {
-    color: #CCFF00;
-    text-decoration: none;
+  button {
+    color: #ccff00;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
   }
 
-  a:hover {
+  button:hover {
     text-decoration: underline;
   }
+`;
+
+export const SuccessMessage = styled.p`
+  color: #CCFF00;
+`;
+
+export const ErrorMessage = styled.p`
+  color: #CCFF00;
 `;
