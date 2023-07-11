@@ -93,3 +93,10 @@ export const StyledParagraph = styled.p`
   }
 `;
 
+export const SuccessMessage = styled.p`
+  color: #CCFF00;
+`;
+
+export const ErrorMessage = styled.p`
+  color: #CCFF00;
+`;

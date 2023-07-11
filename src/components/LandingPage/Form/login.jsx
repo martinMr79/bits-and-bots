@@ -5,8 +5,8 @@ import {
     SignUpButton,
     InputWrapper,
     StyledInput,
-    TabContainer,
     StyledParagraph,
+    ErrorMessage,
 } from './styles';
 
 const Login = ({ setTabValue }) => {
@@ -49,7 +49,7 @@ const Login = ({ setTabValue }) => {
         />
       </InputWrapper>
       <SignUpButton type="submit">Log In</SignUpButton>
-      {errorMessage && <StyledParagraph>{errorMessage}</StyledParagraph>}
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       <StyledParagraph>
         Don't have an account? <button onClick={() => setTabValue(1)}>Sign up!</button>
       </StyledParagraph>
