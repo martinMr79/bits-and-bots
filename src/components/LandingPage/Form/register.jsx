@@ -8,6 +8,7 @@ import {
   TabContainer,
   StyledParagraph,
 } from './styles';
+import Login from './login';
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -37,30 +38,35 @@ const Register = () => {
           <StyledTab label="Sign Up" />
         </StyledTabs>
       </TabContainer>
-      <RegisterForm onSubmit={handleSubmit}>
-        <InputWrapper>
-          <StyledInput
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </InputWrapper>
-        <InputWrapper>
-          <StyledInput
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </InputWrapper>
-        <SignUpButton type="submit">Sign up</SignUpButton>
-        <StyledParagraph>
-          Already have an account? <a href="">Log in!</a>
-        </StyledParagraph>
-      </RegisterForm>
+      {tabValue === 0 ? (
+        <Login />
+      ) : (
+        <RegisterForm onSubmit={handleSubmit}>
+          <InputWrapper>
+            <StyledInput
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </InputWrapper>
+          <InputWrapper>
+            <StyledInput
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </InputWrapper>
+          <SignUpButton type="submit">Sign up</SignUpButton>
+          <StyledParagraph>
+            Already have an account? <a href="">Log in!</a>
+          </StyledParagraph>
+        </RegisterForm>
+      )}
     </>
   );
 };
 
 export default Register;
+
