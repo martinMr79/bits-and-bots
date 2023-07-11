@@ -1,5 +1,5 @@
 import React from 'react';
-import useFetch from '../hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 
 function Media() {
   const { data: Images, loading, error } = useFetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/media');
