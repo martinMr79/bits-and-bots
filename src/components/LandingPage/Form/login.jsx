@@ -19,11 +19,11 @@ const Login = () => {
     event.preventDefault();
     // Retrieve stored user from localStorage
     const storedUser = JSON.parse(localStorage.getItem('user'));
-
+  
     // Validate inputs against stored user
     if (storedUser && storedUser.email === email && storedUser.password === password) {
       // If inputs match stored user, redirect to the browse page
-      navigate.push('/browse');
+      navigate('/browse');
     } else {
       // If inputs don't match stored user, show an error message
       setErrorMessage('Incorrect username or password');
