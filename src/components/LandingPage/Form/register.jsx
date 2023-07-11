@@ -40,7 +40,7 @@ const Register = () => {
         </StyledTabs>
       </TabContainer>
       {tabValue === 0 ? (
-        <Login />
+        <Login setTabValue={setTabValue} />
       ) : (
         <RegisterForm onSubmit={handleSubmit}>
           <InputWrapper>
@@ -62,7 +62,7 @@ const Register = () => {
           <SignUpButton type="submit">Sign up</SignUpButton>
           {successMessage && <StyledParagraph>{successMessage}</StyledParagraph>}
           <StyledParagraph>
-            Already have an account? <a href="">Log in!</a>
+            Already have an account? <button onClick={() => setTabValue(0)}>Log in!</button>
           </StyledParagraph>
         </RegisterForm>
       )}
@@ -71,5 +71,7 @@ const Register = () => {
 };
 
 export default Register;
+
+
 
 

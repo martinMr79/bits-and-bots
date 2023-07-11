@@ -78,12 +78,18 @@ export const TabContainer = styled.div`
 export const StyledParagraph = styled.p`
   color: white;
 
-  a {
+  button {
     color: #ccff00;
-    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
   }
 
-  a:hover {
+  button:hover {
     text-decoration: underline;
   }
 `;
+

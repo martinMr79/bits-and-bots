@@ -9,7 +9,7 @@ import {
     StyledParagraph,
 } from './styles';
 
-const Login = () => {
+const Login = ({ setTabValue }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -51,10 +51,12 @@ const Login = () => {
       <SignUpButton type="submit">Log In</SignUpButton>
       {errorMessage && <StyledParagraph>{errorMessage}</StyledParagraph>}
       <StyledParagraph>
-        Don't have an account? <a href="">Sign up!</a>
+        Don't have an account? <button onClick={() => setTabValue(1)}>Sign up!</button>
       </StyledParagraph>
     </RegisterForm>
   );
 };
 
 export default Login;
+
+
