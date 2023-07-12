@@ -1,6 +1,7 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
 import { Link } from 'react-router-dom';
+import Loading from '../../components/Loading/loading.js'; 
 
 function Browse() {
   const {
@@ -9,8 +10,9 @@ function Browse() {
     error,
   } = useFetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/media');
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />; 
   if (error) return <p>Error: {error.message}</p>;
+
 
   return (
     <div>

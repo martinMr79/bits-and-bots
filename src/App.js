@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import Browse from './pages/Browse';
-import Footer from './components/Footer/footer';
 import { GlobalStyle, AppContainer } from './GlobalStyles';
+import MainLayout from './components/MainLayout';
 
 function App() {
   return (
@@ -12,13 +12,13 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/browse" element={<Browse />} />
+          <Route path="/browse" element={<MainLayout><Browse /></MainLayout>} />
         </Routes>
-        <Footer />
       </Router>
     </AppContainer>
   );
 }
 
 export default App;
+
 
