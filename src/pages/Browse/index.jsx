@@ -8,7 +8,7 @@ function Browse() {
     data: games,
     loading,
     error,
-  } = useFetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/media');
+  } = useFetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/posts');
 
   if (loading) return <Loading />; 
   if (error) return <p>Error: {error.message}</p>;

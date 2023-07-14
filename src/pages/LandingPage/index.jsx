@@ -18,21 +18,14 @@ const LandingPage = () => {
     data: posts,
     loading,
     error,
-  } = useFetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/posts');
+  } = useFetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/media');
 
   const [imageUrls, setImageUrls] = useState([]);
 
   useEffect(() => {
     if (posts && posts.length > 0) {
-      const extractImageSrcs = (htmlString) => {
-        const parser = new DOMParser();
-        const html = parser.parseFromString(htmlString, 'text/html');
-        const imgTags = html.getElementsByTagName('img');
-        return Array.from(imgTags).map((img) => img.getAttribute('src'));
-      };
-
       setImageUrls(
-        posts.flatMap((post) => extractImageSrcs(post.content.rendered)),
+        posts.map((post) => post.media_details.sizes.full.source_url),
       );
     }
   }, [posts]);
