@@ -22,13 +22,13 @@ const LandingPage = () => {
         const mediaResponse = await fetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/media');
         const mediaData = await mediaResponse.json();
   
-        // Filter media items which contain 'Landing-page-slider' in their title
+
         const landingPageSliderMedia = mediaData.filter(media => media.title.rendered.includes('Landing-page-slider'));
   
-        // Extract source URLs
+
         const mediaUrls = landingPageSliderMedia.map(media => media.media_details.sizes.full.source_url);
   
-        console.log(mediaUrls);  // For debugging
+        console.log(mediaUrls);  
         setImageUrls(mediaUrls);
         setLoading(false);
       } catch (err) {

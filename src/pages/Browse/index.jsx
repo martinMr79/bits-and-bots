@@ -1,51 +1,64 @@
 import React from 'react';
-import useFetchWithAdditionalData from '../../hooks/fetchAdditionalData';
 import { Link } from 'react-router-dom';
 import Loading from '../../components/Loading/loading.js'; 
-
-const fetchMedia = async (posts) => {
-  const promises = posts.map(async (post) => {
-    const mediaResponse = await fetch(
-      `https://bit-and-bots.volumvekt.no/wp-json/wp/v2/media/${post.featured_media}`,
-    );
-    const mediaData = await mediaResponse.json();
-    return { ...post, media: mediaData };
-  });
-  return Promise.all(promises);
-};
+import { ImageGrid } from '../../components/Browse/cardLayout';
 
 function Browse() {
-  const {
-    data: games,
-    loading,
-    error,
-  } = useFetchWithAdditionalData('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/posts', fetchMedia);
+  const [products, setProducts] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(null);
+
+  React.useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(`https://bit-and-bots.volumvekt.no/wp-json/wc/v3/products?consumer_key=${process.env.REACT_APP_CONSUMER_KEY}&consumer_secret=${process.env.REACT_APP_CONSUMER_SECRET}`);
+        const data = await response.json();
+        
+        // check if data is an array before setting state
+        if (Array.isArray(data)) {
+          setProducts(data);
+        } else {
+          throw new Error("Data is not an array");
+        }
+  
+        setLoading(false);
+      } catch (err) {
+        setError(err);
+        setLoading(false);
+      }
+    };
+  
+    fetchProducts();
+  }, []);
+  
 
   if (loading) return <Loading />; 
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div>
-      {games.map((game) => {
-        console.log(game);  // Move this line before the return statement
+    <ImageGrid>
+      {products.map((product) => {
         return (
-          <div key={game.id}>
-            <h2 dangerouslySetInnerHTML={{ __html: game.title.rendered }}></h2>
-            {game.media && game.media.media_details && game.media.media_details.sizes.full && (
+          <div key={product.id}>
+            <h2>{product.name}</h2>
+            <p>Price: {product.price}</p>
+            {product.images[0] && (
               <img
-                src={game.media.media_details.sizes.full.source_url}
-                alt={game.alt_text || 'game'}
+                src={product.images[0].src}
+                alt={product.images[0].alt || 'product'}
               />
             )}
-            <Link to={`/details/${game.id}`}>More info</Link>
+            <Link to={`/details/${product.id}`}>More info</Link>
           </div>
         );
       })}
-    </div>
+    </ImageGrid>
   );
 }
 
 export default Browse;
+
+
 
 
 
