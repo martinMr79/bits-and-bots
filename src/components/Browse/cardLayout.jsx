@@ -30,10 +30,28 @@ export const Card = styled.div`
   background-color: #27282E;
   color: #ffffff;
   padding: 1rem;
+
 `;
 
 export const ProductImage = styled.img`
-  width: 100%;
-  height: auto;
+  margin: -1rem;
+  width: calc(100% + 2rem);
 `;
 
+export const CartButton = styled.button`
+  background-color: #CCFF00;
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;           
+  justify-content: center; 
+  align-items: center;
+  font-weight: bold;
+`;
+
+export const ProductInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
