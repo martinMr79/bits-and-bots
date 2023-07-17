@@ -30,13 +30,20 @@ export const Card = styled.div`
   background-color: #27282E;
   color: #ffffff;
   padding: 1rem;
+  position: relative;
+`;
 
+export const ProductImageContainer = styled.div`
+  position: relative;
+  overflow: hidden;  // Add this line
 `;
 
 export const ProductImage = styled.img`
-  margin: -1rem;
-  width: calc(100% + 2rem);
+  width: 100%;  // Update this line
+  display: block; // Add this line to remove the space at the bottom of the image
 `;
+
+
 
 export const CartButton = styled.button`
   background-color: #CCFF00;
@@ -54,4 +61,15 @@ export const ProductInfo = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+export const SaleBox = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #CCFF00;
+  color: black;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
 `;
