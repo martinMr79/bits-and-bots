@@ -35,12 +35,13 @@ export const Card = styled.div`
 
 export const ProductImageContainer = styled.div`
   position: relative;
-  overflow: hidden;  // Add this line
+  width: 100%;
+  overflow: hidden;  
 `;
 
 export const ProductImage = styled.img`
-  width: 100%;  // Update this line
-  display: block; // Add this line to remove the space at the bottom of the image
+  width: 100%;
+  display: block;
 `;
 
 
@@ -69,7 +70,7 @@ export const SaleBox = styled.div`
   right: 0;
   background-color: #CCFF00;
   color: black;
-  padding: 10px;
-  font-size: 16px;
+  padding: 5px;
+  font-size: 26px;
   font-weight: bold;
 `;
