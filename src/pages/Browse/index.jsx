@@ -34,39 +34,38 @@ function Browse() {
         {products.map((product) => {
           const onSale = product.sale_price !== '';
           return (
-            <Link to={`/details/${product.id}`} key={product.id} style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Card>
-                {product.images[0] && (
-                  <ProductImageContainer>
+            <Card key={product.id}>
+              {product.images[0] && (
+                <ProductImageContainer>
+                  <Link to={`/details/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                     <ProductImage
                       src={product.images[0].src}
                       alt={product.images[0].alt || 'product'}
                     />
-                    {onSale && (
-                      <SaleBox>
-                       - {Math.round((1 - product.sale_price / product.regular_price) * 100)}% 
-                      </SaleBox>
-                    )}
-                  </ProductImageContainer>
-                )}
-                <h2>{product.name}</h2>
-                <ProductInfo>
-                  {onSale ? (
-                    <p>
-                      <s style={{color: '#76777B', marginRight: '8px', fontSize: "18px"}}>{product.regular_price} Nok </s> 
-                      <span style={{color: '#BEEB09', fontSize: "18px"}}>{product.sale_price} Nok</span>
-                    </p>
-                  ) : (
-                    <p style={{fontSize: "18px", margin: "16px"}}>{product.price} Nok</p>
+                  </Link>
+                  {onSale && (
+                    <SaleBox>
+                     - {Math.round((1 - product.sale_price / product.regular_price) * 100)}% 
+                    </SaleBox>
                   )}
-                  <CartButton>
-                    <ShoppingCartIcon style={{ fontSize: "14px", marginRight: '8px'}} />
-                    Add to Cart
-                  </CartButton>
-                </ProductInfo>
-                {/*<p>Tags: {product.tags && product.tags.map(tag => tag.name).join(', ')}</p>*/}
-              </Card>
-            </Link>
+                </ProductImageContainer>
+              )}
+              <h2>{product.name}</h2>
+              <ProductInfo>
+                {onSale ? (
+                  <p>
+                    <s style={{color: '#76777B', marginRight: '8px', fontSize: "18px"}}>{product.regular_price} Nok </s> 
+                    <span style={{color: '#BEEB09', fontSize: "18px"}}>{product.sale_price} Nok</span>
+                  </p>
+                ) : (
+                  <p style={{fontSize: "18px", margin: "16px"}}>{product.price} Nok</p>
+                )}
+                <CartButton>
+                  <ShoppingCartIcon style={{ fontSize: "14px", marginRight: '8px'}} />
+                  Add to Cart
+                </CartButton>
+              </ProductInfo>
+            </Card>
           );
         })}
       </ImageGrid>
@@ -75,6 +74,7 @@ function Browse() {
 }
 
 export default Browse;
+
 
 
 
