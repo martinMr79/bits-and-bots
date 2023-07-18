@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, IconButton } from '@mui/material';
+import { AppBar, Toolbar as MuiToolbar, Typography, IconButton } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Avatar } from '@mui/material';
 import styled from 'styled-components';
@@ -14,20 +14,37 @@ const Title = styled(Typography)`
   flex-grow: 1;
 `;
 
+const Toolbar = styled(MuiToolbar)`
+  display: flex;
+  justify-content: center;
+  height: 100%;
+`;
+
+const ContentContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  width: 100%;
+`;
+
 function Header() {
   return (
     <StyledAppBar position="static">
       <Toolbar>
-        <Title variant="h5">
-          Bits & Bots
-        </Title>
-        <IconButton color="inherit">
-          <ShoppingCartIcon />
-        </IconButton>
-        <Avatar>A</Avatar>
+        <ContentContainer>
+          <Title variant="h5">
+            Bits & Bots
+          </Title>
+          <IconButton color="inherit">
+            <ShoppingCartIcon style={{ fontSize: 40, marginRight: 45 }} />
+          </IconButton>
+          <Avatar>A</Avatar>
+        </ContentContainer>
       </Toolbar>
     </StyledAppBar>
   );
 }
 
 export default Header;
+
