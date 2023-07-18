@@ -10,8 +10,10 @@ const StyledAppBar = styled(AppBar)`
 `;
 
 const Title = styled(Typography)`
+  font-family: 'MuseSans', sans-serif !important;
   color: #CCFF00;
   flex-grow: 1;
+  font-size: 32px !important;
 `;
 
 const Toolbar = styled(MuiToolbar)`

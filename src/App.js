@@ -5,6 +5,7 @@ import Browse from './pages/Browse';
 import { GlobalStyle, AppContainer } from './GlobalStyles';
 import MainLayout from './components/MainLayout';
 import './GlobalStyles'; 
+
  
 function App() {
   return (
