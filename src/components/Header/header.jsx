@@ -38,10 +38,10 @@ function Header() {
           <Title variant="h5">
             Bits & Bots
           </Title>
-          <IconButton color="inherit">
-            <ShoppingCartIcon style={{ fontSize: 40, marginRight: 45 }} />
+          <IconButton color="inherit" style= {{ marginRight: 30 }}>
+            <ShoppingCartIcon style={{ fontSize: 40, }} />
           </IconButton>
-          <Avatar>A</Avatar>
+          <Avatar style={{ color: 'black', backgroundColor: 'white' }}>A</Avatar>
         </ContentContainer>
       </Toolbar>
     </StyledAppBar>
