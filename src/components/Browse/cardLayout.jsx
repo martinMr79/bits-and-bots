@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 1rem;
 `;
@@ -12,7 +12,7 @@ export const ImageGrid = styled.div`
   gap: 1rem;
   justify-content: center;
 
-  @media (min-width: 680px) {
+  @media (min-width: 750px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
