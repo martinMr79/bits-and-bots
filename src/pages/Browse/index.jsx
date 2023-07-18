@@ -58,7 +58,7 @@ function Browse() {
                     <span style={{color: '#BEEB09', fontSize: "18px"}}>{product.sale_price} Nok</span>
                   </p>
                 ) : (
-                  <p style={{fontSize: "18px", margin: "16px"}}>{product.price} Nok</p>
+                  <p style={{fontSize: "18px" }}>{product.price} Nok</p>
                 )}
                 <CartButton>
                   <ShoppingCartIcon style={{ fontSize: "14px", marginRight: '8px'}} />
