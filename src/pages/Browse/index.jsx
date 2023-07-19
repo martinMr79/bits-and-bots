@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Loading from '../../components/Loading/loading.js'; 
+import Loading from '../../components/Loading/loading.js';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Container, ImageGrid, Card, ProductImage, ProductInfo, CartButton, SaleBox, ProductImageContainer } from '../../components/Browse/cardLayout.jsx';
 import Carousel from 'react-material-ui-carousel';
 import { Paper, Typography, IconButton } from '@mui/material';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
-
 
 const Browse = () => {
   const [products, setProducts] = React.useState([]);
@@ -29,30 +28,23 @@ const Browse = () => {
     fetchProducts();
   }, []);
 
-  if (loading) return <Loading />; 
+  if (loading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
 
   const popularCategories = ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'];
 
   const PopularCategoriesCarousel = ({ categories }) => {
-    const [activeIndex, setActiveIndex] = React.useState(0);
-    const [autoPlay, setAutoPlay] = React.useState(true);
-  
     const handleNext = () => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % categories.length);
+
     };
-  
+
     const handlePrev = () => {
-      setActiveIndex((prevIndex) => (prevIndex - 1 + categories.length) % categories.length);
+    
     };
-  
-    const handleAutoPlayToggle = () => {
-      setAutoPlay((prevAutoPlay) => !prevAutoPlay);
-    };
-  
+
     return (
       <Carousel
-        autoPlay={autoPlay}
+        autoPlay={false}
         interval={3000}
         animation="slide"
         navButtonsAlwaysVisible
@@ -94,7 +86,7 @@ const Browse = () => {
                   </Link>
                   {onSale && (
                     <SaleBox>
-                      -{Math.round((1 - product.sale_price / product.regular_price) * 100)}% 
+                      -{Math.round((1 - product.sale_price / product.regular_price) * 100)}%
                     </SaleBox>
                   )}
                 </ProductImageContainer>
@@ -103,14 +95,16 @@ const Browse = () => {
               <ProductInfo>
                 {onSale ? (
                   <p>
-                    <s style={{color: '#76777B', marginRight: '8px', fontSize: "18px"}}>{product.regular_price} Nok </s> 
-                    <span style={{color: '#BEEB09', fontSize: "18px"}}>{product.sale_price} Nok</span>
+                    <s style={{ color: '#76777B', marginRight: '8px', fontSize: '18px' }}>
+                      {product.regular_price} Nok
+                    </s>
+                    <span style={{ color: '#BEEB09', fontSize: '18px' }}>{product.sale_price} Nok</span>
                   </p>
                 ) : (
-                  <p style={{fontSize: "18px" }}>{product.price} Nok</p>
+                  <p style={{ fontSize: '18px' }}>{product.price} Nok</p>
                 )}
                 <CartButton>
-                  <ShoppingCartIcon style={{ fontSize: "14px", marginRight: '8px'}} />
+                  <ShoppingCartIcon style={{ fontSize: '14px', marginRight: '8px' }} />
                   Add to Cart
                 </CartButton>
               </ProductInfo>
@@ -123,6 +117,8 @@ const Browse = () => {
 };
 
 export default Browse;
+
+
 
 
 
