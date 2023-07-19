@@ -70,7 +70,9 @@ export const SaleBox = styled.div`
   right: 0;
   background-color: #CCFF00;
   color: black;
-  padding: 5px;
+  padding: 6px 15px;
   font-size: 26px;
   font-weight: bold;
+  font-family: 'MuseSans', sans-serif !important;
+  font-weight: 500; 
 `;

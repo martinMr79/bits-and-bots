@@ -5,3 +5,9 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'MuseSans';
+  src: url('./fonts/MuseoSans_500.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}

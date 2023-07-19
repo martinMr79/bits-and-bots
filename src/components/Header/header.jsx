@@ -11,6 +11,7 @@ const StyledAppBar = styled(AppBar)`
 
 const Title = styled(Typography)`
   font-family: 'MuseSans', sans-serif !important;
+  font-weight: 700; 
   color: #CCFF00;
   flex-grow: 1;
   font-size: 32px !important;
