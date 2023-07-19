@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom';
 import Loading from '../../components/Loading/loading.js'; 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Container, ImageGrid, Card, ProductImage, ProductInfo, CartButton, SaleBox, ProductImageContainer } from '../../components/Browse/cardLayout.jsx';
+import Carousel from 'react-material-ui-carousel';
+import { Paper, Typography, IconButton } from '@mui/material';
+import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 
-function Browse() {
+
+const Browse = () => {
   const [products, setProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
@@ -28,8 +32,53 @@ function Browse() {
   if (loading) return <Loading />; 
   if (error) return <p>Error: {error.message}</p>;
 
+  const popularCategories = ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'];
+
+  const PopularCategoriesCarousel = ({ categories }) => {
+    const [activeIndex, setActiveIndex] = React.useState(0);
+    const [autoPlay, setAutoPlay] = React.useState(true);
+  
+    const handleNext = () => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % categories.length);
+    };
+  
+    const handlePrev = () => {
+      setActiveIndex((prevIndex) => (prevIndex - 1 + categories.length) % categories.length);
+    };
+  
+    const handleAutoPlayToggle = () => {
+      setAutoPlay((prevAutoPlay) => !prevAutoPlay);
+    };
+  
+    return (
+      <Carousel
+        autoPlay={autoPlay}
+        interval={3000}
+        animation="slide"
+        navButtonsAlwaysVisible
+        next={() => (
+          <IconButton onClick={handleNext}>
+            <KeyboardArrowRight />
+          </IconButton>
+        )}
+        prev={() => (
+          <IconButton onClick={handlePrev}>
+            <KeyboardArrowLeft />
+          </IconButton>
+        )}
+      >
+        {categories.map((category, index) => (
+          <Paper key={index}>
+            <Typography variant="h5">{category}</Typography>
+          </Paper>
+        ))}
+      </Carousel>
+    );
+  };
+
   return (
     <Container>
+      <PopularCategoriesCarousel categories={popularCategories} />
       <ImageGrid>
         {products.map((product) => {
           const onSale = product.sale_price !== '';
@@ -45,7 +94,7 @@ function Browse() {
                   </Link>
                   {onSale && (
                     <SaleBox>
-                     -{Math.round((1 - product.sale_price / product.regular_price) * 100)}% 
+                      -{Math.round((1 - product.sale_price / product.regular_price) * 100)}% 
                     </SaleBox>
                   )}
                 </ProductImageContainer>
@@ -71,9 +120,11 @@ function Browse() {
       </ImageGrid>
     </Container>
   );
-}
+};
 
 export default Browse;
+
+
 
 
 
