@@ -45,7 +45,7 @@ function Browse() {
                   </Link>
                   {onSale && (
                     <SaleBox>
-                     - {Math.round((1 - product.sale_price / product.regular_price) * 100)}% 
+                     -{Math.round((1 - product.sale_price / product.regular_price) * 100)}% 
                     </SaleBox>
                   )}
                 </ProductImageContainer>
