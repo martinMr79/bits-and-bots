@@ -3,6 +3,14 @@ import { Card, ProductImage, ProductImageContainer } from '../../components/Brow
 ;
 
 
+export const StyledCarouselContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
+
+
 export const StyledCategoryCard = styled(Card)`
   background-color: #27282E;
   color: #ffffff;
@@ -11,6 +19,8 @@ export const StyledCategoryCard = styled(Card)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin: 0 10px; /* Adjust the gap between cards by modifying the margin */
 `;
 
 export const StyledProductImageContainer = styled(ProductImageContainer)`

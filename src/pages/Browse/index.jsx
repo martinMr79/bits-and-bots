@@ -5,7 +5,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Container, ImageGrid, Card, ProductImage, ProductInfo, CartButton, SaleBox, ProductImageContainer } from '../../components/Browse/cardLayout.jsx';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import { StyledCategoryCard, StyledProductImageContainer, StyledProductImage } from './styled.jsx'
+import { StyledCategoryCard, StyledProductImageContainer, StyledProductImage, StyledCarouselContainer } from './styled.jsx'
 
 const Browse = () => {
   const [products, setProducts] = React.useState([]);
@@ -61,13 +61,14 @@ const Browse = () => {
           }
         >
           {categories.map((category, index) => (
-            <div key={index} style={{ display: 'flex' }}>
+            <div key={index}>
+              <StyledCarouselContainer>
               {category.map((subCategory, subIndex) => (
                 <StyledCategoryCard key={subIndex}>
                   <StyledProductImageContainer>
                     <Link to={`/details/${subCategory}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                       <StyledProductImage
-                        src={"https://placehold.co/150x50"}
+                        src={"https://placehold.co/350x250"}
                         alt={"Category image"}
                       />
                     </Link>
@@ -75,6 +76,7 @@ const Browse = () => {
                   <h2>{subCategory}</h2>
                 </StyledCategoryCard>
               ))}
+              </StyledCarouselContainer>
             </div>
           ))}
         </Carousel>
