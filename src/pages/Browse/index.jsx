@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import Loading from '../../components/Loading/loading.js';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Container, ImageGrid, Card, ProductImage, ProductInfo, CartButton, SaleBox, ProductImageContainer } from '../../components/Browse/cardLayout.jsx';
-import Carousel from 'react-material-ui-carousel';
-import { Paper, Typography, IconButton } from '@mui/material';
-import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 const Browse = () => {
   const [products, setProducts] = React.useState([]);
@@ -31,38 +30,43 @@ const Browse = () => {
   if (loading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
 
-  const popularCategories = ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'];
+  const popularCategories = [
+    ['Category 1', 'Category 2', 'Category 3'],
+    ['Category 4', 'Category 5', 'Category 6'],
+    ['Category 7', 'Category 8', 'Category 9'],
+  ];
 
   const PopularCategoriesCarousel = ({ categories }) => {
-    const handleNext = () => {
-
-    };
-
-    const handlePrev = () => {
-    
-    };
-
     return (
       <Carousel
+        showThumbs={false}
+        showStatus={false}
         autoPlay={false}
-        interval={3000}
-        animation="slide"
-        navButtonsAlwaysVisible
-        next={() => (
-          <IconButton onClick={handleNext}>
-            <KeyboardArrowRight />
-          </IconButton>
-        )}
-        prev={() => (
-          <IconButton onClick={handlePrev}>
-            <KeyboardArrowLeft />
-          </IconButton>
-        )}
+        infiniteLoop
+        renderArrowPrev={(onClickHandler, hasPrev, label) =>
+          hasPrev && (
+            <button type="button" onClick={onClickHandler} title={label} style={{ position: 'absolute', left: 15, top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
+              Prev
+            </button>
+          )
+        }
+        renderArrowNext={(onClickHandler, hasNext, label) =>
+          hasNext && (
+            <button type="button" onClick={onClickHandler} title={label} style={{ position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
+              Next
+            </button>
+          )
+        }
       >
         {categories.map((category, index) => (
-          <Paper key={index}>
-            <Typography variant="h5">{category}</Typography>
-          </Paper>
+          <div key={index}>
+            {category.map((subCategory, subIndex) => (
+              <div key={subIndex}>
+                <h2>{subCategory}</h2>
+                {/* Add your images or other content here */}
+              </div>
+            ))}
+          </div>
         ))}
       </Carousel>
     );
@@ -117,6 +121,8 @@ const Browse = () => {
 };
 
 export default Browse;
+
+
 
 
 
