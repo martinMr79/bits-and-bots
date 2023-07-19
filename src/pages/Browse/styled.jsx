@@ -20,7 +20,7 @@ export const StyledCategoryCard = styled(Card)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 10px; /* Adjust the gap between cards by modifying the margin */
+  margin: 0 10px;
 `;
 
 export const StyledProductImageContainer = styled(ProductImageContainer)`
