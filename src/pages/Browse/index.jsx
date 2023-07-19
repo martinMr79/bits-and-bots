@@ -5,6 +5,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Container, ImageGrid, Card, ProductImage, ProductInfo, CartButton, SaleBox, ProductImageContainer } from '../../components/Browse/cardLayout.jsx';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import { StyledCategoryCard, StyledProductImageContainer, StyledProductImage } from './styled.jsx'
 
 const Browse = () => {
   const [products, setProducts] = React.useState([]);
@@ -38,40 +39,53 @@ const Browse = () => {
 
   const PopularCategoriesCarousel = ({ categories }) => {
     return (
-      <Carousel
-        showThumbs={false}
-        showStatus={false}
-        autoPlay={false}
-        infiniteLoop
-        renderArrowPrev={(onClickHandler, hasPrev, label) =>
-          hasPrev && (
-            <button type="button" onClick={onClickHandler} title={label} style={{ position: 'absolute', left: 15, top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
-              Prev
-            </button>
-          )
-        }
-        renderArrowNext={(onClickHandler, hasNext, label) =>
-          hasNext && (
-            <button type="button" onClick={onClickHandler} title={label} style={{ position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
-              Next
-            </button>
-          )
-        }
-      >
-        {categories.map((category, index) => (
-          <div key={index}>
-            {category.map((subCategory, subIndex) => (
-              <div key={subIndex}>
-                <h2>{subCategory}</h2>
-                {/* Add your images or other content here */}
-              </div>
-            ))}
-          </div>
-        ))}
-      </Carousel>
+      <Container>
+        <Carousel
+          showThumbs={false}
+          showStatus={false}
+          autoPlay={false}
+          infiniteLoop
+          renderArrowPrev={(onClickHandler, hasPrev, label) =>
+            hasPrev && (
+              <button type="button" onClick={onClickHandler} title={label} style={{ position: 'absolute', left: 15, top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
+                Prev
+              </button>
+            )
+          }
+          renderArrowNext={(onClickHandler, hasNext, label) =>
+            hasNext && (
+              <button type="button" onClick={onClickHandler} title={label} style={{ position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
+                Next
+              </button>
+            )
+          }
+        >
+          {categories.map((category, index) => (
+            <div key={index} style={{ display: 'flex' }}>
+              {category.map((subCategory, subIndex) => (
+                <StyledCategoryCard key={subIndex}>
+                  <StyledProductImageContainer>
+                    <Link to={`/details/${subCategory}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                      <StyledProductImage
+                        src={"https://placehold.co/150x50"}
+                        alt={"Category image"}
+                      />
+                    </Link>
+                  </StyledProductImageContainer>
+                  <h2>{subCategory}</h2>
+                </StyledCategoryCard>
+              ))}
+            </div>
+          ))}
+        </Carousel>
+      </Container>
     );
   };
 
+
+
+
+  
   return (
     <Container>
       <PopularCategoriesCarousel categories={popularCategories} />

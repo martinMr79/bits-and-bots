@@ -76,3 +76,4 @@ export const SaleBox = styled.div`
   font-family: 'MuseSans', sans-serif !important;
   font-weight: 500; 
 `;
+
