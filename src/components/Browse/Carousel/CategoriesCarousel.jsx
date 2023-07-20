@@ -8,15 +8,27 @@ import {
   StyledCarouselContainer,
   Container,
 } from './styled.jsx';
-
-const popularCategories = [
-  ['Category 1', 'Category 2', 'Category 3', 'Category 4'],
-  ['Category 5', 'Category 6', 'Category 7', 'Category 8'],
-];
+import useFetch from '../../../hooks/useFetch.jsx';
 
 const PopularCategoriesCarousel = () => {
+  const { data: posts, loading, error } = useFetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/posts?categories=35');
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  const popularCategories = posts.map((post) => ({
+    title: post.title.rendered,
+    image: post.jetpack_featured_media_url,
+  }));
+
   return (
     <Container>
+      <h1>Categories</h1>
       <Carousel
         showThumbs={false}
         showStatus={false}
@@ -50,14 +62,14 @@ const PopularCategoriesCarousel = () => {
         {popularCategories.map((category, index) => (
           <div key={index}>
             <StyledCarouselContainer>
-              {category.map((subCategory, subIndex) => (
+              {popularCategories.slice(index, index + 3).map((subCategory, subIndex) => (
                 <StyledCategoryCard key={subIndex}>
                   <StyledProductImageContainer>
-                    <Link to={`/details/${subCategory}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                      <StyledProductImage src="https://placehold.co/350x250" alt="Category image" />
+                    <Link to={`/details/${subCategory.title}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                      <StyledProductImage src={subCategory.image} alt="Category image" />
                     </Link>
                   </StyledProductImageContainer>
-                  <h2>{subCategory}</h2>
+                  <h2>{subCategory.title}</h2>
                 </StyledCategoryCard>
               ))}
             </StyledCarouselContainer>
@@ -69,4 +81,6 @@ const PopularCategoriesCarousel = () => {
 };
 
 export default PopularCategoriesCarousel;
+
+
 
