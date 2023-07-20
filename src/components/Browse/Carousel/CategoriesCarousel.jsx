@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';
 import {
@@ -13,6 +13,28 @@ import useFetch from '../../../hooks/useFetch.jsx';
 
 const PopularCategoriesCarousel = () => {
   const { data: posts, loading, error } = useFetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/posts?categories=35');
+  const [itemsPerSlide, setItemsPerSlide] = useState(1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth >= 1400) {
+        setItemsPerSlide(4);
+      } else if (screenWidth >= 1050) {
+        setItemsPerSlide(3);
+      } else if (screenWidth >= 750) {
+        setItemsPerSlide(2);
+      } else {
+        setItemsPerSlide(1);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -27,21 +49,7 @@ const PopularCategoriesCarousel = () => {
     image: post.jetpack_featured_media_url,
   }));
 
-  const getItemsPerSlide = () => {
-    const screenWidth = window.innerWidth;
-    if (screenWidth >= 1400) {
-      return 4;
-    } else if (screenWidth >= 1050) {
-      return 3;
-    } else if (screenWidth >= 750) {
-      return 2;
-    } else {
-      return 1;
-    }
-  };
-
   const renderCarouselItems = () => {
-    const itemsPerSlide = getItemsPerSlide();
     const numSlides = Math.ceil(popularCategories.length / itemsPerSlide);
     const carouselItems = [];
 
@@ -111,6 +119,7 @@ const PopularCategoriesCarousel = () => {
 };
 
 export default PopularCategoriesCarousel;
+
 
 
 
