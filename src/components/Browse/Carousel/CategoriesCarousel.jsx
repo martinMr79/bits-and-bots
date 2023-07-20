@@ -27,6 +27,50 @@ const PopularCategoriesCarousel = () => {
     image: post.jetpack_featured_media_url,
   }));
 
+  const getItemsPerSlide = () => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 1400) {
+      return 4;
+    } else if (screenWidth >= 1050) {
+      return 3;
+    } else if (screenWidth >= 750) {
+      return 2;
+    } else {
+      return 1;
+    }
+  };
+
+  const renderCarouselItems = () => {
+    const itemsPerSlide = getItemsPerSlide();
+    const numSlides = Math.ceil(popularCategories.length / itemsPerSlide);
+    const carouselItems = [];
+
+    for (let i = 0; i < numSlides; i++) {
+      const startIndex = i * itemsPerSlide;
+      const endIndex = startIndex + itemsPerSlide;
+      const slideCategories = popularCategories.slice(startIndex, endIndex);
+
+      carouselItems.push(
+        <div key={i}>
+          <StyledCarouselContainer itemsPerSlide={itemsPerSlide}>
+            {slideCategories.map((category, index) => (
+              <StyledCategoryCard key={index}>
+                <StyledProductImageContainer>
+                  <Link to={`/details/${category.title}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <StyledProductImage src={category.image} alt="Category image" />
+                  </Link>
+                </StyledProductImageContainer>
+                <h2>{category.title}</h2>
+              </StyledCategoryCard>
+            ))}
+          </StyledCarouselContainer>
+        </div>
+      );
+    }
+
+    return carouselItems;
+  };
+
   return (
     <Container>
       <H2>Genres</H2>
@@ -60,28 +104,16 @@ const PopularCategoriesCarousel = () => {
           )
         }
       >
-        {popularCategories.map((category, index) => (
-          <div key={index}>
-            <StyledCarouselContainer>
-              {popularCategories.slice(index, index + 3).map((subCategory, subIndex) => (
-                <StyledCategoryCard key={subIndex}>
-                  <StyledProductImageContainer>
-                    <Link to={`/details/${subCategory.title}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                      <StyledProductImage src={subCategory.image} alt="Category image" />
-                    </Link>
-                  </StyledProductImageContainer>
-                  <h2>{subCategory.title}</h2>
-                </StyledCategoryCard>
-              ))}
-            </StyledCarouselContainer>
-          </div>
-        ))}
+        {renderCarouselItems()}
       </Carousel>
     </Container>
   );
 };
 
 export default PopularCategoriesCarousel;
+
+
+
 
 
 
