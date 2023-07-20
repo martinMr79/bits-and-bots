@@ -7,6 +7,7 @@ import {
   StyledProductImage,
   StyledCarouselContainer,
   Container,
+  H2,
 } from './styled.jsx';
 import useFetch from '../../../hooks/useFetch.jsx';
 
@@ -28,7 +29,7 @@ const PopularCategoriesCarousel = () => {
 
   return (
     <Container>
-      <h1>Categories</h1>
+      <H2>Genres</H2>
       <Carousel
         showThumbs={false}
         showStatus={false}
