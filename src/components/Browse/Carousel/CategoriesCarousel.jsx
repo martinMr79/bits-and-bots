@@ -29,6 +29,9 @@ const PopularCategoriesCarousel = () => {
       }
     };
 
+
+    handleResize();
+
     window.addEventListener('resize', handleResize);
 
     return () => {
