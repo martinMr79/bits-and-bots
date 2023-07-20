@@ -4,8 +4,7 @@ import Loading from '../../components/Loading/loading.js';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Container, ImageGrid, Card, ProductImage, ProductInfo, CartButton, SaleBox, ProductImageContainer } from '../../components/Browse/cardLayout.jsx';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
-import { StyledCategoryCard, StyledProductImageContainer, StyledProductImage, StyledCarouselContainer } from './styled.jsx'
+import CategoriesCarousel from '../../components/Browse/Carousel/CategoriesCarousel.jsx';
 
 const Browse = () => {
   const [products, setProducts] = React.useState([]);
@@ -31,66 +30,12 @@ const Browse = () => {
   if (loading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
 
-  const popularCategories = [
-    ['Category 1', 'Category 2', 'Category 3'],
-    ['Category 4', 'Category 5', 'Category 6'],
-    ['Category 7', 'Category 8', 'Category 9'],
-  ];
-
-  const PopularCategoriesCarousel = ({ categories }) => {
-    return (
-      <Container>
-        <Carousel
-          showThumbs={false}
-          showStatus={false}
-          autoPlay={false}
-          infiniteLoop
-          renderArrowPrev={(onClickHandler, hasPrev, label) =>
-            hasPrev && (
-              <button type="button" onClick={onClickHandler} title={label} style={{ position: 'absolute', left: 15, top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
-                Prev
-              </button>
-            )
-          }
-          renderArrowNext={(onClickHandler, hasNext, label) =>
-            hasNext && (
-              <button type="button" onClick={onClickHandler} title={label} style={{ position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
-                Next
-              </button>
-            )
-          }
-        >
-          {categories.map((category, index) => (
-            <div key={index}>
-              <StyledCarouselContainer>
-              {category.map((subCategory, subIndex) => (
-                <StyledCategoryCard key={subIndex}>
-                  <StyledProductImageContainer>
-                    <Link to={`/details/${subCategory}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                      <StyledProductImage
-                        src={"https://placehold.co/350x250"}
-                        alt={"Category image"}
-                      />
-                    </Link>
-                  </StyledProductImageContainer>
-                  <h2>{subCategory}</h2>
-                </StyledCategoryCard>
-              ))}
-              </StyledCarouselContainer>
-            </div>
-          ))}
-        </Carousel>
-      </Container>
-    );
-  };
-
-
 
 
   
   return (
-    <Container>
-      <PopularCategoriesCarousel categories={popularCategories} />
+    <Container>    
+      <CategoriesCarousel />
       <ImageGrid>
         {products.map((product) => {
           const onSale = product.sale_price !== '';

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Card, ProductImage, ProductImageContainer } from '../../components/Browse/cardLayout';
+import { Card, ProductImage, ProductImageContainer } from '../cardLayout';
 ;
 
 
@@ -33,4 +33,10 @@ export const StyledProductImageContainer = styled(ProductImageContainer)`
 export const StyledProductImage = styled(ProductImage)`
   width: 100%;
   display: block;
+`;
+
+export const Container = styled.div`
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1rem;
 `;
