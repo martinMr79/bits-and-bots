@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';
+import IconButton from '@mui/material/IconButton';
+import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 import {
   StyledCategoryCard,
   StyledProductImageContainer,
@@ -8,12 +10,20 @@ import {
   StyledCarouselContainer,
   Container,
   H2,
+  ArrowButtonContainer
 } from './styled.jsx';
 import useFetch from '../../../hooks/useFetch.jsx';
 
 const PopularCategoriesCarousel = () => {
   const { data: posts, loading, error } = useFetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/posts?categories=35');
   const [itemsPerSlide, setItemsPerSlide] = useState(1);
+
+  const ArrowButton = ({ children, onClick, title, right }) => (
+    <ArrowButtonContainer onClick={onClick} title={title} right={right}>
+      {children}
+    </ArrowButtonContainer>
+  );
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,7 +39,7 @@ const PopularCategoriesCarousel = () => {
       }
     };
 
-
+    // Call the handleResize function on initial mount
     handleResize();
 
     window.addEventListener('resize', handleResize);
@@ -82,6 +92,26 @@ const PopularCategoriesCarousel = () => {
     return carouselItems;
   };
 
+  const renderArrowPrev = (onClickHandler, hasPrev, label) => (
+    hasPrev && (
+      <ArrowButton onClick={onClickHandler} title={label}>
+        <IconButton sx={{ position: 'absolute', left: -30, top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
+          <KeyboardArrowLeft sx={{ fontSize: 100, color: '#000', opacity: 0.8 }} />
+        </IconButton>
+      </ArrowButton>
+    )
+  );
+
+  const renderArrowNext = (onClickHandler, hasNext, label) => (
+    hasNext && (
+      <ArrowButton onClick={onClickHandler} title={label} right>
+        <IconButton sx={{ position: 'absolute', right: -30, top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
+          <KeyboardArrowRight sx={{ fontSize: 100, color: '#000', opacity: 0.8 }} />
+        </IconButton>
+      </ArrowButton>
+    )
+  );
+
   return (
     <Container>
       <H2>Genres</H2>
@@ -90,30 +120,8 @@ const PopularCategoriesCarousel = () => {
         showStatus={false}
         autoPlay={false}
         infiniteLoop
-        renderArrowPrev={(onClickHandler, hasPrev, label) =>
-          hasPrev && (
-            <button
-              type="button"
-              onClick={onClickHandler}
-              title={label}
-              style={{ position: 'absolute', left: 15, top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}
-            >
-              Prev
-            </button>
-          )
-        }
-        renderArrowNext={(onClickHandler, hasNext, label) =>
-          hasNext && (
-            <button
-              type="button"
-              onClick={onClickHandler}
-              title={label}
-              style={{ position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}
-            >
-              Next
-            </button>
-          )
-        }
+        renderArrowPrev={renderArrowPrev}
+        renderArrowNext={renderArrowNext}
       >
         {renderCarouselItems()}
       </Carousel>
@@ -122,6 +130,7 @@ const PopularCategoriesCarousel = () => {
 };
 
 export default PopularCategoriesCarousel;
+
 
 
 

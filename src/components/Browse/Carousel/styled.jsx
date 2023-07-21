@@ -54,3 +54,20 @@ export const Container = styled.div`
 export const H2 = styled.h2`
   color: #ffffff;
 `;
+
+export const ArrowButtonContainer = styled.div`
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  ${({ right }) => (right ? 'right: 15px;' : 'left: 15px;')}
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+`;
