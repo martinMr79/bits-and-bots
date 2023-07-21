@@ -47,17 +47,17 @@ export const ProductImage = styled.img`
 
 
 
-export const CartButton = styled.button`
-  background-color: #CCFF00;
-  border: none;
-  border-radius: 3px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  display: flex;           
-  justify-content: center; 
-  align-items: center;
-  font-weight: bold;
-`;
+ export const CartButton = styled.button`
+   background-color: #CCFF00;
+   border: none;
+   border-radius: 3px;
+   padding: 0.5rem 1rem;
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-weight: bold;
+ `;
 
 export const ProductInfo = styled.div`
   display: flex;
