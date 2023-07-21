@@ -30,11 +30,31 @@ const Browse = () => {
   if (loading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
 
+  const handleToggleCart = (productId) => {
+    // Check if the product is already in the cart
+    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+    const isInCart = cartData.some((item) => item.id === productId);
 
+    // Update the cart data in localStorage
+    if (isInCart) {
+      const updatedCart = cartData.filter((item) => item.id !== productId);
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+    } else {
+      const productToAdd = products.find((product) => product.id === productId);
+      const updatedCart = [...cartData, productToAdd];
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+    }
 
-  
+    // Update the state to reflect the change
+    setProducts((prevProducts) =>
+      prevProducts.map((prevProduct) =>
+        prevProduct.id === productId ? { ...prevProduct, isInCart: !isInCart } : prevProduct
+      )
+    );
+  };
+
   return (
-    <Container>    
+    <Container>
       <CategoriesCarousel />
       <ImageGrid>
         {products.map((product) => {
@@ -68,9 +88,9 @@ const Browse = () => {
                 ) : (
                   <p style={{ fontSize: '18px' }}>{product.price} Nok</p>
                 )}
-                <CartButton>
+                <CartButton onClick={() => handleToggleCart(product.id)}>
                   <ShoppingCartIcon style={{ fontSize: '14px', marginRight: '8px' }} />
-                  Add to Cart
+                  {product.isInCart ? 'In Cart' : 'Add to Cart'}
                 </CartButton>
               </ProductInfo>
             </Card>
@@ -82,6 +102,7 @@ const Browse = () => {
 };
 
 export default Browse;
+
 
 
 
