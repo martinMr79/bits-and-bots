@@ -3,7 +3,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Register from '../../components/LandingPage/Form/register';
 import styled from 'styled-components';
-import Loading from '../../components/Loading/loading.js'; 
+import Loading from '../../components/Loading/loading.js';
 
 const RegisterWrapper = styled.div`
   position: absolute;
@@ -16,19 +16,23 @@ const LandingPage = () => {
   const [imageUrls, setImageUrls] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
   useEffect(() => {
     const fetchMedia = async () => {
       try {
-        const mediaResponse = await fetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/media');
+        const mediaResponse = await fetch(
+          'https://bit-and-bots.volumvekt.no/wp-json/wp/v2/media?per_page=30'
+        );
+        if (!mediaResponse.ok) {
+          throw new Error(`Failed to fetch media, status: ${mediaResponse.status}`);
+        }
+
         const mediaData = await mediaResponse.json();
-  
+        const landingPageSliderMedia = mediaData.filter(
+          (media) => media.title.rendered === 'Landing-page-slider'
+        );
 
-        const landingPageSliderMedia = mediaData.filter(media => media.title.rendered.includes('Landing-page-slider'));
-  
-
-        const mediaUrls = landingPageSliderMedia.map(media => media.media_details.sizes.full.source_url);
-  
-        console.log(mediaUrls);  
+        const mediaUrls = landingPageSliderMedia.map((media) => media.source_url);
         setImageUrls(mediaUrls);
         setLoading(false);
       } catch (err) {
@@ -36,13 +40,11 @@ const LandingPage = () => {
         setLoading(false);
       }
     };
-  
+
     fetchMedia();
   }, []);
-  
-  
 
-  if (loading) return <Loading />; 
+  if (loading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
@@ -75,4 +77,5 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
 
