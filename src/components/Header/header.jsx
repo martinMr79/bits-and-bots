@@ -4,6 +4,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Avatar } from '@mui/material';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useCart } from '../../hooks/useCart';
 
 const StyledAppBar = styled(AppBar)`
   background-color: #27282E !important;
@@ -53,14 +54,8 @@ const CartItemCount = styled.span`
   height: 12px;
 `;
 
-
 function Header() {
-  // Function to get the number of items in the cart from localStorage
-  const getCartItemCount = () => {
-    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
-    return cartData.length;
-  };
-
+  const { getCartItemCount } = useCart();
   const cartItemCount = getCartItemCount();
 
   return (
@@ -84,6 +79,7 @@ function Header() {
 }
 
 export default Header;
+
 
 
 
