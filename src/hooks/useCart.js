@@ -1,36 +1,31 @@
 import create from 'zustand';
 import { produce } from 'immer';
 
-const useCartStore = create(produce((set) => ({
-  cart: [],
+const useCartStore = create(set => ({
+  cart: JSON.parse(localStorage.getItem('cart')) || [],
 
-  addToCart: (item) => {
-    set((state) => {
-      state.cart.push(item);
-    });
-  },
+  addToCart: (item) => set(state => produce(state, draftState => {
+    draftState.cart.push(item);
+    localStorage.setItem('cart', JSON.stringify(draftState.cart));
+  })),
 
-  removeFromCart: (itemId) => {
-    set((state) => {
-      state.cart = state.cart.filter((item) => item.id !== itemId);
-    });
-  },
+  removeFromCart: (itemId) => set(state => produce(state, draftState => {
+    draftState.cart = draftState.cart.filter((item) => item.id !== itemId);
+    localStorage.setItem('cart', JSON.stringify(draftState.cart));
+  })),
 
-  clearCart: () => {
-    set((state) => {
-      state.cart = [];
-    });
-  },
+  clearCart: () => set(state => produce(state, draftState => {
+    draftState.cart = [];
+    localStorage.removeItem('cart');
+  })),
 
-  getCartItemCount: () => {
-    return useCartStore.getState().cart.length;
-  },
-})));
+  getCartItemCount: () => useCartStore.getState().cart.length,
+}));
 
-export { useCartStore }; // Export the store object
+export { useCartStore };
 
 export function useCart() {
-  return useCartStore((state) => state); // Use the store with Zustand's hook API
+  return useCartStore((state) => state);
 }
 
 

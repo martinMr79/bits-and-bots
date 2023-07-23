@@ -1,37 +1,18 @@
-import React, { useState, useEffect } from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { CartButton } from '../cardLayout';
+import { useCartStore } from '../../../hooks/useCart'; // update the import
 
-const AddToCartButton = ({ product, onToggleCart }) => {
-  const [isInCart, setIsInCart] = useState(false);
-  const [cartData, setCartData] = useState([]);
+const AddToCartButton = ({ product }) => {
+  const { cart, addToCart, removeFromCart } = useCartStore();
 
-  // Load cart data from local storage on mount
-  useEffect(() => {
-    const storedCartData = JSON.parse(localStorage.getItem('cart')) || [];
-    setCartData(storedCartData);
-  }, []);
-
-  // Update the 'isInCart' state based on the cart items
-  useEffect(() => {
-    setIsInCart(cartData.some((item) => item.id === product.id));
-  }, [cartData, product]);
+  const isInCart = cart.some((item) => item.id === product.id);
 
   const handleToggleCart = () => {
-    let updatedCart;
-
     if (isInCart) {
-      updatedCart = cartData.filter((item) => item.id !== product.id);
+      removeFromCart(product.id);
     } else {
-      updatedCart = [...cartData, product];
+      addToCart(product);
     }
-
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-
-    // Update the cartData state to trigger the effect that updates isInCart
-    setCartData(updatedCart);
-
-    onToggleCart(product);
   };
 
   return (
