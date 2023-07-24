@@ -66,6 +66,7 @@ const Browse = () => {
     <Container>
       
       <CategoriesCarousel setCurrentCategory={setCurrentCategory} />
+      <h2 style={{ color: '#FFFFFF' }}>{currentCategory ? currentCategory : 'All Games'}</h2>
       <ImageGrid>
         {filteredProducts.map((product) => {
           const onSale = product.sale_price !== '';

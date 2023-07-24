@@ -48,7 +48,7 @@ export const StyledProductImage = styled(ProductImage)`
 export const Container = styled.div`
   max-width: 1500px;
   margin: 0 auto;
-  padding-bottom: 8rem;
+  padding-bottom: 4rem;
 `;
 
 export const H2 = styled.h2`
