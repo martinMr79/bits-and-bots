@@ -14,11 +14,11 @@ export const StyledCarouselContainer = styled.div`
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  @media (min-width: 1050px) {
+  @media (min-width: 1100px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1450px) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 `;
@@ -52,6 +52,8 @@ export const Container = styled.div`
   max-width: 1500px;
   margin: 0 auto;
   padding-bottom: 2rem;
+
+  
   
 `;
 

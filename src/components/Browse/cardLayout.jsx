@@ -18,11 +18,11 @@ export const ImageGrid = styled.div`
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  @media (min-width: 1050px) {
+  @media (min-width: 1100px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1450px) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
@@ -52,7 +52,7 @@ export const ProductImage = styled.img`
    background-color: #CCFF00;
    border: none;
    border-radius: 3px;
-   padding: 0.5rem 1rem;
+   padding: 0.5rem 0.8rem;
    cursor: pointer;
    display: flex;
    justify-content: center;
@@ -64,6 +64,11 @@ export const ProductInfo = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const SaleBox = styled.div`
@@ -72,10 +77,11 @@ export const SaleBox = styled.div`
   right: 0;
   background-color: #CCFF00;
   color: black;
-  padding: 6px 15px;
+  padding: 6px 12px;
   font-size: 26px;
   font-weight: bold;
   font-family: 'MuseSans', sans-serif !important;
   font-weight: 500; 
+  
 `;
 

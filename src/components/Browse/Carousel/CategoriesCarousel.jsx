@@ -28,9 +28,9 @@ const PopularCategoriesCarousel = ({ setCurrentCategory }) => {
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
-      if (screenWidth >= 1400) {
+      if (screenWidth >= 1450) {
         setItemsPerSlide(4);
-      } else if (screenWidth >= 1050) {
+      } else if (screenWidth >= 1100) {
         setItemsPerSlide(3);
       } else if (screenWidth >= 750) {
         setItemsPerSlide(2);

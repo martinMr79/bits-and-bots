@@ -93,13 +93,13 @@ const Browse = () => {
               <ProductInfo>
                 {onSale ? (
                   <p>
-                    <s style={{ color: '#76777B', marginRight: '8px', fontSize: '18px' }}>
+                    <s style={{ color: '#76777B', marginRight: '8px', fontSize: '16px' }}>
                       {product.regular_price} Nok
                     </s>
-                    <span style={{ color: '#BEEB09', fontSize: '18px' }}>{product.sale_price} Nok</span>
+                    <span style={{ color: '#BEEB09', fontSize: '16px' }}>{product.sale_price} Nok</span>
                   </p>
                 ) : (
-                  <p style={{ fontSize: '18px' }}>{product.price} Nok</p>
+                  <p style={{ fontSize: '16px' }}>{product.price} Nok</p>
                 )}
                  <AddToCartButton product={product} onToggleCart={handleToggleCart} />
             
