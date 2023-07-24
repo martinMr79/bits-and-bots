@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/browse" element={<MainLayout><Browse /></MainLayout>} />
-          <Route path="/details/:id" element={<ProductDetails />} />
+          <Route path="/details/:id" element={<MainLayout><ProductDetails /></MainLayout>} />
         </Routes>
       </Router>
     </AppContainer>
