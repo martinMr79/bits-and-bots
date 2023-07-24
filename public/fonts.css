@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'MuseSans';
+  src: url('./fonts/MuseoSans_700.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseSans';
+  src: url('./fonts/MuseoSans_500.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+h2, h3, h4 {
+  font-family: 'MuseSans', sans-serif;
+  font-weight: 500; 
+} 
+
+p, a, button {
+  font-family: 'MuseSans', sans-serif;
+  font-weight: 300; 
+} 
