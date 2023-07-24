@@ -1,6 +1,6 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { CartButton } from '../cardLayout';
-import { useCartStore } from '../../../hooks/useCart'; // update the import
+import { useCartStore } from '../../../hooks/useCart';
 
 const AddToCartButton = ({ product }) => {
   const { cart, addToCart, removeFromCart } = useCartStore();
