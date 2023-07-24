@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar as MuiToolbar, Typography, IconButton } from '@mui/material';
+import { AppBar, Toolbar as MuiToolbar, IconButton } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Avatar } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -11,12 +11,13 @@ const StyledAppBar = styled(AppBar)`
   height: 100px;
 `;
 
-const Title = styled(Typography)`
+const Logo = styled(Link)`
   font-family: 'MuseSans', sans-serif !important;
   font-weight: 700; 
   color: #CCFF00;
   flex-grow: 1;
   font-size: 32px !important;
+  text-decoration: none;
 `;
 
 const Toolbar = styled(MuiToolbar)`
@@ -62,9 +63,10 @@ function Header() {
     <StyledAppBar position="static">
       <Toolbar>
         <ContentContainer>
-          <Title variant="h5">
+         
+          <Logo variant="h5" to="/browse">
             Bits & Bots
-          </Title>
+          </Logo>
           <CartLink to="/cart">
             <IconButton color="inherit">
               <ShoppingCartIcon style={{ fontSize: 40 }} />
