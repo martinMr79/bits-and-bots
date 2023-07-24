@@ -3,11 +3,12 @@ import { Card, ProductImage, ProductImageContainer } from '../cardLayout';
 
 export const StyledCarouselContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the minimum width and desired fraction as per your requirements */
-  gap: 1rem; /* Add the desired gap between the cards */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 1rem; 
   justify-items: center;
   align-items: center;
   height: 100%;
+  
 
   @media (min-width: 750px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -31,6 +32,7 @@ export const StyledCategoryCard = styled(Card)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `;
 
 export const StyledProductImageContainer = styled(ProductImageContainer)`
@@ -38,6 +40,7 @@ export const StyledProductImageContainer = styled(ProductImageContainer)`
   width: 100%;
   overflow: hidden;
   flex-grow: 1;
+  
 `;
 
 export const StyledProductImage = styled(ProductImage)`
@@ -48,7 +51,8 @@ export const StyledProductImage = styled(ProductImage)`
 export const Container = styled.div`
   max-width: 1500px;
   margin: 0 auto;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
+  
 `;
 
 export const H2 = styled.h2`

@@ -12,6 +12,7 @@ export const ImageGrid = styled.div`
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1rem;
   justify-content: center;
+  margin-top: 3rem;
 
   @media (min-width: 750px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
