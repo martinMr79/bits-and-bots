@@ -89,7 +89,7 @@ const Browse = () => {
                   )}
                 </ProductImageContainer>
               )}
-              <h2>{product.name}</h2>
+              <h2 style={{ textAlign: 'center'}}>{product.name}</h2>
               <ProductInfo>
                 {onSale ? (
                   <p>

@@ -51,13 +51,18 @@ export const ProductImage = styled.img`
  export const CartButton = styled.button`
    background-color: #CCFF00;
    border: none;
-   border-radius: 3px;
+   border-radius: 5px;
    padding: 0.5rem 0.8rem;
    cursor: pointer;
    display: flex;
    justify-content: center;
    align-items: center;
    font-weight: bold;
+
+   @media (max-width: 750px) {
+    width: 100%; 
+    padding: 0.8rem 0.8rem;
+  }
  `;
 
 export const ProductInfo = styled.div`
