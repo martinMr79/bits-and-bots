@@ -14,7 +14,7 @@ import {
 } from './styled.jsx';
 import useFetch from '../../../hooks/useFetch.jsx';
 
-const PopularCategoriesCarousel = () => {
+const PopularCategoriesCarousel = ({ setCurrentCategory }) => {
   const { data: posts, loading, error } = useFetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/posts?categories=35');
   const [itemsPerSlide, setItemsPerSlide] = useState(1);
 
@@ -62,6 +62,10 @@ const PopularCategoriesCarousel = () => {
     image: post.jetpack_featured_media_url,
   }));
 
+  const handleCategoryClick = (category) => {
+    setCurrentCategory(category.title);
+  };
+
   const renderCarouselItems = () => {
     const numSlides = Math.ceil(popularCategories.length / itemsPerSlide);
     const carouselItems = [];
@@ -75,11 +79,9 @@ const PopularCategoriesCarousel = () => {
         <div key={i}>
           <StyledCarouselContainer itemsPerSlide={itemsPerSlide}>
             {slideCategories.map((category, index) => (
-              <StyledCategoryCard key={index}>
-                <StyledProductImageContainer>
-                  <Link to={`/details/${category.title}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <StyledProductImage src={category.image} alt="Category image" />
-                  </Link>
+              <StyledCategoryCard key={index} onClick={() => handleCategoryClick(category)}>
+                <StyledProductImageContainer>            
+                    <StyledProductImage src={category.image} alt="Category image" />              
                 </StyledProductImageContainer>
                 <h2>{category.title}</h2>
               </StyledCategoryCard>

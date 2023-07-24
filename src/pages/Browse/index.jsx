@@ -10,6 +10,20 @@ const Browse = () => {
   const [products, setProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
+  const [currentCategory, setCurrentCategory] = React.useState(null);
+  const [filteredProducts, setFilteredProducts] = React.useState([]);
+
+  React.useEffect(() => {
+    if (!currentCategory) {
+      setFilteredProducts(products);
+    } else {
+      setFilteredProducts(
+        products.filter(product =>
+          product.tags.some(tag => tag.name === currentCategory)
+        )
+      );
+    }
+  }, [products, currentCategory]);
 
   React.useEffect(() => {
     const fetchProducts = async () => {
@@ -50,9 +64,10 @@ const Browse = () => {
 
   return (
     <Container>
-      <CategoriesCarousel />
+      
+      <CategoriesCarousel setCurrentCategory={setCurrentCategory} />
       <ImageGrid>
-        {products.map((product) => {
+        {filteredProducts.map((product) => {
           const onSale = product.sale_price !== '';
           return (
             <Card key={product.id}>
