@@ -3,7 +3,7 @@ import { Card, ProductImage, ProductImageContainer } from '../cardLayout';
 
 export const StyledCarouselContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1rem; 
   justify-items: center;
   align-items: center;
