@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from '../../components/Loading/loading.js';
-import { Container, H1, H2, H3, ProductDescription, useStyles, ProductContainer, ProductTags, Tag, BuyProductContainer } from '../../components/Details/styled.jsx';
+import { Container, H1, H2, H3, ProductDescription, useStyles, ProductContainer, ProductTags, Tag, BuyProductContainer, CartButton } from '../../components/Details/styled.jsx';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -41,12 +41,15 @@ const ProductDetails = () => {
         </ProductTags>
         <H2>About this game</H2>
         <ProductDescription>{product.description}</ProductDescription>
-       {/*<ProductDescription>Price: {product.price} Nok</ProductDescription>*/} 
+       
         <H3>Specifications</H3>      
         <p>lorem ipsum</p>    
       </ProductContainer>    
       <BuyProductContainer>
-        <p>sdsdsd</p>
+        <H2>{product.name}</H2>
+        <ProductDescription> Nok {product.price}</ProductDescription>
+        <CartButton>Add to Cart</CartButton>
+        <H3>Player ratings</H3>
       </BuyProductContainer>
     </Container>
   );

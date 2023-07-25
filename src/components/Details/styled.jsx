@@ -6,8 +6,7 @@ export const Container = styled.div`
   max-width: 1500px;
   margin: 0 auto;
   padding-bottom: 2rem;
-  display: flex;
-  flex-direction: row;
+  display: flex; 
 `;
 
 export const H1 = styled.h1`
@@ -26,20 +25,21 @@ export const H3 = styled.h3`
   
 `;
 
-
-
 export const ProductDescription = styled.p`
   color: #ffffff;
 `;
 
 export const useStyles = makeStyles({
-    image: {
-      width: '100%',
-      height: 'auto'
-    },
-  });
-  
-  export const ProductContainer = styled.div`
+  image: {
+    width: '100%',
+    objectFit: 'contain',
+  },
+});
+
+export const ProductContainer = styled.div`
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
   width: 50%;
 `;
 
@@ -57,14 +57,29 @@ export const Tag = styled.span`
 `;
 
 export const BuyProductContainer = styled.div`
+  flex: 1;  
   width: 30%;
+  max-height: 400px;
   background-color: #27282E;
   color: #ffffff;
-  padding: 1rem;
+  margin-top: 7rem; 
   margin-left: 5rem;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  
+`;
+
+export const CartButton = styled.button`
+background-color: #CCFF00;
+border: none;
+border-radius: 5px;
+padding: 0.6rem 5rem;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: bold;
+
 `;
