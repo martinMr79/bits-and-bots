@@ -37,7 +37,7 @@ export const useStyles = makeStyles({
 });
 
 export const ProductContainer = styled.div`
-  flex: 1; 
+  flex: 1.5; 
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -58,17 +58,17 @@ export const Tag = styled.span`
 
 export const BuyProductContainer = styled.div`
   flex: 1;  
-  width: 30%;
-  max-height: 400px;
+
+  max-height: 479.25px;
   background-color: #27282E;
   color: #ffffff;
   margin-top: 7rem; 
   margin-left: 5rem;
-  position: relative;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  justify-content: center;
 `;
 
 export const CartButton = styled.button`

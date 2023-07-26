@@ -48,8 +48,10 @@ const ProductDetails = () => {
       <BuyProductContainer>
         <H2>{product.name}</H2>
         <ProductDescription> Nok {product.price}</ProductDescription>
-        <CartButton>Add to Cart</CartButton>
+        <CartButton>ADD TO CART</CartButton>
         <H3>Player ratings</H3>
+        <p>5</p>
+        <p>*******</p>
       </BuyProductContainer>
     </Container>
   );
