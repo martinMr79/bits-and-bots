@@ -6,23 +6,21 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
+  grid-template-areas: 
+    "top"
+    "bottom";
   gap: 20px;
 
   @media (min-width: 768px) {
     max-width: 1500px;
     margin: 0 auto;
-    grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-    "top top"
-    "image bottom";
   }
 `;
 
 export const TopWrapper = styled.div`
   grid-area: top;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1.5fr 0.7fr;
   gap: 20px;
 `;
 
