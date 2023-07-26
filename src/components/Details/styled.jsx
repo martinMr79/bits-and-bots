@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { colors } from '../../styles/theme';
 
 export const Container = styled.div`
   max-width: 1500px;
@@ -10,23 +10,22 @@ export const Container = styled.div`
 `;
 
 export const H1 = styled.h1`
-  color: #ffffff;
+  color: ${colors.white};
   padding-top: 1rem; 
   padding-bottom: 1rem; 
 `;
 
 export const H2 = styled.h2`
-  color: #ffffff;
+  color: ${colors.white};
   padding-bottom: 1rem; 
 `;
 
 export const H3 = styled.h3`
-  color: #ffffff;
-  
+  color: ${colors.white};
 `;
 
 export const ProductDescription = styled.p`
-  color: #ffffff;
+  color: ${colors.white};
 `;
 
 export const useStyles = makeStyles({
@@ -50,7 +49,7 @@ export const ProductTags = styled.div`
 
 export const Tag = styled.span`
   background-color: #76777B;
-  color: #FFFFFF;
+  color: ${colors.white};
   padding: 5px; 
   margin: 3px;  
   display: inline-block; 
@@ -60,8 +59,8 @@ export const BuyProductContainer = styled.div`
   flex: 1;  
 
   max-height: 479.25px;
-  background-color: #27282E;
-  color: #ffffff;
+  background-color: ${colors.primary};
+  color: ${colors.white};
   margin-top: 7rem; 
   margin-left: 5rem;
   justify-content: center;
@@ -72,7 +71,7 @@ export const BuyProductContainer = styled.div`
 `;
 
 export const CartButton = styled.button`
-background-color: #CCFF00;
+background-color: ${colors.secondary};
 border: none;
 border-radius: 5px;
 padding: 0.6rem 5rem;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { mediaQueries } from '../../styles/mediaQueries';
+import { colors } from '../../styles/theme';
 
 export const Container = styled.div`
   max-width: 1500px;
@@ -29,8 +30,8 @@ export const ImageGrid = styled.div`
 `;
 
 export const Card = styled.div`
-  background-color: #27282E;
-  color: #ffffff;
+  background-color: ${colors.primary};
+  color: ${colors.white};
   padding: 1rem;
   position: relative;
 `;
@@ -47,7 +48,7 @@ export const ProductImage = styled.img`
 `;
 
 export const CartButton = styled.button`
-  background-color: #CCFF00;
+  background-color: ${colors.secondary};
   border: none;
   border-radius: 5px;
   padding: 0.5rem 0.8rem;
@@ -78,7 +79,7 @@ export const SaleBox = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #CCFF00;
+  background-color: ${colors.secondary};
   color: black;
   padding: 6px 12px;
   font-size: 26px;

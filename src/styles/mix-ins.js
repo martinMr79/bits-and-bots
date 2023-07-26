@@ -1,4 +1,3 @@
-// mix-ins.js
 import { css } from 'styled-components';
 
 export const flexCenter = css`

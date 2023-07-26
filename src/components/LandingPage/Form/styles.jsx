@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { colors } from '../../../styles/theme';
+import { flexCenter } from '../../../styles/mix-ins';
 
 export const RegisterForm = styled.form`
-  display: flex;
+  ${flexCenter}
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -26,7 +27,7 @@ export const SignUpButton = styled.button`
   margin-top: 10px;
   cursor: pointer;
   width: 100%;
-  border-radius: ${colors.borderRadius};
+  border-radius: 0 0 5px 5px;
 `;
 
 export const InputWrapper = styled.div`
@@ -34,31 +35,31 @@ export const InputWrapper = styled.div`
   margin: 5px 0;
   border-radius: 8px;
   padding: 10px 0px;
-  background-color: #27282e;
-  color: #ffffff;
+  background-color: ${colors.primary};
+  color: ${colors.white};
 `;
 
 export const StyledInput = styled.input`
   background: none;
   border: none;
   width: 100%;
-  color: #ffffff;
+  color: ${colors.white};
   padding-left: 1rem;
 
   &::-webkit-input-placeholder {
-    color: #ffffff;
+    color: ${colors.white};
   }
   &::-moz-placeholder {
-    color: #ffffff;
+    color: ${colors.white};
   }
   &:-ms-input-placeholder {
-    color: #ffffff;
+    color: ${colors.white};
   }
   &::-ms-input-placeholder {
-    color: #ffffff;
+    color: ${colors.white};
   }
   &::placeholder {
-    color: #ffffff;
+    color: ${colors.white};
   }
 
   &:focus {
@@ -80,7 +81,7 @@ export const StyledParagraph = styled.p`
   color: white;
 
   button {
-    color: #ccff00;
+    color: ${colors.secondary};
     background: none;
     border: none;
     padding: 0;
@@ -95,9 +96,9 @@ export const StyledParagraph = styled.p`
 `;
 
 export const SuccessMessage = styled.p`
-  color: #CCFF00;
+  color: ${colors.secondary};
 `;
 
 export const ErrorMessage = styled.p`
-  color: #CCFF00;
+  color: ${colors.secondary};
 `;

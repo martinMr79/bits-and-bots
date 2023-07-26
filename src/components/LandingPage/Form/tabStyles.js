@@ -1,5 +1,6 @@
 import { withStyles } from '@material-ui/core/styles';
 import { Tabs, Tab } from '@material-ui/core';
+import { colors } from '../../../styles/theme';
 
 export const StyledTabs = withStyles({
   root: {
@@ -7,7 +8,7 @@ export const StyledTabs = withStyles({
     borderRadius: '5px 5px 0 0',
   },
   indicator: {
-    backgroundColor: '#CCFF00',
+    backgroundColor: colors.secondary,
   },
 })(Tabs);
 
@@ -19,12 +20,10 @@ export const StyledTab = withStyles((theme) => ({
     width: '50%',
     color: '#FFF',
     backgroundColor: '#3B3C41',
-    [theme.breakpoints.up('sm')]: {
-      minWidth: 0,
-    },
+
     '&$selected': {
-      color: '#CCFF00',
-      backgroundColor: '#27282E',
+      color: colors.secondary,
+      backgroundColor: colors.primary,
     },
   },
   selected: {},
