@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from '../../components/Loading/loading.js';
-import { Container, H1, H2, H3, ProductDescription, useStyles, ProductContainer, ProductTags, Tag, BuyProductContainer, CartButton } from '../../components/Details/styled.jsx';
+import { Container, H1, H2, H3, ProductDescription, useStyles, ProductContainer, ProductTags, Tag, BuyProductContainer } from '../../components/Details/styled.jsx';
 import AddToCartButton from '../../components/AddToCart/AddToCartButton.jsx';
 
 const ProductDetails = () => {
