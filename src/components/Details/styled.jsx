@@ -7,7 +7,10 @@ export const Container = styled.div`
   margin: 0 auto;
   padding-bottom: 2rem;
   display: flex; 
+  flex-wrap: wrap;
+  align-items: stretch; // Added this line
 `;
+
 
 export const H1 = styled.h1`
   color: ${colors.white};
@@ -36,10 +39,11 @@ export const useStyles = makeStyles({
 });
 
 export const ProductContainer = styled.div`
-  flex: 1.5; 
-  display: flex;
-  flex-direction: column;
-  width: 50%;
+  flex-grow: 1.5; // Use flex-grow instead of flex for a more responsive layout
+  width: 100%; // Set the width to 100%, so it takes full width when wrapping
+  @media (min-width: 768px) {
+    width: 50%; // Use media queries to adjust the width for larger screens
+  }
 `;
 
 export const ProductTags = styled.div`
@@ -56,9 +60,9 @@ export const Tag = styled.span`
 `;
 
 export const BuyProductContainer = styled.div`
-  flex: 1;  
+  flex-grow: 1.5; 
 
-  max-height: 479.25px;
+  max-height: 576.8px;
   background-color: ${colors.primary};
   color: ${colors.white};
   margin-top: 7rem; 
