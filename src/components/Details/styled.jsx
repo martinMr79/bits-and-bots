@@ -3,12 +3,35 @@ import { makeStyles } from '@material-ui/core/styles';
 import { colors } from '../../styles/theme';
 
 export const Container = styled.div`
-  max-width: 1500px;
-  margin: 0 auto;
-  padding-bottom: 2rem;
-  display: flex; 
-  flex-wrap: wrap;
-  align-items: stretch; // Added this line
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 
+    "top"
+    "bottom";
+
+  @media (min-width: 768px) {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+`;
+
+export const TopWrapper = styled.div`
+  grid-area: top;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+`;
+
+
+export const LeftGrid = styled.div`
+  display: grid;
+  grid-template-rows: auto 1fr; 
+`;
+
+export const RightGrid = styled.div`
+  display: grid;
+  grid-template-rows: 1fr;
 `;
 
 
@@ -39,12 +62,28 @@ export const useStyles = makeStyles({
 });
 
 export const ProductContainer = styled.div`
-  flex-grow: 1.5; // Use flex-grow instead of flex for a more responsive layout
-  width: 100%; // Set the width to 100%, so it takes full width when wrapping
+  grid-area: bottom;
+`;
+
+export const ImageBuyWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; // this will make sure they have equal height
+`;
+
+export const ImageContainer = styled.div`
+  flex: 1.5;
+`;
+
+export const ImageAndBuyContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; // This aligns the top edges of the image and BuyProductContainer
   @media (min-width: 768px) {
-    width: 50%; // Use media queries to adjust the width for larger screens
+    align-items: stretch; // This causes the image and BuyProductContainer to have the same height on larger screens
   }
 `;
+
 
 export const ProductTags = styled.div`
   width: 40%;
@@ -60,18 +99,7 @@ export const Tag = styled.span`
 `;
 
 export const BuyProductContainer = styled.div`
-  flex-grow: 1.5; 
-
-  max-height: 576.8px;
-  background-color: ${colors.primary};
-  color: ${colors.white};
-  margin-top: 7rem; 
-  margin-left: 5rem;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex: 0.7;
 `;
 
 export const CartButton = styled.button`
