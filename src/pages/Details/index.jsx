@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from '../../components/Loading/loading.js';
 import { Container, H1, H2, H3, ProductDescription, useStyles, ProductContainer, ProductTags, Tag, BuyProductContainer, CartButton } from '../../components/Details/styled.jsx';
+import AddToCartButton from '../../components/AddToCart/AddToCartButton.jsx';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -29,6 +30,7 @@ const ProductDetails = () => {
   if (loading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
 
+
   return (
     <Container>
       <ProductContainer>
@@ -48,7 +50,7 @@ const ProductDetails = () => {
       <BuyProductContainer>
         <H2>{product.name}</H2>
         <ProductDescription> Nok {product.price}</ProductDescription>
-        <CartButton>ADD TO CART</CartButton>
+        <AddToCartButton product={product} />
         <H3>Player ratings</H3>
         <p>5</p>
         <p>*******</p>
