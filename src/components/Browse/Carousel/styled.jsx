@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Card, ProductImage, ProductImageContainer } from '../cardLayout';
 import { mediaQueries } from '../../../styles/mediaQueries';
-
+import { colors } from '../../../styles/theme';
 
 export const StyledCarouselContainer = styled.div`
   display: grid;
@@ -25,8 +25,8 @@ export const StyledCarouselContainer = styled.div`
 `;
 
 export const StyledCategoryCard = styled(Card)`
-  background-color: #27282E;
-  color: #ffffff;
+  background-color: ${colors.primary};
+  color: ${colors.white};
   padding: 1rem;
   position: relative;
   display: flex;
@@ -35,6 +35,7 @@ export const StyledCategoryCard = styled(Card)`
   justify-content: center;
   cursor: pointer;
 `;
+
 
 export const StyledProductImageContainer = styled(ProductImageContainer)`
   position: relative;
@@ -55,7 +56,7 @@ export const Container = styled.div`
 `;
 
 export const H2 = styled.h2`
-  color: #ffffff;
+  color: ${colors.white};
 `;
 
 export const ArrowButtonContainer = styled.div`

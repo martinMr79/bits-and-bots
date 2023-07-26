@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../styles/theme';
 
 export const RegisterForm = styled.form`
   display: flex;
@@ -18,14 +19,14 @@ export const RegisterForm = styled.form`
 `;
 
 export const SignUpButton = styled.button`
-  color: #000;
-  background: #ccff00;
+  color: ${colors.black};
+  background: ${colors.secondary};
   border: none;
   padding: 10px 20px;
   margin-top: 10px;
   cursor: pointer;
   width: 100%;
-  border-radius: 5px;
+  border-radius: ${colors.borderRadius};
 `;
 
 export const InputWrapper = styled.div`
