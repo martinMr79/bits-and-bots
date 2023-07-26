@@ -4,7 +4,7 @@ import Loading from '../../components/Loading/loading.js';
 import { Container, ImageGrid, Card, ProductImage, ProductInfo, SaleBox, ProductImageContainer } from '../../components/Browse/cardLayout.jsx';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CategoriesCarousel from '../../components/Browse/Carousel/CategoriesCarousel.jsx';
-import AddToCartButton from '../../components/Browse/AddToCart/AddToCartButton.jsx';
+import AddToCartButton from '../../components/AddToCart/AddToCartButton.jsx';
 
 const Browse = () => {
   const [products, setProducts] = React.useState([]);
@@ -12,6 +12,8 @@ const Browse = () => {
   const [error, setError] = React.useState(null);
   const [currentCategory, setCurrentCategory] = React.useState(null);
   const [filteredProducts, setFilteredProducts] = React.useState([]);
+
+  
 
   React.useEffect(() => {
     if (!currentCategory) {
