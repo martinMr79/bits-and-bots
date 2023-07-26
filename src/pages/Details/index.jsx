@@ -33,7 +33,9 @@ const ProductDetails = () => {
 
   return (
     <Container>
+      
       <TopWrapper>
+        
         <ImageContainer>
           
           <img className={classes.image} src={product.images[0]?.src} alt={product.images[0]?.alt || 'product'} />

@@ -6,13 +6,16 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
-  grid-template-areas: 
-    "top"
-    "bottom";
+  gap: 20px;
 
   @media (min-width: 768px) {
     max-width: 1500px;
     margin: 0 auto;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "top top"
+    "image bottom";
   }
 `;
 
@@ -20,7 +23,7 @@ export const TopWrapper = styled.div`
   grid-area: top;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  gap: 20px;
 `;
 
 
@@ -68,17 +71,18 @@ export const ProductContainer = styled.div`
 export const ImageBuyWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: stretch; // this will make sure they have equal height
+  align-items: stretch; 
 `;
 
 export const ImageContainer = styled.div`
-  flex: 1.5;
+  margin-right: 1rem;
+  margin-top: 3rem;
 `;
 
 export const ImageAndBuyContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; // This aligns the top edges of the image and BuyProductContainer
+  align-items: flex-start; 
   @media (min-width: 768px) {
     align-items: stretch; // This causes the image and BuyProductContainer to have the same height on larger screens
   }
@@ -99,8 +103,14 @@ export const Tag = styled.span`
 `;
 
 export const BuyProductContainer = styled.div`
-  flex: 0.7;
+  margin-top: 3rem;
+  background-color: ${colors.primary};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
+
 
 export const CartButton = styled.button`
 background-color: ${colors.secondary};
