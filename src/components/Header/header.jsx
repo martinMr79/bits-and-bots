@@ -44,20 +44,14 @@ const CartItemCount = styled.span`
   background-color: ${colors.secondary};
   color: ${colors.black};
   border-radius: 50%;
-  padding: 6px;
+  padding: 5px;
   font-size: 12px;
   font-weight: bold;
   position: absolute;
-  top: -1px;
+  top: 1px;
   right: 5px;
   width: 12px;
   height: 12px;
-`;
-
-const UserAvatar = styled(Avatar)`
-  color: ${colors.black};
-  background-color: ${colors.white};
-  margin-left: 16px;
 `;
 
 function Header() {
@@ -73,11 +67,11 @@ function Header() {
           </Logo>
           <CartLink to="/cart">
             <IconButton color="inherit">
-              <ShoppingCartIcon style={{ fontSize: 40 }} />
+              <ShoppingCartIcon style={{ fontSize: 40, }} />
               {cartItemCount > 0 && <CartItemCount>{cartItemCount}</CartItemCount>}
             </IconButton>
           </CartLink>
-          <UserAvatar>A</UserAvatar>
+          <Avatar sx={{ color: colors.black, backgroundColor: colors.white, marginLeft: 8 }}>A</Avatar>
         </ContentContainer>
       </Toolbar>
     </StyledAppBar>
