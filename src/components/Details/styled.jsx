@@ -4,11 +4,11 @@ import { colors } from '../../styles/theme';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 1.5fr 1fr; 
+  grid-template-rows: auto auto;
   grid-template-areas: 
-    "top"
-    "bottom";
+    "image buy"
+    "description buy";
   gap: 20px;
 
   @media (min-width: 768px) {
@@ -18,12 +18,12 @@ export const Container = styled.div`
 `;
 
 export const TopWrapper = styled.div`
-  grid-area: top;
   display: grid;
-  grid-template-columns: 1.5fr 0.7fr;
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "image buy";
 `;
-
 
 export const LeftGrid = styled.div`
   display: grid;
@@ -63,7 +63,7 @@ export const useStyles = makeStyles({
 });
 
 export const ProductContainer = styled.div`
-  grid-area: bottom;
+  grid-area: description;
 `;
 
 export const ImageBuyWrapper = styled.div`
@@ -73,8 +73,7 @@ export const ImageBuyWrapper = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  margin-right: 1rem;
-  margin-top: 3rem;
+  grid-area: image;
 `;
 
 export const ImageAndBuyContainer = styled.div`
@@ -101,12 +100,8 @@ export const Tag = styled.span`
 `;
 
 export const BuyProductContainer = styled.div`
-  margin-top: 3rem;
-  background-color: ${colors.primary};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  grid-area: buy;
+  align-self: start;
 `;
 
 
