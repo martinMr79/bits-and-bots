@@ -4,11 +4,8 @@ import { colors } from '../../styles/theme';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 1.5fr 1fr; 
-  grid-template-rows: auto auto;
-  grid-template-areas: 
-    "image buy"
-    "description buy";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   gap: 20px;
 
   @media (min-width: 768px) {
@@ -16,6 +13,8 @@ export const Container = styled.div`
     margin: 0 auto;
   }
 `;
+
+
 
 export const TopWrapper = styled.div`
   display: grid;
@@ -53,6 +52,7 @@ export const H3 = styled.h3`
 
 export const ProductDescription = styled.p`
   color: ${colors.white};
+  
 `;
 
 export const useStyles = makeStyles({
@@ -63,7 +63,8 @@ export const useStyles = makeStyles({
 });
 
 export const ProductContainer = styled.div`
-  grid-area: description;
+  grid-column: 1;
+  grid-row: 2;
 `;
 
 export const ImageBuyWrapper = styled.div`
@@ -73,7 +74,9 @@ export const ImageBuyWrapper = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  grid-area: image;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ImageAndBuyContainer = styled.div`
@@ -81,7 +84,7 @@ export const ImageAndBuyContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start; 
   @media (min-width: 768px) {
-    align-items: stretch; // This causes the image and BuyProductContainer to have the same height on larger screens
+    align-items: stretch;
   }
 `;
 
@@ -100,8 +103,12 @@ export const Tag = styled.span`
 `;
 
 export const BuyProductContainer = styled.div`
-  grid-area: buy;
-  align-self: start;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${colors.primary};
+  margin-top: 7rem;
 `;
 
 
@@ -112,7 +119,5 @@ border-radius: 5px;
 padding: 0.6rem 5rem;
 cursor: pointer;
 display: flex;
-justify-content: center;
-align-items: center;
 font-weight: bold;
 `;

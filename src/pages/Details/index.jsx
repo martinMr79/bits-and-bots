@@ -33,7 +33,9 @@ const ProductDetails = () => {
 
   return (
     <Container>
+        
         <ImageContainer>
+        <H1>{product.name}</H1>
           <img className={classes.image} src={product.images[0]?.src} alt={product.images[0]?.alt || 'product'} />
         </ImageContainer>
         <BuyProductContainer>
