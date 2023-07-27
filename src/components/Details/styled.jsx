@@ -4,7 +4,7 @@ import { colors } from '../../styles/theme';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   grid-template-rows: auto;
   gap: 20px;
 
@@ -40,6 +40,20 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
   color: ${colors.white};
   margin-top: 3rem;
+`;
+
+export const H4 = styled.h4`
+  color: ${colors.white};
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+  font-size: 34px;
+`;
+
+export const H5 = styled.h5`
+  color: ${colors.white};
+  margin-bottom: 0.5rem;
+  margin-top: 4rem;
+  font-size: 18px;
 `;
 
 export const ProductDescription = styled.p`

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from '../../components/Loading/loading.js';
-import { Container, H1, H2, H3, ProductDescription, useStyles, ProductContainer, ProductTags, Tag, BuyProductContainer, ImageContainer, ProductPrice, AverageRating } from '../../components/Details/styled.jsx';
+import { Container, H1, H2, H3, H4, H5, ProductDescription, useStyles, ProductContainer, ProductTags, Tag, BuyProductContainer, ImageContainer, ProductPrice, AverageRating } from '../../components/Details/styled.jsx';
 import AddToCartButton from '../../components/AddToCart/AddToCartButton.jsx';
 import StarIcon from '@material-ui/icons/Star';
 import StarHalfIcon from '@material-ui/icons/StarHalf';
@@ -56,10 +56,10 @@ return (
       <img className={classes.image} src={product.images[0]?.src} alt={product.images[0]?.alt || 'product'} />
     </ImageContainer>
     <BuyProductContainer>
-      <H2>Buy {product.name}</H2>
+      <H4>Buy {product.name}</H4>
       <ProductPrice> Nok {product.price}</ProductPrice>
       <AddToCartButton product={product} />
-      <H3>Player ratings</H3>
+      <H5>Player ratings</H5>
       <AverageRating>{parseFloat(product.average_rating).toFixed(1)}</AverageRating>
 
       <div style={{ display: "flex" }}>
