@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import { colors } from '../../styles/theme';
-import StarIcon from '@material-ui/icons/Star';
 
 export const Container = styled.div`
   display: grid;
@@ -13,16 +12,6 @@ export const Container = styled.div`
     max-width: 1500px;
     margin: 0 auto;
   }
-`;
-
-
-
-export const TopWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "image buy";
 `;
 
 export const LeftGrid = styled.div`
@@ -44,7 +33,7 @@ export const H1 = styled.h1`
 
 export const H2 = styled.h2`
   color: ${colors.white};
-  padding-bottom: 1rem; 
+  
   
 `;
 
@@ -58,6 +47,13 @@ export const ProductDescription = styled.p`
   
 `;
 
+export const ProductPrice = styled.p`
+  color: ${colors.white};
+  margin-top: 0;
+  font-size: 26px;
+  font-weight: 500
+`;
+
 export const useStyles = makeStyles({
   icon: {
     color: colors.secondary,
@@ -69,15 +65,15 @@ export const useStyles = makeStyles({
   },
 });
 
+export const AverageRating = styled.p`
+  font-size: 36px;
+  color: ${colors.white};
+  margin: 0; 
+`;
+
 export const ProductContainer = styled.div`
   grid-column: 1;
   grid-row: 2;
-`;
-
-export const ImageBuyWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: stretch; 
 `;
 
 export const ImageContainer = styled.div`
