@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import { colors } from '../../styles/theme';
+import StarIcon from '@material-ui/icons/Star';
 
 export const Container = styled.div`
   display: grid;
@@ -44,10 +45,12 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   color: ${colors.white};
   padding-bottom: 1rem; 
+  
 `;
 
 export const H3 = styled.h3`
   color: ${colors.white};
+  margin-top: 3rem;
 `;
 
 export const ProductDescription = styled.p`
@@ -56,6 +59,10 @@ export const ProductDescription = styled.p`
 `;
 
 export const useStyles = makeStyles({
+  icon: {
+    color: colors.secondary,
+    fontSize: "30px",
+  },
   image: {
     width: '100%',
     objectFit: 'contain',
@@ -81,7 +88,7 @@ export const ImageContainer = styled.div`
 
 export const ImageAndBuyContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start; 
   @media (min-width: 768px) {
     align-items: stretch;
@@ -107,6 +114,7 @@ export const BuyProductContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; 
   background-color: ${colors.primary};
   margin-top: 7rem;
 `;
