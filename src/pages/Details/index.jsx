@@ -6,6 +6,8 @@ import AddToCartButton from '../../components/AddToCart/AddToCartButton.jsx';
 import StarIcon from '@material-ui/icons/Star';
 import StarHalfIcon from '@material-ui/icons/StarHalf';
 
+
+
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = React.useState(null);
@@ -48,6 +50,17 @@ if (isHalf) {
   stars.push(<StarHalfIcon key={rating} className={classes.icon} />);
 }
 
+function stripPTags(content) {
+  // replace opening <p> tag with an empty string
+  const withoutOpeningTag = content.replace(/<p>/g, '');
+
+  // replace closing </p> tag with a line break (or whatever you want)
+  const withoutClosingTag = withoutOpeningTag.replace(/<\/p>/g, '\n');
+
+  return withoutClosingTag;
+}
+
+
 
 return (
   <Container>
@@ -75,8 +88,7 @@ return (
         ))}
       </ProductTags>
       <H2>About this game</H2>
-      <ProductDescription>{product.description}</ProductDescription>
-
+      <ProductDescription>{stripPTags(product.description)}</ProductDescription>
       <H3>Specifications</H3>      
       <p>lorem ipsum</p>  
     </ProductContainer>
