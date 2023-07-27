@@ -4,9 +4,10 @@ import { colors } from '../../styles/theme';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-template-rows: auto;
-  gap: 20px;
+  gap: 50px;
+  padding: 15px;
 
   @media (min-width: 768px) {
     max-width: 1500px;
@@ -51,7 +52,7 @@ export const H4 = styled.h4`
 
 export const H5 = styled.h5`
   color: ${colors.white};
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   margin-top: 4rem;
   font-size: 18px;
 `;
@@ -65,7 +66,7 @@ export const ProductPrice = styled.p`
   color: ${colors.white};
   margin-top: 0;
   font-size: 26px;
-  font-weight: 500
+  font-weight: 500;
 `;
 
 export const useStyles = makeStyles({

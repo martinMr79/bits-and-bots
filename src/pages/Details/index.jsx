@@ -59,7 +59,7 @@ return (
       <H4>Buy {product.name}</H4>
       <ProductPrice> Nok {product.price}</ProductPrice>
       <AddToCartButton product={product} />
-      <H5>Player ratings</H5>
+      <H5>Player Ratings</H5>
       <AverageRating>{parseFloat(product.average_rating).toFixed(1)}</AverageRating>
 
       <div style={{ display: "flex" }}>
