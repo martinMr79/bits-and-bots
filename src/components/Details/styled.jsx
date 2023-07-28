@@ -35,6 +35,7 @@ export const H1 = styled.h1`
   color: ${colors.white};
   padding-top: 1rem; 
   padding-bottom: 1rem; 
+  
 
   @media (max-width: 1100px) {
     text-align: center; 
@@ -64,6 +65,10 @@ export const H4 = styled.h4`
   margin-top: 0.5rem;
   margin-bottom: 2rem;
   font-size: 34px;
+
+  @media (max-width: 1100px) {
+    display: none;  
+  }
 `;
 
 export const H5 = styled.h5`
@@ -83,6 +88,11 @@ export const ProductPrice = styled.p`
   margin-top: 0;
   font-size: 26px;
   font-weight: 500;
+
+  @media (max-width: 1100px) {
+    font-size: 18px;
+
+  }
 `;
 
 export const useStyles = makeStyles({

@@ -71,7 +71,11 @@ function Header() {
               {cartItemCount > 0 && <CartItemCount>{cartItemCount}</CartItemCount>}
             </IconButton>
           </CartLink>
-          <Avatar sx={{ color: colors.black, backgroundColor: colors.white, marginLeft: 8 }}>A</Avatar>
+          <Avatar sx={{ 
+            color: colors.black,
+            backgroundColor: colors.white,
+            marginLeft: { xs: 2, sm: 4, md: 8 },
+            }}>A</Avatar>
         </ContentContainer>
       </Toolbar>
     </StyledAppBar>
