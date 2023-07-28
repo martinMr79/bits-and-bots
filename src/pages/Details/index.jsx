@@ -53,8 +53,6 @@ if (isHalf) {
 function stripPTags(content) {
   // replace opening <p> tag with an empty string
   const withoutOpeningTag = content.replace(/<p>/g, '');
-
-  // replace closing </p> tag with a line break (or whatever you want)
   const withoutClosingTag = withoutOpeningTag.replace(/<\/p>/g, '\n');
 
   return withoutClosingTag;
@@ -94,11 +92,6 @@ return (
     </ProductContainer>
   </Container>
 );
-
-
-
-  
-  
 
 };
 

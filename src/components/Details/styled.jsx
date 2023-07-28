@@ -5,7 +5,7 @@ import { colors } from '../../styles/theme';
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: auto auto;
   gap: 50px;
   padding: 15px;
 
@@ -13,7 +13,13 @@ export const Container = styled.div`
     max-width: 1500px;
     margin: 0 auto;
   }
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
 `;
+
 
 export const LeftGrid = styled.div`
   display: grid;
@@ -45,7 +51,7 @@ export const H3 = styled.h3`
 
 export const H4 = styled.h4`
   color: ${colors.white};
-  margin-top: 0rem;
+  margin-top: 0.5rem;
   margin-bottom: 2rem;
   font-size: 34px;
 `;
@@ -54,7 +60,7 @@ export const H5 = styled.h5`
   color: ${colors.white};
   margin-bottom: 1rem;
   margin-top: 4rem;
-  font-size: 18px;
+  font-size: 26px;
 `;
 
 export const ProductDescription = styled.p`
@@ -72,7 +78,8 @@ export const ProductPrice = styled.p`
 export const useStyles = makeStyles({
   icon: {
     color: colors.secondary,
-    fontSize: "30px",
+    fontSize: "24px",
+    marginTop: "5px"
   },
   image: {
     width: '100%',
@@ -87,14 +94,26 @@ export const AverageRating = styled.p`
 `;
 
 export const ProductContainer = styled.div`
-  grid-column: 1;
+  grid-column: 1 / 3;
   grid-row: 2;
+
+  @media (max-width: 1100px) {
+    grid-column: 1;
+    grid-row: 3;
+  }
 `;
 
 export const ImageContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  grid-column: 1;
+  grid-row: 1;
+
+  @media (max-width: 1100px) {
+    grid-column: 1;
+    grid-row: 1;
+  }
 `;
 
 export const ImageAndBuyContainer = styled.div`
@@ -128,15 +147,11 @@ export const BuyProductContainer = styled.div`
   justify-content: center; 
   background-color: ${colors.primary};
   margin-top: 7rem;
-`;
+  grid-column: 2;
+  grid-row: 1;
 
-
-export const CartButton = styled.button`
-background-color: ${colors.secondary};
-border: none;
-border-radius: 5px;
-padding: 0.6rem 5rem;
-cursor: pointer;
-display: flex;
-font-weight: bold;
+  @media (max-width: 1100px) {
+    grid-column: 1;
+    grid-row: 2;
+  }
 `;
