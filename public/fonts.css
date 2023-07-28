@@ -12,6 +12,21 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'MuseSans';
+  src: url('./fonts/MuseoSans_300.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseSans';
+  src: url('./fonts/MuseoSans_100.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+
 h1, h2, h3, h4, h5 {
   font-family: 'MuseSans', sans-serif;
   font-weight: 500; 

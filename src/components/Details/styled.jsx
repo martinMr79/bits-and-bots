@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto 1fr;
-  gap: 50px;
+  gap: 10px;
   padding: 15px;
 
   @media (min-width: 768px) {
@@ -53,6 +53,8 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
   color: ${colors.white};
   margin-top: 3rem;
+  font-size: 26px;
+  font-weight: 300;
 
   @media (max-width: 1100px) {
     text-align: center; 
@@ -80,6 +82,7 @@ export const H5 = styled.h5`
 
 export const ProductDescription = styled.p`
   color: ${colors.white};
+  font-weight: 100;
 `;
 
 export const ProductPrice = styled.p`
@@ -147,10 +150,14 @@ export const ImageAndBuyContainer = styled.div`
 export const ProductTags = styled.div`
   grid-column: 1 / 3;
   grid-row: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 
   @media (max-width: 1100px) {
     grid-row: 2;
     grid-column: 1;
+    justify-content: center;
   }
 `;
 
@@ -169,6 +176,8 @@ export const BuyProductContainer = styled.div`
   align-items: center;
   justify-content: center; 
   background-color: ${colors.primary};
+  margin-left: 2rem; 
+  margin-top: 7rem;
   grid-column: 3;
   grid-row: 1;
 
@@ -176,6 +185,7 @@ export const BuyProductContainer = styled.div`
     grid-column: 1;
     grid-row: 3;
     background-color: transparent; 
+    margin-left: 0rem; 
+    margin-top: 1rem;
   }
 `;
-

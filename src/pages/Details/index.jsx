@@ -71,7 +71,9 @@ return (
         <Tag key={index}>{tag.name}</Tag>
       ))}
     </ProductTags>
+    
     <BuyProductContainer>
+      
       <H4>Buy {product.name}</H4>
       <ProductPrice> Nok {product.price}</ProductPrice>
       <AddToCartButton product={product} />
