@@ -4,7 +4,7 @@ import { colors } from '../../styles/theme';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 50px;
   padding: 15px;
@@ -19,7 +19,6 @@ export const Container = styled.div`
     grid-template-rows: auto auto auto;
   }
 `;
-
 
 export const LeftGrid = styled.div`
   display: grid;
@@ -36,17 +35,28 @@ export const H1 = styled.h1`
   color: ${colors.white};
   padding-top: 1rem; 
   padding-bottom: 1rem; 
+
+  @media (max-width: 1100px) {
+    text-align: center; 
+  }
 `;
 
 export const H2 = styled.h2`
   color: ${colors.white};
-  
-  
+
+  @media (max-width: 1100px) {
+    text-align: center; 
+  }
 `;
 
 export const H3 = styled.h3`
   color: ${colors.white};
   margin-top: 3rem;
+
+  @media (max-width: 1100px) {
+    text-align: center; 
+  }
+
 `;
 
 export const H4 = styled.h4`
@@ -107,7 +117,7 @@ export const ImageContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  grid-column: 1;
+  grid-column: 1 / 3;
   grid-row: 1;
 
   @media (max-width: 1100px) {
@@ -147,11 +157,13 @@ export const BuyProductContainer = styled.div`
   justify-content: center; 
   background-color: ${colors.primary};
   margin-top: 7rem;
-  grid-column: 2;
+  grid-column: 3;
   grid-row: 1;
 
   @media (max-width: 1100px) {
     grid-column: 1;
     grid-row: 2;
+    margin-top: 0rem;
+    background-color: transparent; 
   }
 `;
