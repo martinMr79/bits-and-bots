@@ -66,13 +66,17 @@ return (
       <H1>{product.name}</H1>
       <img className={classes.image} src={product.images[0]?.src} alt={product.images[0]?.alt || 'product'} />
     </ImageContainer>
+    <ProductTags>        
+      {product.tags.map((tag, index) => (
+        <Tag key={index}>{tag.name}</Tag>
+      ))}
+    </ProductTags>
     <BuyProductContainer>
       <H4>Buy {product.name}</H4>
       <ProductPrice> Nok {product.price}</ProductPrice>
       <AddToCartButton product={product} />
       <H5>Player Ratings</H5>
       <AverageRating>{parseFloat(product.average_rating).toFixed(1)}</AverageRating>
-
       <div style={{ display: "flex" }}>
         {stars.map((star, index) => (
           <div className={classes.icon} key={index}>{star}</div>
@@ -80,11 +84,6 @@ return (
       </div>
     </BuyProductContainer>
     <ProductContainer>
-      <ProductTags>        
-        {product.tags.map((tag, index) => (
-          <Tag key={index}>{tag.name}</Tag>
-        ))}
-      </ProductTags>
       <H2>About this game</H2>
       <ProductDescription>{stripPTags(product.description)}</ProductDescription>
       <H3>Specifications</H3>      

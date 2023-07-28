@@ -5,7 +5,7 @@ import { colors } from '../../styles/theme';
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto 1fr;
   gap: 50px;
   padding: 15px;
 
@@ -16,7 +16,7 @@ export const Container = styled.div`
 
   @media (max-width: 1100px) {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto auto auto;
   }
 `;
 
@@ -80,7 +80,6 @@ export const H5 = styled.h5`
 
 export const ProductDescription = styled.p`
   color: ${colors.white};
-  
 `;
 
 export const ProductPrice = styled.p`
@@ -115,16 +114,15 @@ export const AverageRating = styled.p`
 
 export const ProductContainer = styled.div`
   grid-column: 1 / 3;
-  grid-row: 2;
+  grid-row: 3;
 
   @media (max-width: 1100px) {
+    grid-row: 4;
     grid-column: 1;
-    grid-row: 3;
   }
 `;
 
 export const ImageContainer = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
   grid-column: 1 / 3;
@@ -147,8 +145,13 @@ export const ImageAndBuyContainer = styled.div`
 
 
 export const ProductTags = styled.div`
-  width: 40%;
-  padding-top: 0.5rem;
+  grid-column: 1 / 3;
+  grid-row: 2;
+
+  @media (max-width: 1100px) {
+    grid-row: 2;
+    grid-column: 1;
+  }
 `;
 
 export const Tag = styled.span`
@@ -166,14 +169,13 @@ export const BuyProductContainer = styled.div`
   align-items: center;
   justify-content: center; 
   background-color: ${colors.primary};
-  margin-top: 7rem;
   grid-column: 3;
   grid-row: 1;
 
   @media (max-width: 1100px) {
     grid-column: 1;
-    grid-row: 2;
-    margin-top: 0rem;
+    grid-row: 3;
     background-color: transparent; 
   }
 `;
+
