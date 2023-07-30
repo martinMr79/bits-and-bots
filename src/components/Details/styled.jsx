@@ -189,7 +189,14 @@ export const BuyProductContainer = styled.div`
   grid-column: 3;
   grid-row: 1;
 
+  @media (min-width: 1100px) {
+    position: sticky;
+    top: 7rem; 
+  }
+
   @media (max-width: 1100px) {
+    position: sticky;
+    top: 0;
     grid-column: 1;
     grid-row: 3;
     background-color: transparent; 
@@ -197,6 +204,7 @@ export const BuyProductContainer = styled.div`
     margin-top: 1rem;
   }
 `;
+
 
 export const ProductSpecificationsContainer = styled.div`
   display: flex;
