@@ -201,6 +201,7 @@ export const BuyProductContainer = styled.div`
 export const ProductSpecificationsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 3rem;
 
   @media (min-width: 1100px) {
     flex-direction: row;
