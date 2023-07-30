@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from '../../components/Loading/loading.js';
-import { Container, H1, H2, H3, H4, H5, ProductDescription, useStyles, ProductContainer, ProductTags, Tag, BuyProductContainer, ImageContainer, ProductPrice, AverageRating } from '../../components/Details/styled.jsx';
+import { Container, H1, H2, H3, H4, H5, ProductDescription, useStyles, ProductContainer, ProductTags, Tag, BuyProductContainer, ImageContainer, ProductPrice, AverageRating, ProductSpecificationsContainer } from '../../components/Details/styled.jsx';
 import AddToCartButton from '../../components/AddToCart/AddToCartButton.jsx';
 import StarIcon from '@material-ui/icons/Star';
 import StarHalfIcon from '@material-ui/icons/StarHalf';
@@ -81,15 +81,16 @@ const ProductDetails = () => {
       <ProductContainer>
   <H2>About this game</H2>
     <ProductDescription>{stripPTags(product.description)}</ProductDescription>
-      <H3>Specifications</H3>      
-      <ProductDescription>
-        <H5>Minimum: </H5>
-  {product.acf.minimum ? product.acf.minimum : 'No minimum specifications provided.'}
-</ProductDescription>
-<ProductDescription>
-<H5>Recommended: </H5>
-  {product.acf.recommended ? product.acf.recommended : 'No recommended specifications provided.'}
-</ProductDescription>
+         
+    <ProductSpecificationsContainer>
+    
+    <ProductDescription>
+    <ProductDescription dangerouslySetInnerHTML={{ __html: product.acf.minimum ? product.acf.minimum : 'No minimum specifications provided.' }} />
+    </ProductDescription>
+    <ProductDescription>
+      {product.acf.recommended ? product.acf.recommended : 'No recommended specifications provided.'}
+    </ProductDescription>
+  </ProductSpecificationsContainer>
 
     </ProductContainer>
     </Container>
@@ -98,4 +99,4 @@ const ProductDetails = () => {
 
 export default ProductDetails;
 
-
+/*<H3>Specifications</H3>;*/  

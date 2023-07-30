@@ -189,3 +189,14 @@ export const BuyProductContainer = styled.div`
     margin-top: 1rem;
   }
 `;
+
+export const ProductSpecificationsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1100px) {
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+`;
