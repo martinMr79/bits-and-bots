@@ -83,7 +83,7 @@ export const H5 = styled.h5`
 export const H6 = styled.h6`
   color: ${colors.white};
   margin-bottom: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
   font-size: 16px;
   font-weight: 300;
 `;
@@ -212,5 +212,5 @@ export const ProductSpecificationsContainer = styled.div`
 
 export const SpecificationSection = styled.div`
   flex: 1;
-  margin: 0 10px; // or whatever spacing you want between the two sections
+  margin: 0 10px;
 `;
