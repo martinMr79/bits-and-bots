@@ -3,6 +3,7 @@ import { useCart } from '../../hooks/useCart';
 
 const Cart = () => {
   const { cartItems, removeFromCart, addToCart } = useCart();
+  console.log(addToCart);
 
   if (!cartItems || cartItems.length === 0) return <p>Your cart is empty.</p>;
 

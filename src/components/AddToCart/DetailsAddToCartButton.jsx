@@ -1,8 +1,8 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { CartButton } from '../cardLayout';
-import { useCartStore } from '../../../hooks/useCart';
+import { DetailsCartButton } from '../Details/styled';
+import { useCartStore } from '../../hooks/useCart';
 
-const AddToCartButton = ({ product }) => {
+const DetailsAddToCartButton = ({ product }) => {
   const { cart, addToCart, removeFromCart } = useCartStore();
 
   const isInCart = cart.some((item) => item.id === product.id);
@@ -16,12 +16,12 @@ const AddToCartButton = ({ product }) => {
   };
 
   return (
-    <CartButton onClick={handleToggleCart}>
+    <DetailsCartButton onClick={handleToggleCart}>
       <ShoppingCartIcon style={{ fontSize: '14px', marginRight: '8px' }} />
       {isInCart ? 'In Cart' : 'Add to Cart'}
-    </CartButton>
+    </DetailsCartButton>
   );
 };
 
-export default AddToCartButton;
+export default DetailsAddToCartButton;
 

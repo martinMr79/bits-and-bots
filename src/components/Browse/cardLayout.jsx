@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { mediaQueries } from '../../styles/mediaQueries';
+import { colors } from '../../styles/theme';
 
 export const Container = styled.div`
   max-width: 1500px;
@@ -14,23 +16,22 @@ export const ImageGrid = styled.div`
   justify-content: center;
   margin-top: 3rem;
 
-  @media (min-width: 750px) {
+  @media (${mediaQueries.medium}) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  @media (min-width: 1100px) {
+  @media (${mediaQueries.large}) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  @media (min-width: 1450px) {
+  @media (${mediaQueries.xLarge}) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
-
 `;
 
 export const Card = styled.div`
-  background-color: #27282E;
-  color: #ffffff;
+  background-color: ${colors.primary};
+  color: ${colors.white};
   padding: 1rem;
   position: relative;
 `;
@@ -46,24 +47,22 @@ export const ProductImage = styled.img`
   display: block;
 `;
 
+export const BrowseCartButton = styled.button`
+  background-color: ${colors.secondary};
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 
-
- export const CartButton = styled.button`
-   background-color: #CCFF00;
-   border: none;
-   border-radius: 5px;
-   padding: 0.5rem 0.8rem;
-   cursor: pointer;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-weight: bold;
-
-   @media (max-width: 750px) {
+  @media (max-width: 750px) {
     width: 100%; 
     padding: 0.8rem 0.8rem;
   }
- `;
+`;
 
 export const ProductInfo = styled.div`
   display: flex;
@@ -80,13 +79,11 @@ export const SaleBox = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #CCFF00;
+  background-color: ${colors.secondary};
   color: black;
   padding: 6px 12px;
   font-size: 26px;
   font-weight: bold;
   font-family: 'MuseSans', sans-serif !important;
   font-weight: 500; 
-  
 `;
-

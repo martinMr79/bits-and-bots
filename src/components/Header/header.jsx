@@ -5,51 +5,50 @@ import { Avatar } from '@mui/material';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useCart } from '../../hooks/useCart';
+import { colors } from '../../styles/theme';
+import { flexCenter } from '../../styles/mix-ins';
 
 const StyledAppBar = styled(AppBar)`
-  background-color: #27282E !important;
+  background-color: ${colors.primary} !important;
   height: 100px;
 `;
 
 const Logo = styled(Link)`
   font-family: 'MuseSans', sans-serif !important;
   font-weight: 700; 
-  color: #CCFF00;
+  color: ${colors.secondary};
   flex-grow: 1;
   font-size: 32px !important;
   text-decoration: none;
 `;
 
 const Toolbar = styled(MuiToolbar)`
-  display: flex;
-  justify-content: center;
+  ${flexCenter}
   height: 100%;
 `;
 
 const ContentContainer = styled.div`
-  display: flex;
-  align-items: center;
+  ${flexCenter}
   max-width: 1500px;
   width: 100%;
   position: relative;
 `;
 
 const CartLink = styled(Link)`
-  display: flex;
-  align-items: center;
+  ${flexCenter}
   text-decoration: none;
   color: inherit;
 `;
 
 const CartItemCount = styled.span`
-  background-color: #CCFF00;
-  color: black;
+  background-color: ${colors.secondary};
+  color: ${colors.black};
   border-radius: 50%;
-  padding: 6px;
+  padding: 5px;
   font-size: 12px;
   font-weight: bold;
   position: absolute;
-  top: -1px;
+  top: 1px;
   right: 5px;
   width: 12px;
   height: 12px;
@@ -63,17 +62,20 @@ function Header() {
     <StyledAppBar position="static">
       <Toolbar>
         <ContentContainer>
-         
           <Logo variant="h5" to="/browse">
             Bits & Bots
           </Logo>
           <CartLink to="/cart">
             <IconButton color="inherit">
-              <ShoppingCartIcon style={{ fontSize: 40 }} />
+              <ShoppingCartIcon style={{ fontSize: 40, }} />
               {cartItemCount > 0 && <CartItemCount>{cartItemCount}</CartItemCount>}
             </IconButton>
           </CartLink>
-          <Avatar style={{ color: 'black', backgroundColor: 'white', marginLeft: '16px' }}>A</Avatar>
+          <Avatar sx={{ 
+            color: colors.black,
+            backgroundColor: colors.white,
+            marginLeft: { xs: 2, sm: 4, md: 8 },
+            }}>A</Avatar>
         </ContentContainer>
       </Toolbar>
     </StyledAppBar>
@@ -81,6 +83,7 @@ function Header() {
 }
 
 export default Header;
+
 
 
 
