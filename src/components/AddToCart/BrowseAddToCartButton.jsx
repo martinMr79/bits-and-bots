@@ -1,5 +1,5 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { CartButton } from '../Browse/cardLayout';
+import { BrowseCartButton } from '../Browse/cardLayout';
 import { useCartStore } from '../../hooks/useCart';
 
 const BrowseAddToCartButton = ({ product }) => {
@@ -16,10 +16,10 @@ const BrowseAddToCartButton = ({ product }) => {
   };
 
   return (
-    <CartButton onClick={handleToggleCart}>
+    <BrowseCartButton onClick={handleToggleCart}>
       <ShoppingCartIcon style={{ fontSize: '14px', marginRight: '8px' }} />
       {isInCart ? 'In Cart' : 'Add to Cart'}
-    </CartButton>
+    </BrowseCartButton>
   );
 };
 

@@ -222,12 +222,12 @@ export const SpecificationSection = styled.div`
   margin: 0 10px;
 `;
 
-export const CartButton = styled.button`
+export const DetailsCartButton = styled.button`
   background-color: ${colors.secondary};
   width: 90%; 
   border: none;
   border-radius: 5px;
-  padding: 0.5rem 0.8rem;
+  padding: 1rem 0.8rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -235,7 +235,6 @@ export const CartButton = styled.button`
   font-weight: bold;
 
   @media (max-width: 750px) {
-    width: 100%; 
-    padding: 0.8rem 0.8rem;
+
   }
 `;

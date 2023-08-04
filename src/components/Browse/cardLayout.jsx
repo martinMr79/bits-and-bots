@@ -47,7 +47,7 @@ export const ProductImage = styled.img`
   display: block;
 `;
 
-export const CartButton = styled.button`
+export const BrowseCartButton = styled.button`
   background-color: ${colors.secondary};
   border: none;
   border-radius: 5px;
