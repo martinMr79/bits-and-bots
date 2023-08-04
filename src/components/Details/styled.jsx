@@ -209,18 +209,22 @@ export const ProductSpecificationsContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 3rem;
+  align-items: center;
 
   @media (min-width: 1100px) {
     flex-direction: row;
-    justify-content: space-between;
-    
+    justify-content: center; 
+    align-items: center; 
   }
 `;
 
 export const SpecificationSection = styled.div`
-  flex: 1;
-  margin: 0 10px;
+  flex: 1; 
+  margin: 0.5rem; 
+  text-align: center; 
 `;
+
+
 
 export const DetailsCartButton = styled.button`
   background-color: ${colors.secondary};
@@ -229,6 +233,7 @@ export const DetailsCartButton = styled.button`
   border-radius: 10px;
   padding: 1rem 0.8rem;
   cursor: pointer;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
