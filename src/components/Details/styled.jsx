@@ -221,3 +221,21 @@ export const SpecificationSection = styled.div`
   flex: 1;
   margin: 0 10px;
 `;
+
+export const CartButton = styled.button`
+  background-color: ${colors.secondary};
+  width: 90%; 
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+
+  @media (max-width: 750px) {
+    width: 100%; 
+    padding: 0.8rem 0.8rem;
+  }
+`;

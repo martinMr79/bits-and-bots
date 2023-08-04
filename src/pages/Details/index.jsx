@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from '../../components/Loading/loading.js';
 import { Container, H1, H2, H3, H4, H5, H6, ProductDescription, useStyles, ProductContainer, ProductTags, Tag, BuyProductContainer, ImageContainer, ProductPrice, AverageRating, ProductSpecificationsContainer, SpecificationSection } from '../../components/Details/styled.jsx';
-import AddToCartButton from '../../components/AddToCart/AddToCartButton.jsx';
+import AddToCartButton from '../../components/AddToCart/DetailsAddToCartButton.jsx';
 import StarIcon from '@material-ui/icons/Star';
 import StarHalfIcon from '@material-ui/icons/StarHalf';
 

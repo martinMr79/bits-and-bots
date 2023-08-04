@@ -1,8 +1,8 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { CartButton } from '../Browse/cardLayout';
+import { CartButton } from '../Details/styled';
 import { useCartStore } from '../../hooks/useCart';
 
-const AddToCartButton = ({ product }) => {
+const DetailsAddToCartButton = ({ product }) => {
   const { cart, addToCart, removeFromCart } = useCartStore();
 
   const isInCart = cart.some((item) => item.id === product.id);
@@ -23,5 +23,5 @@ const AddToCartButton = ({ product }) => {
   );
 };
 
-export default AddToCartButton;
+export default DetailsAddToCartButton;
 
