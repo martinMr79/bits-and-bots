@@ -195,7 +195,6 @@ export const BuyProductContainer = styled.div`
   }
 
   @media (max-width: 1100px) {
-    position: sticky;
     top: 0;
     grid-column: 1;
     grid-row: 3;
