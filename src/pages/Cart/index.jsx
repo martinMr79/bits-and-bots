@@ -29,7 +29,7 @@ const Cart = () => {
             ) : (
               <p style={{ fontSize: '16px' }}>{item.price} Nok</p>
             )}
-            <button onClick={() => removeFromCart(item.id)}>Remove from Cart</button>
+            <button onClick={() => removeFromCart(item.id)}>Remove</button>
           </div>
         </div>
       </div>
