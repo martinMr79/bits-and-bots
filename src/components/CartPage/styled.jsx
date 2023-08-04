@@ -6,6 +6,14 @@ export const CartPageContainer = styled.div`
   margin: 0 auto;
   padding: 1rem;
   padding-bottom: 8rem;
+  min-height: 70vh;
+
+  h1 {
+    color: white; 
+    margin-top: 2rem; 
+    margin-bottom: 3rem;
+    font-size: 26px;
+  }
 
   > div { 
     background-color: #27282E;
@@ -15,7 +23,6 @@ export const CartPageContainer = styled.div`
 
     div.row {
       display: flex;
-      align-items: center;
 
       img {
         max-height: 130px;
@@ -34,6 +41,7 @@ export const CartPageContainer = styled.div`
           margin: 0;
           color: white; 
           margin-right: 8rem; 
+          font-size: 26px;
         }
 
         div.price-and-button {
