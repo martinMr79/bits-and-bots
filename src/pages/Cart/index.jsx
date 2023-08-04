@@ -16,10 +16,12 @@ const Cart = () => {
       <img src={item.images[0]?.src} alt={item.images[0]?.alt || 'product'} />
       <div className="info">
         <h2>{item.name}</h2>
-        <p>Price: {item.price} Nok</p>
+        <div className="price-and-button">
+          <p>Price: {item.price} Nok</p>
+          <button onClick={() => removeFromCart(item.id)}>Remove from Cart</button>
+        </div>
       </div>
     </div>
-    <button onClick={() => removeFromCart(item.id)}>Remove from Cart</button>
   </div>
 ))}
 
