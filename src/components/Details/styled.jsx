@@ -224,17 +224,14 @@ export const SpecificationSection = styled.div`
 
 export const DetailsCartButton = styled.button`
   background-color: ${colors.secondary};
-  width: 90%; 
+  width: 80%; 
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 1rem 0.8rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
+  font-size: 16px; 
 
-  @media (max-width: 750px) {
-
-  }
 `;
