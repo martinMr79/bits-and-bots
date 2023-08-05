@@ -35,18 +35,22 @@ const Cart = () => {
                 <div className="info">
                   <h2>{item.name}</h2>
                   <div className="price-and-button">
-                    {onSale ? (
-                      <p>
-                        <s style={{ color: '#76777B', marginRight: '8px', fontSize: '16px' }}>
-                          {item.regular_price} Nok
-                        </s>
-                        <span style={{ color: '#BEEB09', fontSize: '16px' }}>{item.sale_price} Nok</span>
-                      </p>
-                    ) : (
-                      <p style={{ fontSize: '16px' }}>{item.price} Nok</p>
-                    )}
-                    <button onClick={() => removeFromCart(item.id)}>Remove</button>
-                  </div>
+  <div className="price-wrapper">
+    {onSale ? (
+      <>
+        <p style={{ color: '#76777B', marginRight: '8px', fontSize: '16px' }}>
+          {item.regular_price} Nok
+        </p>
+        <p style={{ color: '#BEEB09', fontSize: '16px' }}>
+          {item.sale_price} Nok
+        </p>
+      </>
+    ) : (
+      <p style={{ fontSize: '16px' }}>{item.price} Nok</p>
+    )}
+  </div>
+  <button onClick={() => removeFromCart(item.id)}>Remove</button>
+</div>
                 </div>
               </div>
             </div>

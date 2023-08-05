@@ -6,14 +6,11 @@ export const CartPageContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 1rem;
-  padding-bottom: 8rem;
+  padding-bottom: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
-  
-  
-  
   
 
   h1 {
@@ -35,12 +32,12 @@ export const CartPageContainer = styled.div`
 
       div.row {
         display: flex;
+        height: 130px; 
         margin-bottom: 1rem;  
         background-color: #27282E; 
         
 
         img {
-          max-height: 130px;
           flex-shrink: 0;
           margin-right: 2rem;
         }
@@ -60,23 +57,35 @@ export const CartPageContainer = styled.div`
           }
 
           div.price-and-button {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
 
-            p {
-              margin: 0;
-              color: white;
-              margin-bottom: 1rem;
-            }
+  div.price-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
 
-            button {
-              background-color: #27282E;
-              color: #2177EB;
-              border: none;
-              cursor: pointer;
-            }
-          }
+    p {
+      margin: 0;
+      color: white;
+    }
+  }
+
+  button {
+    background-color: #27282E;
+    color: #2177EB;
+    border: none;
+    cursor: pointer;
+    margin-top: auto;
+  }
+}
+
+
+}
+
         }
       }
     }
@@ -86,7 +95,6 @@ export const CartPageContainer = styled.div`
       background-color: ${colors.primary};
       padding: 1rem;
       margin-left: 1rem;
-      border: 1px solid #ddd;
       max-height: 300px; 
       border: none; 
       text-align: center;
@@ -113,9 +121,13 @@ export const CartPageContainer = styled.div`
         color: ${colors.black};
         border: none;
         cursor: pointer;
+        margin-top: 2rem;
+        padding: 0.5rem 3.5rem;
+        font-size: 18px; 
+        border-radius: 5px
+        
       }
     }
-  }
 `;
 
 
