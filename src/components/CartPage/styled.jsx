@@ -67,6 +67,7 @@ export const CartPageContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     flex-grow: 1;
+    padding-top: 16px;
 
     p {
       margin: 0;

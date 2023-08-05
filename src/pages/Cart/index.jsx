@@ -38,7 +38,7 @@ const Cart = () => {
   <div className="price-wrapper">
     {onSale ? (
       <>
-        <p style={{ color: '#76777B', marginRight: '8px', fontSize: '16px' }}>
+        <p style={{ textDecoration: 'line-through', color: '#76777B', marginRight: '8px', fontSize: '16px' }}>
         Nok {item.regular_price}
         </p>
         <p style={{ color: '#BEEB09', fontSize: '16px' }}>
