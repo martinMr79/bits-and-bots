@@ -56,10 +56,10 @@ const Cart = () => {
       <div className="summary-box">
         <h2>Summary</h2>
         <div className="summary-row">
-          <p>Total Price: {totalPrice.toFixed(2)} Nok</p>
-          <p>Discount: {totalDiscount.toFixed(2)} Nok</p>
+          <p>Price: {totalPrice.toFixed(0)} Nok</p>
+          <p>Discount: {totalDiscount.toFixed(0)} Nok</p>
           <hr></hr>
-          <p>Total After Discount: {finalPrice.toFixed(2)} Nok</p>
+          <p>Total: {finalPrice.toFixed(0)} Nok</p>
         </div>
         <button>Checkout</button>
       </div>

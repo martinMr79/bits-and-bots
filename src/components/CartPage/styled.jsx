@@ -3,12 +3,18 @@ import { colors } from '../../styles/theme';
 
 export const CartPageContainer = styled.div`
   max-width: 1500px;
+  width: 100%;
   margin: 0 auto;
   padding: 1rem;
   padding-bottom: 8rem;
-  min-height: 70vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  
+  
+  
+  
 
   h1 {
     color: white;
@@ -23,13 +29,15 @@ export const CartPageContainer = styled.div`
 
     .cart-content {
       flex: 3; 
-      background-color: #27282E;
       margin-bottom: 1rem;
       display: flex;
       flex-direction: column;
 
       div.row {
         display: flex;
+        margin-bottom: 1rem;  
+        background-color: #27282E; 
+        
 
         img {
           max-height: 130px;
@@ -47,7 +55,7 @@ export const CartPageContainer = styled.div`
           h2 {
             margin: 0;
             color: white;
-            margin-right: 26rem;
+            
             font-size: 26px;
           }
 
@@ -66,6 +74,7 @@ export const CartPageContainer = styled.div`
               background-color: #27282E;
               color: #2177EB;
               border: none;
+              cursor: pointer;
             }
           }
         }
@@ -78,15 +87,24 @@ export const CartPageContainer = styled.div`
       padding: 1rem;
       margin-left: 1rem;
       border: 1px solid #ddd;
+      max-height: 300px; 
+      border: none; 
+      text-align: center;
+      
 
       h2 {
         /* Styling for Summary title */
         color: ${colors.white};
       }
 
+      hr {
+        border-color: #767778;
+      }
+
       .summary-row {
         /* Styling for the summary rows */
         color: ${colors.white};
+        
       }
 
       button {
@@ -94,6 +112,7 @@ export const CartPageContainer = styled.div`
         background-color: ${colors.secondary};
         color: ${colors.black};
         border: none;
+        cursor: pointer;
       }
     }
   }
