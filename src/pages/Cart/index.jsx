@@ -39,14 +39,14 @@ const Cart = () => {
     {onSale ? (
       <>
         <p style={{ color: '#76777B', marginRight: '8px', fontSize: '16px' }}>
-          {item.regular_price} Nok
+        Nok {item.regular_price}
         </p>
         <p style={{ color: '#BEEB09', fontSize: '16px' }}>
-          {item.sale_price} Nok
+        Nok {item.sale_price} 
         </p>
       </>
     ) : (
-      <p style={{ fontSize: '16px' }}>{item.price} Nok</p>
+      <p style={{ fontSize: '16px' }}>Nok {item.price} </p>
     )}
   </div>
   <button onClick={() => removeFromCart(item.id)}>Remove</button>

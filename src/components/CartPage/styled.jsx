@@ -57,10 +57,10 @@ export const CartPageContainer = styled.div`
           }
 
           div.price-and-button {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            height: 100%;
 
   div.price-wrapper {
     display: flex;
@@ -95,6 +95,7 @@ export const CartPageContainer = styled.div`
       background-color: ${colors.primary};
       padding: 1rem;
       margin-left: 1rem;
+      margin-right: 2rem; 
       max-height: 300px; 
       border: none; 
       text-align: center;
