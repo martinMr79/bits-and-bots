@@ -58,15 +58,16 @@ const Cart = () => {
         })}
       </div>
       <div className="summary-box">
-        <h2>Summary</h2>
-        <div className="summary-row">
-          <p>Price: {totalPrice.toFixed(0)} Nok</p>
-          <p>Discount: {totalDiscount.toFixed(0)} Nok</p>
-          <hr></hr>
-          <p>Total: {finalPrice.toFixed(0)} Nok</p>
-        </div>
-        <button>Checkout</button>
-      </div>
+  <h2>Summary</h2>
+  <div className="summary-row">
+    <p><span className="label">Price:</span> {totalPrice.toFixed(0)} Nok</p>
+    <p><span className="label">Discount:</span> {totalDiscount.toFixed(0)} Nok</p>
+    <hr />
+    <p className="total"><span className="label">Total:</span> {finalPrice.toFixed(0)} Nok</p>
+  </div>
+  <button>Checkout</button>
+</div>
+
     </div>  
     </CartPageContainer>
   );

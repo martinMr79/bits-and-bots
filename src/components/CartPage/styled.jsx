@@ -67,7 +67,7 @@ export const CartPageContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     flex-grow: 1;
-    padding-top: 16px;
+    padding-top: 19px;
 
     p {
       margin: 0;
@@ -81,6 +81,7 @@ export const CartPageContainer = styled.div`
     border: none;
     cursor: pointer;
     margin-top: auto;
+    margin-bottom: 3px;
   }
 }
 
@@ -103,7 +104,7 @@ export const CartPageContainer = styled.div`
       
 
       h2 {
-        /* Styling for Summary title */
+        /* Summary title */
         color: ${colors.white};
       }
 
@@ -112,21 +113,40 @@ export const CartPageContainer = styled.div`
       }
 
       .summary-row {
-        /* Styling for the summary rows */
-        color: ${colors.white};
-        
-      }
+       color: ${colors.white};
+
+        p {
+         display: flex;
+         justify-content: space-between;
+       }
+
+        p span.label {
+         margin-right: 8px;
+         
+       }
+
+       p.total span.label {
+        font-weight: bold;
+}
+
+       p.total {
+         font-weight: bold;
+       }
+
+
+    }
+
 
       button {
-        /* Styling for the checkout button */
+        /*checkout button */
         background-color: ${colors.secondary};
         color: ${colors.black};
         border: none;
         cursor: pointer;
         margin-top: 2rem;
-        padding: 0.5rem 3.5rem;
+        padding: 0.4rem 4.5rem;
         font-size: 18px; 
-        border-radius: 5px
+        border-radius: 4px
         
       }
     }
