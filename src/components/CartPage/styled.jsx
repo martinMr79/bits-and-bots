@@ -16,7 +16,7 @@ export const CartPageContainer = styled.div`
   h1 {
     color: white;
     margin-top: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     font-size: 26px;
   }
 
@@ -52,7 +52,6 @@ export const CartPageContainer = styled.div`
           h2 {
             margin: 0;
             color: white;
-            
             font-size: 26px;
           }
 
