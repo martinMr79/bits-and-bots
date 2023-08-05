@@ -97,7 +97,7 @@ export const CartPageContainer = styled.div`
       padding: 1rem;
       margin-left: 1rem;
       margin-right: 2rem; 
-      max-height: 300px; 
+      max-height: 350px; 
       border: none; 
       text-align: center;
       
@@ -105,6 +105,7 @@ export const CartPageContainer = styled.div`
       h2 {
         /* Summary title */
         color: ${colors.white};
+        margin-bottom: 3rem;
       }
 
       hr {
@@ -142,7 +143,7 @@ export const CartPageContainer = styled.div`
         color: ${colors.black};
         border: none;
         cursor: pointer;
-        margin-top: 2rem;
+        margin-top: 3rem;
         padding: 0.4rem 4.5rem;
         font-size: 18px; 
         border-radius: 4px
