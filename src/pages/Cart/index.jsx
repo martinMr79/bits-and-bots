@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCart } from '../../hooks/useCart';
-import { CartPageContainer } from '../../components/CartPage/styled';
+import { CartPageContainer, CartPageWrapper } from '../../components/CartPage/styled';
 
 const Cart = () => {
   const { cart, removeFromCart } = useCart();
@@ -22,6 +22,7 @@ const Cart = () => {
   let finalPrice = totalPrice - totalDiscount;
 
   return (
+    <CartPageWrapper>
     <CartPageContainer>
       <h1>Your Cart</h1>
       <div className="cart-wrapper">
@@ -70,6 +71,7 @@ const Cart = () => {
 
     </div>  
     </CartPageContainer>
+    </CartPageWrapper>
   );
 };
 

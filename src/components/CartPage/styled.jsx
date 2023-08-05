@@ -1,6 +1,17 @@
 import styled from 'styled-components';
 import { colors } from '../../styles/theme';
 
+export const CartPageWrapper = styled.div`
+
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  min-height: 80vh;
+  flex-grow: 1;
+  margin-bottom: 3rem; 
+
+  `; 
+
 export const CartPageContainer = styled.div`
   max-width: 1500px;
   width: 100%;
@@ -15,7 +26,7 @@ export const CartPageContainer = styled.div`
 
   h1 {
     color: white;
-    margin-top: 2rem;
+    margin-top: 4rem;
     margin-bottom: 4rem;
     font-size: 26px;
   }
@@ -32,7 +43,7 @@ export const CartPageContainer = styled.div`
 
       div.row {
         display: flex;
-        height: 130px; 
+        height: 160px; 
         margin-bottom: 1rem;  
         background-color: #27282E; 
         
