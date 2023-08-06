@@ -23,19 +23,32 @@ export const CartPageContainer = styled.div`
 
   
   @media (max-width: 1100px) {
-    .cart-wrapper .cart-content div.row div.info {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .cart-wrapper .cart-content div.row div.info h2 {
-      margin-bottom: 1rem;
-    }
-
-    .cart-wrapper .cart-content div.row div.info div.price-and-button {
-      margin-top: 1rem;
-    }
+    && .cart-wrapper .cart-content div.row {
+    flex-direction: column;
+    align-items: center;
+    height: auto;  
   }
+
+  .cart-wrapper .cart-content div.row img {
+    margin-bottom: 1rem;
+  }
+
+  .cart-wrapper .cart-content div.row div.info {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .cart-wrapper .cart-content div.row div.info h2 {
+    margin-bottom: 1rem;
+  }
+
+  .cart-wrapper .cart-content div.row div.info div.price-and-button {
+    margin-top: 1rem;
+    align-items: center;
+  }
+}
+
 
   h1 {
     color: white;
