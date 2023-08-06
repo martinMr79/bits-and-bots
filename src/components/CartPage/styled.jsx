@@ -51,6 +51,8 @@ export const CartPageContainer = styled.div`
         img {
           flex-shrink: 0;
           margin-right: 2rem;
+          max-width: 100%;
+          height: auto;
         }
 
         div.info {
