@@ -27,6 +27,7 @@ export const CartPageContainer = styled.div`
     flex-direction: column;
     align-items: center;
     height: auto;  
+    
   }
 
   .cart-wrapper .cart-content div.row img {
@@ -46,7 +47,15 @@ export const CartPageContainer = styled.div`
   .cart-wrapper .cart-content div.row div.info div.price-and-button {
     margin-top: 1rem;
     align-items: center;
+    
   }
+
+  h1 {
+    text-align: center; 
+  }
+
+
+
 }
 
 
@@ -63,15 +72,18 @@ export const CartPageContainer = styled.div`
 
     @media (max-width: 1100px) {
         flex-direction: column;
+   
         
         .cart-content {
-            order: 1;  /* This ensures cart content comes first */
+            order: 1; 
+           
         }
         
         .summary-box {
-            order: 2;  /* This ensures summary box comes after */
-            margin-left: 0; /* Resetting the margin to fit properly below the cart content */
+            order: 2;  
+            margin-left: 0; 
             margin-right: 0;
+            background-color: ${colors.grey};
         }
     }
 
@@ -151,7 +163,6 @@ export const CartPageContainer = styled.div`
     text-align: center;
 
     h2 {
-      /* Summary title */
       color: ${colors.white};
       margin-bottom: 3rem;
     }
