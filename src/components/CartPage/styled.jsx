@@ -98,14 +98,17 @@ export const CartPageContainer = styled.div`
   }
 
   .summary-box {
-    flex: 1;
-    background-color: ${colors.primary};
-    padding: 1rem;
-    margin-left: 1rem;
-    margin-right: 2rem;
-    max-height: 350px;
-    border: none;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  background-color: ${colors.primary};
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-right: 2rem;
+  max-height: 350px;
+  border: none;
+  text-align: center;
 
     h2 {
       color: ${colors.white};
@@ -138,15 +141,17 @@ export const CartPageContainer = styled.div`
     }
 
     button {
-      /*checkout button */
+      
       background-color: ${colors.secondary};
       color: ${colors.black};
       border: none;
       cursor: pointer;
       margin-top: 3rem;
-      padding: 0.4rem 4.5rem;
+      padding: 0.5rem 4.5rem;
       font-size: 18px;
-      border-radius: 4px;
+      font-weight: bold; 
+      border-radius: 6px;
+
     }
   }
 
@@ -202,3 +207,14 @@ export const CartPageContainer = styled.div`
   }
 `;
 
+export const SummaryInnerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: center; 
+  justify-content: center; 
+  max-width: 300px; 
+
+  @media (max-width: 1100px) {
+    width: 600px; 
+  }
+`;

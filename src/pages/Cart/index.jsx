@@ -3,6 +3,7 @@ import { useCart } from '../../hooks/useCart';
 import {
   CartPageContainer,
   CartPageWrapper,
+  SummaryInnerContainer,
 } from '../../components/CartPage/styled';
 
 const Cart = () => {
@@ -77,6 +78,7 @@ const Cart = () => {
             })}
           </div>
           <div className="summary-box">
+          <SummaryInnerContainer>
             <h2>Summary</h2>
             <div className="summary-row">
               <p>
@@ -94,7 +96,9 @@ const Cart = () => {
               </p>
             </div>
             <button>Checkout</button>
+            </SummaryInnerContainer>
           </div>
+          
         </div>
       </CartPageContainer>
     </CartPageWrapper>
