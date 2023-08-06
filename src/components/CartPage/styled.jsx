@@ -61,6 +61,20 @@ export const CartPageContainer = styled.div`
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: 1100px) {
+        flex-direction: column;
+        
+        .cart-content {
+            order: 1;  /* This ensures cart content comes first */
+        }
+        
+        .summary-box {
+            order: 2;  /* This ensures summary box comes after */
+            margin-left: 0; /* Resetting the margin to fit properly below the cart content */
+            margin-right: 0;
+        }
+    }
+
     .cart-content {
       flex: 3;
       margin-bottom: 1rem;
