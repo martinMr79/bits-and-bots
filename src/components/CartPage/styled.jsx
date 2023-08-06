@@ -21,44 +21,6 @@ export const CartPageContainer = styled.div`
   justify-content: center;
   flex-grow: 1;
 
-  
-  @media (max-width: 1100px) {
-    && .cart-wrapper .cart-content div.row {
-    flex-direction: column;
-    align-items: center;
-    height: auto;  
-    
-  }
-
-  .cart-wrapper .cart-content div.row img {
-    margin-bottom: 1rem;
-  }
-
-  .cart-wrapper .cart-content div.row div.info {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .cart-wrapper .cart-content div.row div.info h2 {
-    margin-bottom: 1rem;
-  }
-
-  .cart-wrapper .cart-content div.row div.info div.price-and-button {
-    margin-top: 1rem;
-    align-items: center;
-    
-  }
-
-  h1 {
-    text-align: center; 
-  }
-
-
-
-}
-
-
   h1 {
     color: white;
     margin-top: 4rem;
@@ -69,23 +31,6 @@ export const CartPageContainer = styled.div`
   .cart-wrapper {
     display: flex;
     justify-content: space-between;
-
-    @media (max-width: 1100px) {
-        flex-direction: column;
-   
-        
-        .cart-content {
-            order: 1; 
-           
-        }
-        
-        .summary-box {
-            order: 2;  
-            margin-left: 0; 
-            margin-right: 0;
-            background-color: ${colors.grey};
-        }
-    }
 
     .cart-content {
       flex: 3;
@@ -204,4 +149,56 @@ export const CartPageContainer = styled.div`
       border-radius: 4px;
     }
   }
+
+  @media (max-width: 1100px) {
+    h1 {
+      text-align: center;
+    }
+
+    .cart-wrapper .cart-content div.row {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+
+      img {
+        margin-bottom: 1rem;
+        width: 100%; 
+        height: 100%;   
+        object-fit: cover; 
+        margin-right: 0;
+      }
+
+      div.info {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        h2 {
+          margin-bottom: 1rem;
+        }
+
+        div.price-and-button {
+          margin-top: 1rem;
+          align-items: center;
+        }
+      }
+    }
+
+    .cart-wrapper {
+      flex-direction: column;
+
+      .cart-content {
+        order: 1;
+      }
+
+      .summary-box {
+        order: 2;  
+        margin-left: 0; 
+        margin-right: 0;
+        background-color: ${colors.grey};
+      }
+    }
+  }
 `;
+
