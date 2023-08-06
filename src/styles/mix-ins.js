@@ -5,4 +5,3 @@ export const flexCenter = css`
   align-items: center;
   justify-content: center;
 `;
-

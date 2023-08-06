@@ -5,7 +5,7 @@ import { colors } from '../../../styles/theme';
 
 export const StyledCarouselContainer = styled.div`
   display: grid;
-  gap: 1rem; 
+  gap: 1rem;
   justify-items: center;
   align-items: center;
   height: 100%;
@@ -35,7 +35,6 @@ export const StyledCategoryCard = styled(Card)`
   justify-content: center;
   cursor: pointer;
 `;
-
 
 export const StyledProductImageContainer = styled(ProductImageContainer)`
   position: relative;

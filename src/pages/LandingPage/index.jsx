@@ -21,18 +21,22 @@ const LandingPage = () => {
     const fetchMedia = async () => {
       try {
         const mediaResponse = await fetch(
-          'https://bit-and-bots.volumvekt.no/wp-json/wp/v2/media?per_page=30'
+          'https://bit-and-bots.volumvekt.no/wp-json/wp/v2/media?per_page=30',
         );
         if (!mediaResponse.ok) {
-          throw new Error(`Failed to fetch media, status: ${mediaResponse.status}`);
+          throw new Error(
+            `Failed to fetch media, status: ${mediaResponse.status}`,
+          );
         }
 
         const mediaData = await mediaResponse.json();
         const landingPageSliderMedia = mediaData.filter(
-          (media) => media.title.rendered === 'Landing-page-slider'
+          (media) => media.title.rendered === 'Landing-page-slider',
         );
 
-        const mediaUrls = landingPageSliderMedia.map((media) => media.source_url);
+        const mediaUrls = landingPageSliderMedia.map(
+          (media) => media.source_url,
+        );
         setImageUrls(mediaUrls);
         setLoading(false);
       } catch (err) {
@@ -77,5 +81,3 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
-

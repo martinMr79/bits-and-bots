@@ -7,7 +7,7 @@ import {
   StyledInput,
   TabContainer,
   StyledParagraph,
-  SuccessMessage
+  SuccessMessage,
 } from './styles';
 import Login from './login';
 
@@ -63,7 +63,8 @@ const Register = () => {
           <SignUpButton type="submit">Sign up</SignUpButton>
           {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
           <StyledParagraph>
-            Already have an account? <button onClick={() => setTabValue(0)}>Log in!</button>
+            Already have an account?{' '}
+            <button onClick={() => setTabValue(0)}>Log in!</button>
           </StyledParagraph>
         </RegisterForm>
       )}
@@ -72,7 +73,3 @@ const Register = () => {
 };
 
 export default Register;
-
-
-
-

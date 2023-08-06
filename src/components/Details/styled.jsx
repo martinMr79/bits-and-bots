@@ -22,7 +22,7 @@ export const Container = styled.div`
 
 export const LeftGrid = styled.div`
   display: grid;
-  grid-template-rows: auto 1fr; 
+  grid-template-rows: auto 1fr;
 `;
 
 export const RightGrid = styled.div`
@@ -30,15 +30,13 @@ export const RightGrid = styled.div`
   grid-template-rows: 1fr;
 `;
 
-
 export const H1 = styled.h1`
   color: ${colors.white};
-  padding-top: 1rem; 
-  padding-bottom: 1rem; 
-  
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 
   @media (max-width: 1100px) {
-    text-align: center; 
+    text-align: center;
   }
 `;
 
@@ -46,7 +44,7 @@ export const H2 = styled.h2`
   color: ${colors.white};
 
   @media (max-width: 1100px) {
-    text-align: center; 
+    text-align: center;
   }
 `;
 
@@ -57,9 +55,8 @@ export const H3 = styled.h3`
   font-weight: 300;
 
   @media (max-width: 1100px) {
-    text-align: center; 
+    text-align: center;
   }
-
 `;
 
 export const H4 = styled.h4`
@@ -69,7 +66,7 @@ export const H4 = styled.h4`
   font-size: 34px;
 
   @media (max-width: 1100px) {
-    display: none;  
+    display: none;
   }
 `;
 
@@ -101,15 +98,14 @@ export const ProductPrice = styled.p`
 
   @media (max-width: 1100px) {
     font-size: 18px;
-
   }
 `;
 
 export const useStyles = makeStyles({
   icon: {
     color: colors.secondary,
-    fontSize: "24px",
-    marginTop: "5px"
+    fontSize: '24px',
+    marginTop: '5px',
   },
   image: {
     width: '100%',
@@ -120,7 +116,7 @@ export const useStyles = makeStyles({
 export const AverageRating = styled.p`
   font-size: 36px;
   color: ${colors.white};
-  margin: 0; 
+  margin: 0;
 `;
 
 export const ProductContainer = styled.div`
@@ -148,12 +144,11 @@ export const ImageContainer = styled.div`
 export const ImageAndBuyContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  align-items: flex-start; 
+  align-items: flex-start;
   @media (min-width: 768px) {
     align-items: stretch;
   }
 `;
-
 
 export const ProductTags = styled.div`
   grid-column: 1 / 3;
@@ -170,11 +165,11 @@ export const ProductTags = styled.div`
 `;
 
 export const Tag = styled.span`
-  background-color: #76777B;
+  background-color: #76777b;
   color: ${colors.white};
-  padding: 5px; 
-  margin: 3px;  
-  display: inline-block; 
+  padding: 5px;
+  margin: 3px;
+  display: inline-block;
 `;
 
 export const BuyProductContainer = styled.div`
@@ -182,28 +177,27 @@ export const BuyProductContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   background-color: ${colors.primary};
-  margin-left: 2rem; 
+  margin-left: 2rem;
   margin-top: 7rem;
   grid-column: 3;
   grid-row: 1;
 
   @media (min-width: 1100px) {
     position: sticky;
-    top: 7rem; 
+    top: 7rem;
   }
 
   @media (max-width: 1100px) {
     top: 0;
     grid-column: 1;
     grid-row: 3;
-    background-color: transparent; 
-    margin-left: 0rem; 
+    background-color: transparent;
+    margin-left: 0rem;
     margin-top: 1rem;
   }
 `;
-
 
 export const ProductSpecificationsContainer = styled.div`
   display: flex;
@@ -213,22 +207,20 @@ export const ProductSpecificationsContainer = styled.div`
 
   @media (min-width: 1100px) {
     flex-direction: row;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
   }
 `;
 
 export const SpecificationSection = styled.div`
-  flex: 1; 
-  margin: 0.5rem; 
-  text-align: center; 
+  flex: 1;
+  margin: 0.5rem;
+  text-align: center;
 `;
-
-
 
 export const DetailsCartButton = styled.button`
   background-color: ${colors.secondary};
-  width: 80%; 
+  width: 80%;
   border: none;
   border-radius: 10px;
   padding: 1rem 0.8rem;
@@ -237,6 +229,5 @@ export const DetailsCartButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px; 
-
+  font-size: 16px;
 `;

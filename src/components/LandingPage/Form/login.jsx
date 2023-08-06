@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-    RegisterForm,
-    SignUpButton,
-    InputWrapper,
-    StyledInput,
-    StyledParagraph,
-    ErrorMessage,
+  RegisterForm,
+  SignUpButton,
+  InputWrapper,
+  StyledInput,
+  StyledParagraph,
+  ErrorMessage,
 } from './styles';
 
 const Login = ({ setTabValue }) => {
@@ -19,9 +19,13 @@ const Login = ({ setTabValue }) => {
     event.preventDefault();
     // Retrieve stored user from localStorage
     const storedUser = JSON.parse(localStorage.getItem('user'));
-  
+
     // Validate inputs against stored user
-    if (storedUser && storedUser.email === email && storedUser.password === password) {
+    if (
+      storedUser &&
+      storedUser.email === email &&
+      storedUser.password === password
+    ) {
       // If inputs match stored user, redirect to the browse page
       navigate('/browse');
     } else {
@@ -51,12 +55,11 @@ const Login = ({ setTabValue }) => {
       <SignUpButton type="submit">Log In</SignUpButton>
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       <StyledParagraph>
-        Don't have an account? <button onClick={() => setTabValue(1)}>Sign up!</button>
+        Don't have an account?{' '}
+        <button onClick={() => setTabValue(1)}>Sign up!</button>
       </StyledParagraph>
     </RegisterForm>
   );
 };
 
 export default Login;
-
-
