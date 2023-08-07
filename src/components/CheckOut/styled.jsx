@@ -14,5 +14,20 @@ export const CheckOutPageContainer = styled.div`
     color: white; 
   }
 
+  button { 
+    background-color: #2177EB;
+    color: white;
+    border: none; 
+    border-radius: 8px; 
+    padding-top: 0.6rem; 
+    padding-bottom: 0.6rem; 
+    margin-bottom: 1rem; 
+    margin-top: 1rem; 
+    width: 100%; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
 `;
 
