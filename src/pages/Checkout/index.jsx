@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { CheckOutPageContainer } from '../../components/CheckOut/styled';
 
 const Checkout = () => {
   const { cart, clearCart } = useCart();
@@ -37,38 +38,28 @@ const Checkout = () => {
   const confirmPayment = () => {
     closeModal();
     clearCart();
-    navigate("/browse");
+    navigate("/");
   };
 
   return (
-    <Box
-      component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 2, width: '30ch' },
-      }}
-      onSubmit={handleFormSubmit}
-      noValidate
-      autoComplete="off"
-    >
+  <CheckOutPageContainer>
+<Box
+  component="form"
+  sx={{
+    display: 'flex',
+    flexDirection: 'column', 
+    alignItems: 'center',    
+    gap: 2,                  
+    '& .MuiTextField-root': {
+      m: 1, 
+      width: '30ch'
+    },
+  }}
+  onSubmit={handleFormSubmit}
+  noValidate
+  autoComplete="off"
+>
       <h2>You have {cart.length} items in your cart</h2>
-
-      <TextField
-        name="name"
-        label="Name"
-        value={formData.name}
-        onChange={handleInputChange}
-        required
-        variant="standard"
-      />
-      
-      <TextField
-        name="address"
-        label="Address"
-        value={formData.address}
-        onChange={handleInputChange}
-        required
-        variant="standard"
-      />
 
       <TextField
         name="creditCard"
@@ -79,6 +70,12 @@ const Checkout = () => {
         helperText="Format: 1234 5678 9012 3456"
         required
         variant="standard"
+
+        sx={{ 
+            '& .MuiInputLabel-root': {
+              color: 'white',  // replace 'desiredColor' with your color
+            },
+          }}
       />
 
       <TextField
@@ -90,6 +87,12 @@ const Checkout = () => {
         helperText="Format: MM/YY"
         required
         variant="standard"
+
+        sx={{ 
+            '& .MuiInputLabel-root': {
+              color: 'white',  // replace 'desiredColor' with your color
+            },
+          }}
       />
 
       <TextField
@@ -101,7 +104,45 @@ const Checkout = () => {
         helperText="3-digit code"
         required
         variant="standard"
+
+        sx={{ 
+            '& .MuiInputLabel-root': {
+              color: 'white',  // replace 'desiredColor' with your color
+            },
+          }}
       />
+
+      <TextField
+        name="name"
+        label="Name"
+        value={formData.name}
+        onChange={handleInputChange}
+        required
+        variant="standard"
+
+        sx={{ 
+            '& .MuiInputLabel-root': {
+              color: 'white',  // replace 'desiredColor' with your color
+            },
+          }}
+      />
+      
+      <TextField
+        name="address"
+        label="Address"
+        value={formData.address}
+        onChange={handleInputChange}
+        required
+        variant="standard"
+
+        sx={{ 
+            '& .MuiInputLabel-root': {
+              color: 'white',  // replace 'desiredColor' with your color
+            },
+          }}
+      />
+
+
 
       <button type="submit">Submit</button>
 
@@ -115,6 +156,8 @@ const Checkout = () => {
         <button onClick={closeModal}>Cancel</button>
       </Modal>
     </Box>
+
+    </CheckOutPageContainer>    
   );
 };
 
