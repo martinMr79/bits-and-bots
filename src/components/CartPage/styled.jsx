@@ -156,8 +156,17 @@ export const CartPageContainer = styled.div`
   }
 
   @media (max-width: 1100px) {
+
+    div.price-wrapper {
+              display: flex;
+              flex-direction: row !important;
+              margin-bottom: 19px
+            }
+
     h1 {
       text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
     }
 
     .cart-wrapper .cart-content div.row {
@@ -180,7 +189,7 @@ export const CartPageContainer = styled.div`
         width: 100%;
 
         h2 {
-          margin-bottom: 1rem;
+          margin-bottom: 0.5rem;
         }
 
         div.price-and-button {
