@@ -183,8 +183,8 @@ const Checkout = () => {
         value={formData.cvv}
         onChange={handleInputChange}
         pattern="\d{3}"
-        error={!!errors.expiryDate}
-        helperText={errors.cvv || "CVV should be 3 digits"} 
+        error={!!errors.cvv}
+        helperText={errors.cvv || "CVV should be 3 digits"}
         required
         variant="standard"
 
@@ -211,8 +211,8 @@ const Checkout = () => {
         label="Name"
         value={formData.name}
         onChange={handleInputChange} 
-        error={!!errors.expiryDate}
-        helperText={errors.name || "Name is required"} 
+        error={!!errors.name}
+        helperText={errors.name || "Name is required"}        
         required
         variant="standard"
 
@@ -239,8 +239,8 @@ const Checkout = () => {
         label="Address"
         value={formData.address}
         onChange={handleInputChange}
-        error={!!errors.expiryDate}
-        helperText={errors.address || "Address is required"} 
+        error={!!errors.address}
+        helperText={errors.address || "Address is required"}        
         required
         variant="standard"
 

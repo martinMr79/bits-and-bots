@@ -9,7 +9,7 @@ export const CheckOutPageContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   color: white; 
-  min-height: 80vh;
+  min-height: 85vh;
 
   p {
     color: white; 
