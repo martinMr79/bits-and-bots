@@ -5,6 +5,7 @@ import {
   CartPageWrapper,
   SummaryInnerContainer,
 } from '../../components/CartPage/styled';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, removeFromCart } = useCart();
@@ -95,7 +96,9 @@ const Cart = () => {
                 Nok
               </p>
             </div>
-            <button>Checkout</button>
+            <Link to="/checkout">
+             <button>Checkout</button>
+            </Link>
             </SummaryInnerContainer>
           </div>
           

@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage';
 import Browse from './pages/Browse';
 import ProductDetails from './pages/Details';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 import { GlobalStyle, AppContainer } from './GlobalStyles';
 import MainLayout from './components/MainLayout';
 import './GlobalStyles';
@@ -39,6 +40,15 @@ function App() {
               </MainLayout>
             }
           />
+          <Route
+            path="/checkout"
+            element={
+             <MainLayout>
+               <Checkout />
+             </MainLayout>
+  }
+/>
+          
         </Routes>
       </Router>
     </AppContainer>
