@@ -7,8 +7,22 @@ import TextField from '@mui/material/TextField';
 import { CheckOutPageContainer } from '../../components/CheckOut/styled';
 
 const Checkout = () => {
-  const { cart, clearCart } = useCart();
-  const navigate = useNavigate();
+    const { cart, clearCart } = useCart();
+    const navigate = useNavigate();
+  
+    let totalPrice = 0;
+    let discount = 0;
+  
+    cart.forEach((item) => {
+      if (item.sale_price) {
+        totalPrice += parseFloat(item.regular_price);
+        discount += parseFloat(item.regular_price) - parseFloat(item.sale_price);
+      } else {
+        totalPrice += parseFloat(item.price);
+      }
+    });
+  
+    const finalPrice = totalPrice - discount;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const closeModal = () => setIsModalOpen(false);
@@ -59,7 +73,8 @@ const Checkout = () => {
   noValidate
   autoComplete="off"
 >
-      <h2>You have {cart.length} items in your cart</h2>
+
+
 
       <TextField
         name="creditCard"
@@ -72,6 +87,17 @@ const Checkout = () => {
         variant="standard"
 
         sx={{ 
+
+            '& .MuiInput-underline:before': { // default underline color
+                borderBottomColor: 'white',
+              },
+              '& .MuiInput-underline:hover:not(.Mui-disabled):before': { // hover underline color
+                borderBottomColor: 'white',
+              },
+              '& .MuiInput-underline:after': { // focused underline color
+                borderBottomColor: 'white',
+              },
+
             '& .MuiInputLabel-root': {
               color: 'white',  // replace 'desiredColor' with your color
             },
@@ -89,6 +115,17 @@ const Checkout = () => {
         variant="standard"
 
         sx={{ 
+
+            '& .MuiInput-underline:before': { // default underline color
+                borderBottomColor: 'white',
+              },
+              '& .MuiInput-underline:hover:not(.Mui-disabled):before': { // hover underline color
+                borderBottomColor: 'white',
+              },
+              '& .MuiInput-underline:after': { // focused underline color
+                borderBottomColor: 'white',
+              },
+
             '& .MuiInputLabel-root': {
               color: 'white',  // replace 'desiredColor' with your color
             },
@@ -106,6 +143,17 @@ const Checkout = () => {
         variant="standard"
 
         sx={{ 
+
+            '& .MuiInput-underline:before': { // default underline color
+                borderBottomColor: 'white',
+              },
+              '& .MuiInput-underline:hover:not(.Mui-disabled):before': { // hover underline color
+                borderBottomColor: 'white',
+              },
+              '& .MuiInput-underline:after': { // focused underline color
+                borderBottomColor: 'white',
+              },
+
             '& .MuiInputLabel-root': {
               color: 'white',  // replace 'desiredColor' with your color
             },
@@ -121,6 +169,17 @@ const Checkout = () => {
         variant="standard"
 
         sx={{ 
+
+            '& .MuiInput-underline:before': { // default underline color
+                borderBottomColor: 'white',
+              },
+              '& .MuiInput-underline:hover:not(.Mui-disabled):before': { // hover underline color
+                borderBottomColor: 'white',
+              },
+              '& .MuiInput-underline:after': { // focused underline color
+                borderBottomColor: 'white',
+              },
+
             '& .MuiInputLabel-root': {
               color: 'white',  // replace 'desiredColor' with your color
             },
@@ -136,6 +195,17 @@ const Checkout = () => {
         variant="standard"
 
         sx={{ 
+
+            '& .MuiInput-underline:before': { // default underline color
+                borderBottomColor: 'white',
+              },
+              '& .MuiInput-underline:hover:not(.Mui-disabled):before': { // hover underline color
+                borderBottomColor: 'white',
+              },
+              '& .MuiInput-underline:after': { // focused underline color
+                borderBottomColor: 'white',
+              },
+
             '& .MuiInputLabel-root': {
               color: 'white',  // replace 'desiredColor' with your color
             },
@@ -155,6 +225,10 @@ const Checkout = () => {
         <button onClick={confirmPayment}>Confirm</button>
         <button onClick={closeModal}>Cancel</button>
       </Modal>
+        <p>Total Items {cart.length}</p>
+        <p>Original Price: {totalPrice.toFixed(2)} Nok</p>
+        <p>Discount: {discount.toFixed(2)} Nok</p>
+        <p>Total price after discount: {finalPrice.toFixed(2)} Nok</p>
     </Box>
 
     </CheckOutPageContainer>    
