@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { CheckOutPageContainer } from '../../components/CheckOut/styled';
+import { CheckOutPageContainer, } from '../../components/CheckOut/styled';
 
 const Checkout = () => {
     const { cart, clearCart } = useCart();
@@ -44,9 +44,47 @@ const Checkout = () => {
     }));
   };
 
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    let formErrors = {};
+  
+    const creditCardPattern = /^\d{4} \d{4} \d{4} \d{4}$/;
+    const expiryDatePattern = /^\d{2}\/\d{2}$/;
+    const cvvPattern = /^\d{3}$/;
+  
+    if (!creditCardPattern.test(formData.creditCard)) {
+      formErrors.creditCard = "Credit Card format should be: 1234 5678 9012 3456";
+    }
+  
+    if (!expiryDatePattern.test(formData.expiryDate)) {
+      formErrors.expiryDate = "Expiry Date format should be: MM/YY";
+    }
+  
+    if (!cvvPattern.test(formData.cvv)) {
+      formErrors.cvv = "CVV should be 3 digits";
+    }
+  
+    if (!formData.name.trim()) {
+      formErrors.name = "Name is required";
+    }
+  
+    if (!formData.address.trim()) {
+      formErrors.address = "Address is required";
+    }
+  
+    return formErrors;
+  };
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    openModal();
+    const formErrors = validateForm();
+  
+    if (Object.keys(formErrors).length === 0) {  
+      openModal();
+    } else {
+      setErrors(formErrors); 
+    }
   };
 
   const confirmPayment = () => {
@@ -55,16 +93,18 @@ const Checkout = () => {
     navigate("/");
   };
 
+  
+
   return (
   <CheckOutPageContainer>
-<Box
-  component="form"
-  sx={{
-    display: 'flex',
-    flexDirection: 'column', 
-    alignItems: 'center',    
-    gap: 2,                  
-    '& .MuiTextField-root': {
+    <Box
+     component="form"
+     sx={{
+     display: 'flex',
+     flexDirection: 'column', 
+     alignItems: 'center',    
+     gap: 2,                  
+     '& .MuiTextField-root': {
       m: 1, 
       width: '30ch'
     },
@@ -74,7 +114,10 @@ const Checkout = () => {
   autoComplete="off"
 >
 
-
+        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', marginBottom: '20px' }}>
+          <p>Total Items {cart.length}</p>
+          <p>Total price: kr {finalPrice.toFixed(0)}</p>
+        </div>
 
       <TextField
         name="creditCard"
@@ -82,7 +125,8 @@ const Checkout = () => {
         value={formData.creditCard}
         onChange={handleInputChange}
         pattern="\d{4} \d{4} \d{4} \d{4}"
-        helperText="Format: 1234 5678 9012 3456"
+        error={!!errors.creditCard}
+        helperText={errors.creditCard || "Format: 1234 5678 9012 3456"}
         required
         variant="standard"
 
@@ -110,7 +154,8 @@ const Checkout = () => {
         value={formData.expiryDate}
         onChange={handleInputChange}
         pattern="\d{2}/\d{2}"
-        helperText="Format: MM/YY"
+        error={!!errors.expiryDate}
+        helperText={errors.expiryDate || "Format: MM/YY"}
         required
         variant="standard"
 
@@ -138,7 +183,8 @@ const Checkout = () => {
         value={formData.cvv}
         onChange={handleInputChange}
         pattern="\d{3}"
-        helperText="3-digit code"
+        error={!!errors.expiryDate}
+        helperText={errors.cvv || "CVV should be 3 digits"} 
         required
         variant="standard"
 
@@ -164,7 +210,9 @@ const Checkout = () => {
         name="name"
         label="Name"
         value={formData.name}
-        onChange={handleInputChange}
+        onChange={handleInputChange} 
+        error={!!errors.expiryDate}
+        helperText={errors.name || "Name is required"} 
         required
         variant="standard"
 
@@ -191,6 +239,8 @@ const Checkout = () => {
         label="Address"
         value={formData.address}
         onChange={handleInputChange}
+        error={!!errors.expiryDate}
+        helperText={errors.address || "Address is required"} 
         required
         variant="standard"
 
@@ -225,10 +275,7 @@ const Checkout = () => {
         <button onClick={confirmPayment}>Confirm</button>
         <button onClick={closeModal}>Cancel</button>
       </Modal>
-        <p>Total Items {cart.length}</p>
-        <p>Original Price: {totalPrice.toFixed(2)} Nok</p>
-        <p>Discount: {discount.toFixed(2)} Nok</p>
-        <p>Total price after discount: {finalPrice.toFixed(2)} Nok</p>
+
     </Box>
 
     </CheckOutPageContainer>    
