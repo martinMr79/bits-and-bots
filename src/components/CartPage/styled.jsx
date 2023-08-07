@@ -227,3 +227,12 @@ export const SummaryInnerContainer = styled.div`
     width: 600px; 
   }
 `;
+
+export const EmptyCartMessage = styled.p`
+  font-size: 2rem;   
+  color: white;        
+  display: flex;  
+  align-items: center; 
+  justify-content: center; 
+  height: 80vh
+`;

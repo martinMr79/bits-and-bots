@@ -4,13 +4,15 @@ import {
   CartPageContainer,
   CartPageWrapper,
   SummaryInnerContainer,
+  EmptyCartMessage,
 } from '../../components/CartPage/styled';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, removeFromCart } = useCart();
 
-  if (!cart || cart.length === 0) return <p>Your cart is empty.</p>;
+  if (!cart || cart.length === 0) return <EmptyCartMessage>Your cart is empty.</EmptyCartMessage>;
+
 
   let totalPrice = 0;
   let totalDiscount = 0;
