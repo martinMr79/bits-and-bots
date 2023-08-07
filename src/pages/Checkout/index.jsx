@@ -6,12 +6,19 @@ import Modal from 'react-modal';
 const Checkout = () => {
   const { cart, clearCart } = useCart();
   const navigate = useNavigate();
+  
+  // Modal state and functions
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const closeModal = () => setIsModalOpen(false);
+  const openModal = () => setIsModalOpen(true);
+
   const [formData, setFormData] = useState({
     name: '',
     address: '',
-    creditCard: ''
+    creditCard: '',
+    expiryDate: '',
+    cvv: ''
   });
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -21,16 +28,8 @@ const Checkout = () => {
     }));
   };
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCheckout = (e) => {
-    e.preventDefault();
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
     openModal();
   };
 
@@ -43,27 +42,7 @@ const Checkout = () => {
   return (
     <div>
       <h2>You have {cart.length} items in your cart</h2>
-      <form onSubmit={handleCheckout}>
-        <label>
-          Name:
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-          />
-        </label>
-        <label>
-          Address:
-          <input
-            type="text"
-            name="address"
-            value={formData.address}
-            onChange={handleInputChange}
-            required
-          />
-        </label>
+      <form onSubmit={handleFormSubmit}>
         <label>
           Credit Card:
           <input
@@ -75,9 +54,31 @@ const Checkout = () => {
             required
           />
         </label>
+        <label>
+          Expiry Date (MM/YY):
+          <input
+            type="text"
+            name="expiryDate"
+            value={formData.expiryDate}
+            onChange={handleInputChange}
+            pattern="\d{2}/\d{2}"
+            required
+          />
+        </label>
+        <label>
+          CVV:
+          <input
+            type="text"
+            name="cvv"
+            value={formData.cvv}
+            onChange={handleInputChange}
+            pattern="\d{3}"
+            required
+          />
+        </label>
         <button type="submit">Submit</button>
       </form>
-
+      
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
@@ -92,5 +93,6 @@ const Checkout = () => {
 };
 
 export default Checkout;
+
 
 
