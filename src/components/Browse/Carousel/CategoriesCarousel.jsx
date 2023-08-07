@@ -9,12 +9,18 @@ import {
   StyledCarouselContainer,
   Container,
   H2,
-  ArrowButtonContainer
+  ArrowButtonContainer,
 } from './styled.jsx';
 import useFetch from '../../../hooks/useFetch.jsx';
 
 const PopularCategoriesCarousel = ({ setCurrentCategory }) => {
-  const { data: posts, loading, error } = useFetch('https://bit-and-bots.volumvekt.no/wp-json/wp/v2/posts?categories=35');
+  const {
+    data: posts,
+    loading,
+    error,
+  } = useFetch(
+    'https://bit-and-bots.volumvekt.no/wp-json/wp/v2/posts?categories=35',
+  );
   const [itemsPerSlide, setItemsPerSlide] = useState(1);
 
   const ArrowButton = ({ children, onClick, title, right }) => (
@@ -22,7 +28,6 @@ const PopularCategoriesCarousel = ({ setCurrentCategory }) => {
       {children}
     </ArrowButtonContainer>
   );
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -77,40 +82,64 @@ const PopularCategoriesCarousel = ({ setCurrentCategory }) => {
         <div key={i}>
           <StyledCarouselContainer itemsPerSlide={itemsPerSlide}>
             {slideCategories.map((category, index) => (
-              <StyledCategoryCard key={index} onClick={() => handleCategoryClick(category)}>
-                <StyledProductImageContainer>            
-                    <StyledProductImage src={category.image} alt="Category image" />              
+              <StyledCategoryCard
+                key={index}
+                onClick={() => handleCategoryClick(category)}
+              >
+                <StyledProductImageContainer>
+                  <StyledProductImage
+                    src={category.image}
+                    alt="Category image"
+                  />
                 </StyledProductImageContainer>
                 <h2>{category.title}</h2>
               </StyledCategoryCard>
             ))}
           </StyledCarouselContainer>
-        </div>
+        </div>,
       );
     }
 
     return carouselItems;
   };
 
-  const renderArrowPrev = (onClickHandler, hasPrev, label) => (
+  const renderArrowPrev = (onClickHandler, hasPrev, label) =>
     hasPrev && (
       <ArrowButton onClick={onClickHandler} title={label}>
-        <IconButton sx={{ position: 'absolute', left: -30, top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
-          <KeyboardArrowLeft sx={{ fontSize: 100, color: '#000', opacity: 0.8 }} />
+        <IconButton
+          sx={{
+            position: 'absolute',
+            left: -30,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            zIndex: 1,
+          }}
+        >
+          <KeyboardArrowLeft
+            sx={{ fontSize: 100, color: '#000', opacity: 0.8 }}
+          />
         </IconButton>
       </ArrowButton>
-    )
-  );
+    );
 
-  const renderArrowNext = (onClickHandler, hasNext, label) => (
+  const renderArrowNext = (onClickHandler, hasNext, label) =>
     hasNext && (
       <ArrowButton onClick={onClickHandler} title={label} right>
-        <IconButton sx={{ position: 'absolute', right: -30, top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
-          <KeyboardArrowRight sx={{ fontSize: 100, color: '#000', opacity: 0.8 }} />
+        <IconButton
+          sx={{
+            position: 'absolute',
+            right: -30,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            zIndex: 1,
+          }}
+        >
+          <KeyboardArrowRight
+            sx={{ fontSize: 100, color: '#000', opacity: 0.8 }}
+          />
         </IconButton>
       </ArrowButton>
-    )
-  );
+    );
 
   return (
     <Container>
@@ -130,11 +159,3 @@ const PopularCategoriesCarousel = ({ setCurrentCategory }) => {
 };
 
 export default PopularCategoriesCarousel;
-
-
-
-
-
-
-
-

@@ -4,11 +4,11 @@ import LandingPage from './pages/LandingPage';
 import Browse from './pages/Browse';
 import ProductDetails from './pages/Details';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 import { GlobalStyle, AppContainer } from './GlobalStyles';
 import MainLayout from './components/MainLayout';
-import './GlobalStyles'; 
+import './GlobalStyles';
 
- 
 function App() {
   return (
     <AppContainer>
@@ -16,9 +16,39 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/browse" element={<MainLayout><Browse /></MainLayout>} />
-          <Route path="/details/:id" element={<MainLayout><ProductDetails /></MainLayout>} />
-          <Route path="/cart" element={<MainLayout><Cart /></MainLayout>} />
+          <Route
+            path="/browse"
+            element={
+              <MainLayout>
+                <Browse />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/details/:id"
+            element={
+              <MainLayout>
+                <ProductDetails />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <MainLayout>
+                <Cart />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+             <MainLayout>
+               <Checkout />
+             </MainLayout>
+  }
+/>
+          
         </Routes>
       </Router>
     </AppContainer>
@@ -26,5 +56,3 @@ function App() {
 }
 
 export default App;
-
-

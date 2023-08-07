@@ -24,4 +24,3 @@ const BrowseAddToCartButton = ({ product }) => {
 };
 
 export default BrowseAddToCartButton;
-

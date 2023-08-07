@@ -15,7 +15,7 @@ const StyledAppBar = styled(AppBar)`
 
 const Logo = styled(Link)`
   font-family: 'MuseSans', sans-serif !important;
-  font-weight: 700; 
+  font-weight: 700;
   color: ${colors.secondary};
   flex-grow: 1;
   font-size: 32px !important;
@@ -67,15 +67,21 @@ function Header() {
           </Logo>
           <CartLink to="/cart">
             <IconButton color="inherit">
-              <ShoppingCartIcon style={{ fontSize: 40, }} />
-              {cartItemCount > 0 && <CartItemCount>{cartItemCount}</CartItemCount>}
+              <ShoppingCartIcon style={{ fontSize: 40 }} />
+              {cartItemCount > 0 && (
+                <CartItemCount>{cartItemCount}</CartItemCount>
+              )}
             </IconButton>
           </CartLink>
-          <Avatar sx={{ 
-            color: colors.black,
-            backgroundColor: colors.white,
-            marginLeft: { xs: 2, sm: 4, md: 8 },
-            }}>A</Avatar>
+          <Avatar
+            sx={{
+              color: colors.black,
+              backgroundColor: colors.white,
+              marginLeft: { xs: 2, sm: 4, md: 8 },
+            }}
+          >
+            A
+          </Avatar>
         </ContentContainer>
       </Toolbar>
     </StyledAppBar>
@@ -83,10 +89,3 @@ function Header() {
 }
 
 export default Header;
-
-
-
-
-
-
-

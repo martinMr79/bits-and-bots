@@ -2,9 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
 
 export const AppContainer = styled.div`
-  display: grid;
-  grid-template-rows: 1fr auto;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 `;
 
 export const GlobalStyle = createGlobalStyle`
@@ -16,6 +16,3 @@ export const GlobalStyle = createGlobalStyle`
   }
   
 `;
-
-
-

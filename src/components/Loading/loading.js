@@ -14,7 +14,11 @@ const LoadingWrapper = styled.div`
 function CircularProgressWithLabel(props) {
   return (
     <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-      <CircularProgress variant="determinate" {...props} style={{ color: "#2177EB" }}/>
+      <CircularProgress
+        variant="determinate"
+        {...props}
+        style={{ color: '#2177EB' }}
+      />
       <Box
         sx={{
           top: 0,
@@ -27,7 +31,11 @@ function CircularProgressWithLabel(props) {
           justifyContent: 'center',
         }}
       >
-        <Typography variant="caption" component="div" style={{ color: "#FFFFFF" }}>
+        <Typography
+          variant="caption"
+          component="div"
+          style={{ color: '#FFFFFF' }}
+        >
           {`${Math.round(props.value)}%`}
         </Typography>
       </Box>
@@ -40,7 +48,9 @@ const Loading = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
+      setProgress((prevProgress) =>
+        prevProgress >= 100 ? 0 : prevProgress + 10,
+      );
     }, 800);
     return () => {
       clearInterval(timer);
@@ -55,6 +65,3 @@ const Loading = () => {
 };
 
 export default Loading;
-
-
-

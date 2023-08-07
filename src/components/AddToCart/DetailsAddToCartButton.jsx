@@ -24,4 +24,3 @@ const DetailsAddToCartButton = ({ product }) => {
 };
 
 export default DetailsAddToCartButton;
-

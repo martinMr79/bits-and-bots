@@ -39,7 +39,7 @@ export const Card = styled.div`
 export const ProductImageContainer = styled.div`
   position: relative;
   width: 100%;
-  overflow: hidden;  
+  overflow: hidden;
 `;
 
 export const ProductImage = styled.img`
@@ -59,7 +59,7 @@ export const BrowseCartButton = styled.button`
   font-weight: bold;
 
   @media (max-width: 750px) {
-    width: 100%; 
+    width: 100%;
     padding: 0.8rem 0.8rem;
   }
 `;
@@ -85,5 +85,5 @@ export const SaleBox = styled.div`
   font-size: 26px;
   font-weight: bold;
   font-family: 'MuseSans', sans-serif !important;
-  font-weight: 500; 
+  font-weight: 500;
 `;
