@@ -38,11 +38,27 @@ const Checkout = () => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+    let formattedValue = value;
+
+    if (name === "creditCard") {
+        // Remove all non-digit characters
+        const cleanedValue = value.replace(/\D+/g, '');
+
+        // Add a space after every 4 digits
+        formattedValue = cleanedValue.replace(/(\d{4})(?=\d)/g, '$1 ');
+
+        // Limit to 16 digits + 3 spaces = 19 characters
+        if (formattedValue.length > 19) {
+            formattedValue = formattedValue.slice(0, 19);
+        }
+    }
+
     setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
+        ...prevData,
+        [name]: formattedValue
     }));
-  };
+};
+
 
   const [errors, setErrors] = useState({});
 
