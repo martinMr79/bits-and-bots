@@ -7,7 +7,8 @@ import TextField from '@mui/material/TextField';
 import { CheckOutPageContainer, } from '../../components/CheckOut/styled';
 
 const Checkout = () => {
-    const { cart, clearCart } = useCart();
+    
+    const { cart } = useCart();
     const navigate = useNavigate();
   
     let totalPrice = 0;
@@ -136,7 +137,7 @@ const Checkout = () => {
 
   const confirmPayment = () => {
     closeModal();
-    clearCart();
+    localStorage.clear();
     navigate("/");
   };
 
@@ -221,22 +222,22 @@ const Checkout = () => {
               color: 'white',  
               },            
 
-            '& .MuiInput-underline:before': { // default underline color
+            '& .MuiInput-underline:before': { 
                 borderBottomColor: 'white',
               },
-              '& .MuiInput-underline:hover:not(.Mui-disabled):before': { // hover underline color
+              '& .MuiInput-underline:hover:not(.Mui-disabled):before': { 
                 borderBottomColor: 'white',
               },
-              '& .MuiInput-underline:after': { // focused underline color
+              '& .MuiInput-underline:after': { 
                 borderBottomColor: 'white',
               },
 
             '& .MuiInputLabel-root': {
-              color: 'white',  // replace 'desiredColor' with your color
+              color: 'white', 
             },
 
             '& .MuiInputLabel-root.Mui-focused': {
-              color: '#2177EB',  // Focused label color
+              color: '#2177EB',  
           },
 
           }}
@@ -260,22 +261,22 @@ const Checkout = () => {
               color: 'white',  
               },    
 
-            '& .MuiInput-underline:before': { // default underline color
+            '& .MuiInput-underline:before': { 
                 borderBottomColor: 'white',
               },
-              '& .MuiInput-underline:hover:not(.Mui-disabled):before': { // hover underline color
+              '& .MuiInput-underline:hover:not(.Mui-disabled):before': { 
                 borderBottomColor: 'white',
               },
-              '& .MuiInput-underline:after': { // focused underline color
+              '& .MuiInput-underline:after': { 
                 borderBottomColor: 'white',
               },
 
             '& .MuiInputLabel-root': {
-              color: 'white',  // replace 'desiredColor' with your color
+              color: 'white',  
             },
 
             '& .MuiInputLabel-root.Mui-focused': {
-              color: '#2177EB',  // Focused label color
+              color: '#2177EB',  
           },
 
           }}
@@ -297,22 +298,22 @@ const Checkout = () => {
               color: 'white',  
               },   
 
-            '& .MuiInput-underline:before': { // default underline color
+            '& .MuiInput-underline:before': { 
                 borderBottomColor: 'white',
               },
-              '& .MuiInput-underline:hover:not(.Mui-disabled):before': { // hover underline color
+              '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
                 borderBottomColor: 'white',
               },
-              '& .MuiInput-underline:after': { // focused underline color
+              '& .MuiInput-underline:after': { 
                 borderBottomColor: 'white',
               },
 
             '& .MuiInputLabel-root': {
-              color: 'white',  // replace 'desiredColor' with your color
+              color: 'white', 
             },
 
             '& .MuiInputLabel-root.Mui-focused': {
-              color: '#2177EB',  // Focused label color
+              color: '#2177EB',
           },
 
           }}
@@ -334,22 +335,22 @@ const Checkout = () => {
              color: 'white',  
               },  
 
-            '& .MuiInput-underline:before': { // default underline color
+            '& .MuiInput-underline:before': {
                 borderBottomColor: 'white',
               },
-              '& .MuiInput-underline:hover:not(.Mui-disabled):before': { // hover underline color
+              '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
                 borderBottomColor: 'white',
               },
-              '& .MuiInput-underline:after': { // focused underline color
+              '& .MuiInput-underline:after': {
                 borderBottomColor: 'white',
               },
 
             '& .MuiInputLabel-root': {
-              color: 'white',  // replace 'desiredColor' with your color
+              color: 'white',
             },
 
             '& .MuiInputLabel-root.Mui-focused': {
-              color: '#2177EB',  // Focused label color
+              color: '#2177EB',
           },
 
           }}
@@ -357,18 +358,17 @@ const Checkout = () => {
 
 
 
-      <button type="submit">Submit</button>
+      <button type="submit" onClick={() => setIsModalOpen(true)}>Submit</button>
 
       <Modal
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
-      >
-        <h2>Confirm Payment</h2>
-        <p>Do you want to proceed with the payment?</p>
-        <button onClick={confirmPayment}>Confirm</button>
-        <button onClick={closeModal}>Cancel</button>
-      </Modal>
-
+          isOpen={isModalOpen}
+          onRequestClose={closeModal}
+        >
+          <h2>Confirm Payment</h2>
+          <p>Do you want to proceed with the payment?</p>
+          <button onClick={confirmPayment}>Confirm</button>
+          <button onClick={closeModal}>Cancel</button>
+        </Modal>
     </Box>
 
     </CheckOutPageContainer>    
