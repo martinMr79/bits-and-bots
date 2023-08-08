@@ -179,6 +179,10 @@ const Checkout = () => {
 
         sx={{ 
 
+            '& .MuiInputBase-input': {
+                color: 'white',  
+              },  
+
             '& .MuiInput-underline:before': { // default underline color
                 borderBottomColor: 'white',
               },
@@ -192,6 +196,11 @@ const Checkout = () => {
             '& .MuiInputLabel-root': {
               color: 'white',  // replace 'desiredColor' with your color
             },
+
+            '& .MuiInputLabel-root.Mui-focused': {
+              color: '#2177EB',  // Focused label color
+          },
+
           }}
       />
 
@@ -208,6 +217,10 @@ const Checkout = () => {
 
         sx={{ 
 
+            '& .MuiInputBase-input': {
+              color: 'white',  
+              },            
+
             '& .MuiInput-underline:before': { // default underline color
                 borderBottomColor: 'white',
               },
@@ -221,6 +234,11 @@ const Checkout = () => {
             '& .MuiInputLabel-root': {
               color: 'white',  // replace 'desiredColor' with your color
             },
+
+            '& .MuiInputLabel-root.Mui-focused': {
+              color: '#2177EB',  // Focused label color
+          },
+
           }}
       />
 
@@ -238,6 +256,10 @@ const Checkout = () => {
 
         sx={{ 
 
+            '& .MuiInputBase-input': {
+              color: 'white',  
+              },    
+
             '& .MuiInput-underline:before': { // default underline color
                 borderBottomColor: 'white',
               },
@@ -251,6 +273,11 @@ const Checkout = () => {
             '& .MuiInputLabel-root': {
               color: 'white',  // replace 'desiredColor' with your color
             },
+
+            '& .MuiInputLabel-root.Mui-focused': {
+              color: '#2177EB',  // Focused label color
+          },
+
           }}
       />
 
@@ -266,6 +293,10 @@ const Checkout = () => {
 
         sx={{ 
 
+            '& .MuiInputBase-input': {
+              color: 'white',  
+              },   
+
             '& .MuiInput-underline:before': { // default underline color
                 borderBottomColor: 'white',
               },
@@ -279,6 +310,11 @@ const Checkout = () => {
             '& .MuiInputLabel-root': {
               color: 'white',  // replace 'desiredColor' with your color
             },
+
+            '& .MuiInputLabel-root.Mui-focused': {
+              color: '#2177EB',  // Focused label color
+          },
+
           }}
       />
       
@@ -294,6 +330,10 @@ const Checkout = () => {
 
         sx={{ 
 
+            '& .MuiInputBase-input': {
+             color: 'white',  
+              },  
+
             '& .MuiInput-underline:before': { // default underline color
                 borderBottomColor: 'white',
               },
@@ -307,6 +347,11 @@ const Checkout = () => {
             '& .MuiInputLabel-root': {
               color: 'white',  // replace 'desiredColor' with your color
             },
+
+            '& .MuiInputLabel-root.Mui-focused': {
+              color: '#2177EB',  // Focused label color
+          },
+          
           }}
       />
 
