@@ -83,6 +83,7 @@ function Header() {
               sx={{
                 color: colors.black,
                 backgroundColor: colors.white,
+                cursor: 'pointer',
                 marginLeft: { xs: 2, sm: 4, md: 8 },
               }}
               onClick={handleLogout} // Added onClick to trigger handleLogout function
