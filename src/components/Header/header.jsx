@@ -54,6 +54,8 @@ const CartItemCount = styled.span`
   height: 12px;
 `;
 
+
+
 function Header() {
   const { getCartItemCount } = useCart();
   const cartItemCount = getCartItemCount();
@@ -63,6 +65,8 @@ function Header() {
     localStorage.clear();
     navigate('/');
   };
+
+  const userInitial = localStorage.getItem('loggedInUserInitial') || 'A';
 
   return (
     <StyledAppBar position="static">
@@ -86,9 +90,9 @@ function Header() {
               cursor: 'pointer',
               marginLeft: { xs: 2, sm: 4, md: 8 },
             }}
-            onClick={handleLogout} // Added onClick to trigger handleLogout function
+            onClick={handleLogout}
           >
-            A
+            {userInitial}
           </Avatar>
         </ContentContainer>
       </Toolbar>

@@ -53,6 +53,7 @@ const Register = () => {
       const user = {
         email: email,
         password: password,
+        initial: email.charAt(0).toUpperCase(),
       };
       localStorage.setItem('user', JSON.stringify(user));
       setSuccessMessage('Successfully registered! You can now log in.');
