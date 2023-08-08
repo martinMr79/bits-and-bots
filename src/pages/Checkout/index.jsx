@@ -82,21 +82,23 @@ const Checkout = () => {
   const validateForm = () => {
     let formErrors = {};
   
+    if (!formData) return { error: "Form data is missing." };
+
     const creditCardPattern = /^\d{4} \d{4} \d{4} \d{4}$/;
-    const expiryDatePattern = /^\d{2}\/\d{2}$/;
+    const expiryDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/;  
     const cvvPattern = /^\d{3}$/;
-    const specialCharacterPattern = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+    const namePattern = /^[a-zA-Z\s'-]{3,}$/; // Allow letters, spaces, hyphens, and apostrophes
+    const addressPattern = /^[\w\s'-]{10,}$/; // Allow letters, numbers, spaces, hyphens, and apostrophes
   
     if (!creditCardPattern.test(formData.creditCard)) {
       formErrors.creditCard = "Credit Card format should be: 1234 5678 9012 3456";
     }
-  
+      
     if (!expiryDatePattern.test(formData.expiryDate)) {
       formErrors.expiryDate = "Expiry Date format should be: MM/YY";
     } else {
-      // Check if the entered expiry date is in the past
       let [month, year] = formData.expiryDate.split("/");
-      const expiryDateObject = new Date(`20${year}`, month - 1); // months are 0-indexed in JS
+      const expiryDateObject = new Date(`20${year}`, month - 1); 
       const currentDateObject = new Date();
       currentDateObject.setHours(0, 0, 0, 0);
 
@@ -109,16 +111,17 @@ const Checkout = () => {
       formErrors.cvv = "CVV should be 3 digits";
     }
   
-    if (formData.name.trim().length < 3 || specialCharacterPattern.test(formData.name)) {
+    if (!namePattern.test(formData.name)) {
       formErrors.name = "Name must be at least 3 characters long and should not contain any special characters";
     }
   
-    if (formData.address.trim().length < 10 || specialCharacterPattern.test(formData.address)) {
+    if (!addressPattern.test(formData.address)) {
       formErrors.address = "Address must be at least 10 characters long and should not contain any special characters";
     }
   
     return formErrors;
-  };
+};
+
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
