@@ -57,6 +57,19 @@ const Checkout = () => {
         return; // exit the function early if non-digit character entered for CVV
     }
 
+    if (name === "expiryDate") {
+      // Remove all non-digit characters
+      const cleanedValue = value.replace(/\D+/g, '');
+
+      // Add a slash after 2 digits
+      formattedValue = cleanedValue.replace(/(\d{2})(?=\d)/g, '$1/');
+
+      // Limit to 4 digits + 1 slash = 5 characters
+      if (formattedValue.length > 5) {
+          formattedValue = formattedValue.slice(0, 5);
+      }
+  }
+
     setFormData((prevData) => ({
         ...prevData,
         [name]: formattedValue
