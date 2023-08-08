@@ -103,7 +103,7 @@ const Checkout = () => {
       currentDateObject.setHours(0, 0, 0, 0);
 
       if (expiryDateObject < currentDateObject) {
-        formErrors.expiryDate = "Please enter a valid future expiry date.";
+        formErrors.expiryDate = "Please enter a valid expiry date.";
       }
     }  
   
@@ -351,7 +351,7 @@ const Checkout = () => {
             '& .MuiInputLabel-root.Mui-focused': {
               color: '#2177EB',  // Focused label color
           },
-          
+
           }}
       />
 
