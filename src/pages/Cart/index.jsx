@@ -8,26 +8,25 @@ import {
 } from '../../components/CartPage/styled';
 import { Link } from 'react-router-dom';
 
-const Cart = () => {
+  const Cart = () => {
   const { cart, removeFromCart } = useCart();
 
   if (!cart || cart.length === 0) return <EmptyCartMessage>Your cart is empty.</EmptyCartMessage>;
 
 
-  let totalPrice = 0;
-  let totalDiscount = 0;
+  let totalPrice = 0; // Represents the sum of all items at their regular price.
+  let discount = 0;   // Total amount saved from items on sale.
 
   cart.forEach((item) => {
     if (item.sale_price) {
-      totalPrice += parseFloat(item.sale_price);
-      totalDiscount +=
-        parseFloat(item.regular_price) - parseFloat(item.sale_price);
+      discount += parseFloat(item.regular_price) - parseFloat(item.sale_price);
+      totalPrice += parseFloat(item.regular_price);
     } else {
       totalPrice += parseFloat(item.price);
     }
   });
 
-  let finalPrice = totalPrice - totalDiscount;
+  let finalPrice = totalPrice - discount;
 
   return (
     <CartPageWrapper>
@@ -90,7 +89,7 @@ const Cart = () => {
               </p>
               <p>
                 <span className="label">Discount:</span>{' '}
-                {totalDiscount.toFixed(0)} Nok
+                {discount.toFixed(0)} Nok
               </p>
               <hr />
               <p className="total">

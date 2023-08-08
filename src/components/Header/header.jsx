@@ -2,7 +2,7 @@ import React from 'react';
 import { AppBar, Toolbar as MuiToolbar, IconButton } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Avatar } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { useCart } from '../../hooks/useCart';
 import { colors } from '../../styles/theme';
@@ -57,35 +57,42 @@ const CartItemCount = styled.span`
 function Header() {
   const { getCartItemCount } = useCart();
   const cartItemCount = getCartItemCount();
+  const navigate = useNavigate(); 
 
-  return (
-    <StyledAppBar position="static">
-      <Toolbar>
-        <ContentContainer>
-          <Logo variant="h5" to="/browse">
-            Bits & Bots
-          </Logo>
-          <CartLink to="/cart">
-            <IconButton color="inherit">
-              <ShoppingCartIcon style={{ fontSize: 40 }} />
-              {cartItemCount > 0 && (
-                <CartItemCount>{cartItemCount}</CartItemCount>
-              )}
-            </IconButton>
-          </CartLink>
-          <Avatar
-            sx={{
-              color: colors.black,
-              backgroundColor: colors.white,
-              marginLeft: { xs: 2, sm: 4, md: 8 },
-            }}
-          >
-            A
-          </Avatar>
-        </ContentContainer>
-      </Toolbar>
-    </StyledAppBar>
-  );
-}
+  const handleLogout = () => {
+    localStorage.clear(); 
+    navigate('/');
+  };
 
-export default Header;
+    return (
+      <StyledAppBar position="static">
+        <Toolbar>
+          <ContentContainer>
+            <Logo variant="h5" to="/browse">
+              Bits & Bots
+            </Logo>
+            <CartLink to="/cart">
+              <IconButton color="inherit">
+                <ShoppingCartIcon style={{ fontSize: 40 }} />
+                {cartItemCount > 0 && (
+                  <CartItemCount>{cartItemCount}</CartItemCount>
+                )}
+              </IconButton>
+            </CartLink>
+            <Avatar
+              sx={{
+                color: colors.black,
+                backgroundColor: colors.white,
+                marginLeft: { xs: 2, sm: 4, md: 8 },
+              }}
+              onClick={handleLogout} // Added onClick to trigger handleLogout function
+            >
+              A
+            </Avatar>
+          </ContentContainer>
+        </Toolbar>
+      </StyledAppBar>
+    );
+  }
+  
+  export default Header;
