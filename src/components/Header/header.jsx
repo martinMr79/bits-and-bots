@@ -57,43 +57,43 @@ const CartItemCount = styled.span`
 function Header() {
   const { getCartItemCount } = useCart();
   const cartItemCount = getCartItemCount();
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.clear(); 
+    localStorage.clear();
     navigate('/');
   };
 
-    return (
-      <StyledAppBar position="static">
-        <Toolbar>
-          <ContentContainer>
-            <Logo variant="h5" to="/browse">
-              Bits & Bots
-            </Logo>
-            <CartLink to="/cart">
-              <IconButton color="inherit">
-                <ShoppingCartIcon style={{ fontSize: 40 }} />
-                {cartItemCount > 0 && (
-                  <CartItemCount>{cartItemCount}</CartItemCount>
-                )}
-              </IconButton>
-            </CartLink>
-            <Avatar
-              sx={{
-                color: colors.black,
-                backgroundColor: colors.white,
-                cursor: 'pointer',
-                marginLeft: { xs: 2, sm: 4, md: 8 },
-              }}
-              onClick={handleLogout} // Added onClick to trigger handleLogout function
-            >
-              A
-            </Avatar>
-          </ContentContainer>
-        </Toolbar>
-      </StyledAppBar>
-    );
-  }
-  
-  export default Header;
+  return (
+    <StyledAppBar position="static">
+      <Toolbar>
+        <ContentContainer>
+          <Logo variant="h5" to="/browse">
+            Bits & Bots
+          </Logo>
+          <CartLink to="/cart">
+            <IconButton color="inherit">
+              <ShoppingCartIcon style={{ fontSize: 40 }} />
+              {cartItemCount > 0 && (
+                <CartItemCount>{cartItemCount}</CartItemCount>
+              )}
+            </IconButton>
+          </CartLink>
+          <Avatar
+            sx={{
+              color: colors.black,
+              backgroundColor: colors.white,
+              cursor: 'pointer',
+              marginLeft: { xs: 2, sm: 4, md: 8 },
+            }}
+            onClick={handleLogout} // Added onClick to trigger handleLogout function
+          >
+            A
+          </Avatar>
+        </ContentContainer>
+      </Toolbar>
+    </StyledAppBar>
+  );
+}
+
+export default Header;

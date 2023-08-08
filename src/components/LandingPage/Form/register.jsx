@@ -20,7 +20,7 @@ const Register = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   const validateForm = () => {
-    setErrorMessage(''); 
+    setErrorMessage('');
     if (!email.includes('@')) {
       setErrorMessage('Please enter a valid email address.');
       return false;
@@ -38,7 +38,7 @@ const Register = () => {
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
-    setErrorMessage(''); 
+    setErrorMessage('');
     setSuccessMessage('');
   };
 
@@ -52,7 +52,7 @@ const Register = () => {
     try {
       const user = {
         email: email,
-        password: password, 
+        password: password,
       };
       localStorage.setItem('user', JSON.stringify(user));
       setSuccessMessage('Successfully registered! You can now log in.');
@@ -60,7 +60,9 @@ const Register = () => {
       setPassword('');
       setConfirmPassword('');
     } catch (error) {
-      setErrorMessage('There was an error registering your account. Please try again later.');
+      setErrorMessage(
+        'There was an error registering your account. Please try again later.',
+      );
     }
   };
 
@@ -76,7 +78,7 @@ const Register = () => {
         <Login setTabValue={setTabValue} />
       ) : (
         <RegisterForm onSubmit={handleSubmit}>
-                    <InputWrapper>
+          <InputWrapper>
             <StyledInput
               type="email"
               placeholder="Email"
@@ -99,7 +101,6 @@ const Register = () => {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
-
           </InputWrapper>
           <SignUpButton type="submit">Sign up</SignUpButton>
           {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}

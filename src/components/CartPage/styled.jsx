@@ -98,17 +98,17 @@ export const CartPageContainer = styled.div`
   }
 
   .summary-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  background-color: ${colors.primary};
-  padding: 1rem;
-  margin-left: 1rem;
-  margin-right: 2rem;
-  max-height: 350px;
-  border: none;
-  text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: ${colors.primary};
+    padding: 1rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+    max-height: 350px;
+    border: none;
+    text-align: center;
 
     h2 {
       color: ${colors.white};
@@ -141,7 +141,6 @@ export const CartPageContainer = styled.div`
     }
 
     button {
-      
       background-color: ${colors.secondary};
       color: ${colors.black};
       border: none;
@@ -149,19 +148,17 @@ export const CartPageContainer = styled.div`
       margin-top: 3rem;
       padding: 0.5rem 4.5rem;
       font-size: 18px;
-      font-weight: bold; 
+      font-weight: bold;
       border-radius: 6px;
-
     }
   }
 
   @media (max-width: 1100px) {
-
     div.price-wrapper {
-              display: flex;
-              flex-direction: row !important;
-              margin-bottom: 19px
-            }
+      display: flex;
+      flex-direction: row !important;
+      margin-bottom: 19px;
+    }
 
     h1 {
       text-align: center;
@@ -177,9 +174,9 @@ export const CartPageContainer = styled.div`
 
       img {
         margin-bottom: 1rem;
-        width: 100%; 
-        height: 100%;   
-        object-fit: cover; 
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         margin-right: 0;
       }
 
@@ -207,8 +204,8 @@ export const CartPageContainer = styled.div`
       }
 
       .summary-box {
-        order: 2;  
-        margin-left: 0; 
+        order: 2;
+        margin-left: 0;
         margin-right: 0;
         background-color: ${colors.grey};
       }
@@ -219,20 +216,20 @@ export const CartPageContainer = styled.div`
 export const SummaryInnerContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-self: center; 
-  justify-content: center; 
-  max-width: 300px; 
+  align-self: center;
+  justify-content: center;
+  max-width: 300px;
 
   @media (max-width: 1100px) {
-    width: 600px; 
+    width: 600px;
   }
 `;
 
 export const EmptyCartMessage = styled.p`
-  font-size: 2rem;   
-  color: white;        
-  display: flex;  
-  align-items: center; 
-  justify-content: center; 
-  height: 80vh
+  font-size: 2rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
 `;
