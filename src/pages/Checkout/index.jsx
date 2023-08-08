@@ -53,6 +53,10 @@ const Checkout = () => {
         }
     }
 
+    if (name === "cvv" && /[^0-9]/.test(value)) {
+        return; // exit the function early if non-digit character entered for CVV
+    }
+
     setFormData((prevData) => ({
         ...prevData,
         [name]: formattedValue
@@ -203,6 +207,7 @@ const Checkout = () => {
         helperText={errors.cvv || "CVV should be 3 digits"}
         required
         variant="standard"
+        inputProps={{ maxLength: 3 }}
 
         sx={{ 
 
