@@ -92,6 +92,14 @@ const Checkout = () => {
   
     if (!expiryDatePattern.test(formData.expiryDate)) {
       formErrors.expiryDate = "Expiry Date format should be: MM/YY";
+    } else {
+        const [month, year] = formData.expiryDate.split('/').map(num => parseInt(num, 10));
+        const currentYear = new Date().getFullYear() % 100;  
+        const currentMonth = new Date().getMonth() + 1;  
+
+        if (year < currentYear || (year === currentYear && month < currentMonth)) {
+            formErrors.expiryDate = "Your card has expired";
+        }
     }
   
     if (!cvvPattern.test(formData.cvv)) {
