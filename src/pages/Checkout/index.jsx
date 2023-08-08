@@ -85,6 +85,7 @@ const Checkout = () => {
     const creditCardPattern = /^\d{4} \d{4} \d{4} \d{4}$/;
     const expiryDatePattern = /^\d{2}\/\d{2}$/;
     const cvvPattern = /^\d{3}$/;
+    const specialCharacterPattern = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
   
     if (!creditCardPattern.test(formData.creditCard)) {
       formErrors.creditCard = "Credit Card format should be: 1234 5678 9012 3456";
@@ -93,25 +94,27 @@ const Checkout = () => {
     if (!expiryDatePattern.test(formData.expiryDate)) {
       formErrors.expiryDate = "Expiry Date format should be: MM/YY";
     } else {
-        const [month, year] = formData.expiryDate.split('/').map(num => parseInt(num, 10));
-        const currentYear = new Date().getFullYear() % 100;  
-        const currentMonth = new Date().getMonth() + 1;  
+      // Check if the entered expiry date is in the past
+      let [month, year] = formData.expiryDate.split("/");
+      const expiryDateObject = new Date(`20${year}`, month - 1); // months are 0-indexed in JS
+      const currentDateObject = new Date();
+      currentDateObject.setHours(0, 0, 0, 0);
 
-        if (year < currentYear || (year === currentYear && month < currentMonth)) {
-            formErrors.expiryDate = "Your card has expired";
-        }
-    }
+      if (expiryDateObject < currentDateObject) {
+        formErrors.expiryDate = "Please enter a valid future expiry date.";
+      }
+    }  
   
     if (!cvvPattern.test(formData.cvv)) {
       formErrors.cvv = "CVV should be 3 digits";
     }
   
-    if (!formData.name.trim()) {
-      formErrors.name = "Name is required";
+    if (formData.name.trim().length < 3 || specialCharacterPattern.test(formData.name)) {
+      formErrors.name = "Name must be at least 3 characters long and should not contain any special characters";
     }
   
-    if (!formData.address.trim()) {
-      formErrors.address = "Address is required";
+    if (formData.address.trim().length < 10 || specialCharacterPattern.test(formData.address)) {
+      formErrors.address = "Address must be at least 10 characters long and should not contain any special characters";
     }
   
     return formErrors;
