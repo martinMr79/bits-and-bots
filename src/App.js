@@ -43,12 +43,11 @@ function App() {
           <Route
             path="/checkout"
             element={
-             <MainLayout>
-               <Checkout />
-             </MainLayout>
-  }
-/>
-          
+              <MainLayout>
+                <Checkout />
+              </MainLayout>
+            }
+          />
         </Routes>
       </Router>
     </AppContainer>

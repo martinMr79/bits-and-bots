@@ -14,22 +14,57 @@ import Login from './login';
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [tabValue, setTabValue] = useState(0);
   const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const validateForm = () => {
+    setErrorMessage('');
+    if (!email.includes('@')) {
+      setErrorMessage('Please enter a valid email address.');
+      return false;
+    }
+    if (password.length < 8) {
+      setErrorMessage('Password must be at least 8 characters long.');
+      return false;
+    }
+    if (password !== confirmPassword) {
+      setErrorMessage('Passwords do not match.');
+      return false;
+    }
+    return true;
+  };
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
+    setErrorMessage('');
+    setSuccessMessage('');
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const user = {
-      email: email,
-      password: password,
-    };
-    localStorage.setItem('user', JSON.stringify(user));
-    setSuccessMessage('Successfully registered! You can now log in.');
+    if (!validateForm()) {
+      return;
+    }
+
+    try {
+      const user = {
+        email: email,
+        password: password,
+        initial: email.charAt(0).toUpperCase(),
+      };
+      localStorage.setItem('user', JSON.stringify(user));
+      setSuccessMessage('Successfully registered! You can now log in.');
+      setEmail('');
+      setPassword('');
+      setConfirmPassword('');
+    } catch (error) {
+      setErrorMessage(
+        'There was an error registering your account. Please try again later.',
+      );
+    }
   };
 
   return (
@@ -60,7 +95,16 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </InputWrapper>
+          <InputWrapper>
+            <StyledInput
+              type="password"
+              placeholder="Confirm Password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </InputWrapper>
           <SignUpButton type="submit">Sign up</SignUpButton>
+          {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
           {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
           <StyledParagraph>
             Already have an account?{' '}

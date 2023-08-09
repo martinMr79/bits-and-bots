@@ -26,10 +26,10 @@ const Login = ({ setTabValue }) => {
       storedUser.email === email &&
       storedUser.password === password
     ) {
-      // If inputs match stored user, redirect to the browse page
+      localStorage.setItem('loggedInUserInitial', storedUser.initial);  // Setting the initial
       navigate('/browse');
     } else {
-      // If inputs don't match stored user, show an error message
+      
       setErrorMessage('Incorrect username or password');
     }
   };

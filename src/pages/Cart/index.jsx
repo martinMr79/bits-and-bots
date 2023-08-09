@@ -8,14 +8,14 @@ import {
 } from '../../components/CartPage/styled';
 import { Link } from 'react-router-dom';
 
-  const Cart = () => {
+const Cart = () => {
   const { cart, removeFromCart } = useCart();
 
-  if (!cart || cart.length === 0) return <EmptyCartMessage>Your cart is empty.</EmptyCartMessage>;
-
+  if (!cart || cart.length === 0)
+    return <EmptyCartMessage>Your cart is empty.</EmptyCartMessage>;
 
   let totalPrice = 0; // Represents the sum of all items at their regular price.
-  let discount = 0;   // Total amount saved from items on sale.
+  let discount = 0; // Total amount saved from items on sale.
 
   cart.forEach((item) => {
     if (item.sale_price) {
@@ -80,29 +80,28 @@ import { Link } from 'react-router-dom';
             })}
           </div>
           <div className="summary-box">
-          <SummaryInnerContainer>
-            <h2>Summary</h2>
-            <div className="summary-row">
-              <p>
-                <span className="label">Price:</span> {totalPrice.toFixed(0)}{' '}
-                Nok
-              </p>
-              <p>
-                <span className="label">Discount:</span>{' '}
-                {discount.toFixed(0)} Nok
-              </p>
-              <hr />
-              <p className="total">
-                <span className="label">Total:</span> {finalPrice.toFixed(0)}{' '}
-                Nok
-              </p>
-            </div>
-            <Link to="/checkout">
-             <button>Checkout</button>
-            </Link>
+            <SummaryInnerContainer>
+              <h2>Summary</h2>
+              <div className="summary-row">
+                <p>
+                  <span className="label">Price:</span> {totalPrice.toFixed(0)}{' '}
+                  Nok
+                </p>
+                <p>
+                  <span className="label">Discount:</span> {discount.toFixed(0)}{' '}
+                  Nok
+                </p>
+                <hr />
+                <p className="total">
+                  <span className="label">Total:</span> {finalPrice.toFixed(0)}{' '}
+                  Nok
+                </p>
+              </div>
+              <Link to="/checkout">
+                <button>Checkout</button>
+              </Link>
             </SummaryInnerContainer>
           </div>
-          
         </div>
       </CartPageContainer>
     </CartPageWrapper>
