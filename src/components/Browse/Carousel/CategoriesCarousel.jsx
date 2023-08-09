@@ -13,7 +13,7 @@ import {
 } from './styled.jsx';
 import useFetch from '../../../hooks/useFetch.jsx';
 
-const PopularCategoriesCarousel = ({ setCurrentCategory }) => {
+const CategoriesCarousel = ({ setCurrentCategory }) => {
   const {
     data: posts,
     loading,
@@ -158,4 +158,4 @@ const PopularCategoriesCarousel = ({ setCurrentCategory }) => {
   );
 };
 
-export default PopularCategoriesCarousel;
+export default CategoriesCarousel;
