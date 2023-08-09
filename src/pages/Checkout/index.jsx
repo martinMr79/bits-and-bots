@@ -127,13 +127,14 @@ const Checkout = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const formErrors = validateForm();
-
+  
     if (Object.keys(formErrors).length === 0) {
       openModal();
     } else {
       setErrors(formErrors);
     }
   };
+  
 
   const confirmPayment = () => {
     closeModal();
@@ -348,10 +349,8 @@ const Checkout = () => {
           }}
         />
 
-        <button type="submit" onClick={() => setIsModalOpen(true)}>
-          Submit
-        </button>
-
+        <button type="submit">Submit</button>
+        
         <Modal isOpen={isModalOpen} onRequestClose={closeModal}>
           <h2>Confirm Payment</h2>
           <p>Do you want to proceed with the payment?</p>
