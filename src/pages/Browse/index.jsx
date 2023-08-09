@@ -62,18 +62,7 @@ const Browse = () => {
           : prevProduct,
       ),
     );
-    console.log('handleToggleCart is called with productId:', productId);
-    console.log('Previous products:', products);
 
-    setProducts((prevProducts) =>
-      prevProducts.map((prevProduct) =>
-        prevProduct.id === productId
-          ? { ...prevProduct, isInCart: !prevProduct.isInCart }
-          : prevProduct,
-      ),
-    );
-
-    console.log('Updated products:', products);
   };
 
   return (
