@@ -5,10 +5,11 @@ import Box from '@mui/material/Box';
 import styled from 'styled-components';
 
 const LoadingWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  width: 100%;
 `;
 
 function CircularProgressWithLabel(props) {
