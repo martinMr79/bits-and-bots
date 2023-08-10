@@ -57,15 +57,15 @@ const Cart = () => {
                                   fontSize: '16px',
                                 }}
                               >
-                                Nok {item.regular_price}
+                                NOK {item.regular_price}
                               </p>
                               <p style={{ color: '#BEEB09', fontSize: '16px' }}>
-                                Nok {item.sale_price}
+                              NOK {item.sale_price}
                               </p>
                             </>
                           ) : (
                             <p style={{ fontSize: '16px' }}>
-                              Nok {item.price}{' '}
+                              NOK {item.price}{' '}
                             </p>
                           )}
                         </div>
@@ -85,16 +85,16 @@ const Cart = () => {
               <div className="summary-row">
                 <p>
                   <span className="label">Price:</span> {totalPrice.toFixed(0)}{' '}
-                  Nok
+                  NOK
                 </p>
                 <p>
                   <span className="label">Discount:</span> {discount.toFixed(0)}{' '}
-                  Nok
+                  NOK
                 </p>
                 <hr />
                 <p className="total">
                   <span className="label">Total:</span> {finalPrice.toFixed(0)}{' '}
-                  Nok
+                  NOK
                 </p>
               </div>
               <Link to="/checkout">

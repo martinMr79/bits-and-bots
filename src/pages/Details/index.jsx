@@ -98,7 +98,7 @@ const ProductDetails = () => {
 
       <BuyProductContainer>
         <H4>Buy {product.name}</H4>
-        <ProductPrice> Nok {product.price}</ProductPrice>
+        <ProductPrice> NOK {product.price}</ProductPrice>
         <AddToCartButton product={product} />
         <H5>Player Ratings</H5>
         <AverageRating>
