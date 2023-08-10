@@ -60,12 +60,16 @@ const Cart = () => {
                                 NOK {item.regular_price}
                               </p>
                               <p style={{ color: '#BEEB09', fontSize: '16px' }}>
-                                NOK {item.sale_price}
+
+                              NOK {item.sale_price}
+       
                               </p>
                             </>
                           ) : (
                             <p style={{ fontSize: '16px' }}>
-                              NOK| {item.price}{' '}
+
+                              NOK {item.price}{' '}
+                
                             </p>
                           )}
                         </div>
