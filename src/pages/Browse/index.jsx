@@ -109,14 +109,14 @@ const Browse = () => {
                         fontSize: '16px',
                       }}
                     >
-                      {product.regular_price} Nok
+                      {product.regular_price} NOK
                     </s>
                     <span style={{ color: '#BEEB09', fontSize: '16px' }}>
-                      {product.sale_price} Nok
+                      {product.sale_price} NOK
                     </span>
                   </p>
                 ) : (
-                  <p style={{ fontSize: '16px' }}>{product.price} Nok</p>
+                  <p style={{ fontSize: '16px' }}>{product.price} NOK</p>
                 )}
                 <BrowseAddToCartButton
                   product={product}
