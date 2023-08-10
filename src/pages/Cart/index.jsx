@@ -7,9 +7,17 @@ import {
   EmptyCartMessage,
 } from '../../components/CartPage/styled';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const Cart = () => {
   const { cart, removeFromCart } = useCart();
+  const navigate = useNavigate();
+  const onProductClick = (productId) => {
+    // Use the navigate function to go to the new location
+    navigate(`/details/${productId}`);
+  };
+
 
   if (!cart || cart.length === 0)
     return <EmptyCartMessage>Your cart is empty.</EmptyCartMessage>;
@@ -38,48 +46,47 @@ const Cart = () => {
               const onSale = item.sale_price;
               return (
                 <div key={item.id}>
-                  <div className="row">
-                    <img
-                      src={item.images[0]?.src}
-                      alt={item.images[0]?.alt || 'product'}
-                    />
-                    <div className="info">
-                      <h2>{item.name}</h2>
-                      <div className="price-and-button">
-                        <div className="price-wrapper">
-                          {onSale ? (
-                            <>
-                              <p
-                                style={{
-                                  textDecoration: 'line-through',
-                                  color: '#76777B',
-                                  marginRight: '8px',
-                                  fontSize: '16px',
-                                }}
-                              >
-                                NOK {item.regular_price}
-                              </p>
-                              <p style={{ color: '#BEEB09', fontSize: '16px' }}>
+  <div className="row">
+  <img
+  src={item.images[0]?.src}
+  alt={item.images[0]?.alt || 'product'}
+  onClick={() => onProductClick(item.id)}
+/>
 
-                              NOK {item.sale_price}
-       
-                              </p>
-                            </>
-                          ) : (
-                            <p style={{ fontSize: '16px' }}>
+    <div className="info">
+    <h2 onClick={() => onProductClick(item.id)}>{item.name}</h2>
 
-                              NOK {item.price}{' '}
-                
-                            </p>
-                          )}
-                        </div>
-                        <button onClick={() => removeFromCart(item.id)}>
-                          Remove
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+      <div className="price-and-button">
+        <div className="price-wrapper">
+          {onSale ? (
+            <>
+              <p
+                style={{
+                  textDecoration: 'line-through',
+                  color: '#76777B',
+                  marginRight: '8px',
+                  fontSize: '16px',
+                }}
+              >
+                NOK {item.regular_price}
+              </p>
+              <p style={{ color: '#BEEB09', fontSize: '16px' }}>
+                NOK {item.sale_price}
+              </p>
+            </>
+          ) : (
+            <p style={{ fontSize: '16px' }}>
+              NOK {item.price}{' '}
+            </p>
+          )}
+        </div>
+        <button onClick={() => removeFromCart(item.id)}>
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
               );
             })}
           </div>

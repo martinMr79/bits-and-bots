@@ -49,6 +49,7 @@ export const CartPageContainer = styled.div`
           margin-right: 2rem;
           max-width: 100%;
           height: auto;
+          cursor: pointer;
         }
 
         div.info {
@@ -62,6 +63,7 @@ export const CartPageContainer = styled.div`
             margin: 0;
             color: white;
             font-size: 26px;
+            cursor: pointer;
           }
 
           div.price-and-button {
