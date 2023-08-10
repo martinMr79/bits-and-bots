@@ -102,3 +102,7 @@ export const SuccessMessage = styled.p`
 export const ErrorMessage = styled.p`
   color: ${colors.secondary};
 `;
+
+export const Spacer = styled.div`
+  height: 48px;  
+`;
