@@ -139,7 +139,7 @@ const Checkout = () => {
   const confirmPayment = () => {
     closeModal();
     localStorage.clear();
-    navigate('/');
+    navigate('/browse');
   };
 
   return (
