@@ -5,6 +5,7 @@ import Browse from './pages/Browse';
 import ProductDetails from './pages/Details';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import { GlobalStyle, AppContainer } from './GlobalStyles';
 import MainLayout from './components/MainLayout';
 import './GlobalStyles';
@@ -16,36 +17,44 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route
-            path="/browse"
+          <Route 
+            path="/browse" 
             element={
-              <MainLayout>
-                <Browse />
-              </MainLayout>
+              <PrivateRoute>
+                <MainLayout>
+                  <Browse />
+                </MainLayout>
+              </PrivateRoute>
+            } 
+          />
+          <Route 
+            path="/details/:id" 
+            element={
+              <PrivateRoute>
+                <MainLayout>
+                  <ProductDetails />
+                </MainLayout>
+              </PrivateRoute>
             }
           />
-          <Route
-            path="/details/:id"
+          <Route 
+            path="/cart" 
             element={
-              <MainLayout>
-                <ProductDetails />
-              </MainLayout>
+              <PrivateRoute>
+                <MainLayout>
+                  <Cart />
+                </MainLayout>
+              </PrivateRoute>
             }
           />
-          <Route
-            path="/cart"
+          <Route 
+            path="/checkout" 
             element={
-              <MainLayout>
-                <Cart />
-              </MainLayout>
-            }
-          />
-          <Route
-            path="/checkout"
-            element={
-              <MainLayout>
-                <Checkout />
-              </MainLayout>
+              <PrivateRoute>
+                <MainLayout>
+                  <Checkout />
+                </MainLayout>
+              </PrivateRoute>
             }
           />
         </Routes>
@@ -55,3 +64,4 @@ function App() {
 }
 
 export default App;
+

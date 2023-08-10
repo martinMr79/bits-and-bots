@@ -27,7 +27,7 @@ export const SignUpButton = styled.button`
   margin-top: 10px;
   cursor: pointer;
   width: 100%;
-  border-radius: 0 0 5px 5px;
+  border-radius: 5px;
 `;
 
 export const InputWrapper = styled.div`
@@ -101,4 +101,8 @@ export const SuccessMessage = styled.p`
 
 export const ErrorMessage = styled.p`
   color: ${colors.secondary};
+`;
+
+export const Spacer = styled.div`
+  height: 48px;  
 `;

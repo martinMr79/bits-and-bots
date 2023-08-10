@@ -7,6 +7,7 @@ import {
   StyledInput,
   StyledParagraph,
   ErrorMessage,
+  Spacer,
 } from './styles';
 
 const Login = ({ setTabValue }) => {
@@ -36,6 +37,7 @@ const Login = ({ setTabValue }) => {
 
   return (
     <RegisterForm onSubmit={handleSubmit}>
+      
       <InputWrapper>
         <StyledInput
           type="email"
@@ -44,6 +46,7 @@ const Login = ({ setTabValue }) => {
           onChange={(e) => setEmail(e.target.value)}
         />
       </InputWrapper>
+      
       <InputWrapper>
         <StyledInput
           type="password"
@@ -52,6 +55,7 @@ const Login = ({ setTabValue }) => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </InputWrapper>
+      <Spacer />
       <SignUpButton type="submit">Log In</SignUpButton>
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       <StyledParagraph>
