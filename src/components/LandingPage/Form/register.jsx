@@ -21,20 +21,31 @@ const Register = () => {
 
   const validateForm = () => {
     setErrorMessage('');
-    if (!email.includes('@')) {
-      setErrorMessage('Please enter a valid email address.');
-      return false;
+
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+    if (email.trim() === '') {
+        setErrorMessage('Email cannot be empty.');
+        return false;
     }
+
+    if (!emailRegex.test(email)) {
+        setErrorMessage('Please enter a valid email address.');
+        return false;
+    }
+
     if (password.length < 8) {
       setErrorMessage('Password must be at least 8 characters long.');
       return false;
     }
+
     if (password !== confirmPassword) {
       setErrorMessage('Passwords do not match.');
       return false;
     }
+
     return true;
-  };
+}; 
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
