@@ -138,9 +138,10 @@ const Checkout = () => {
 
   const confirmPayment = () => {
     closeModal();
-    localStorage.clear();
+    localStorage.removeItem('cart');
     navigate('/browse');
-  };
+};
+
 
   return (
     <CheckOutPageContainer>
