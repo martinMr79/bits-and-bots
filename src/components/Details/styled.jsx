@@ -203,19 +203,19 @@ export const ProductSpecificationsContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 3rem;
-  align-items: center;
+
 
   @media (min-width: 1100px) {
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    
   }
 `;
 
 export const SpecificationSection = styled.div`
   flex: 1;
   margin: 0.5rem;
-  text-align: center;
+  
 `;
 
 export const DetailsCartButton = styled.button`
