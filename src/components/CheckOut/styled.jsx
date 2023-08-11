@@ -69,14 +69,23 @@ export const StyledModal = styled(Modal)`
   h2 {
     margin-top: 0;
   }
+`;
 
-  button {
-    margin: 10px 15px 0px 0px;
-    padding: 6px 12px; 
-    background-color: #2177eb;
-    color: white; 
-    border: none; 
-    border-radius: 8px;
-    
-  }
+export const ConfirmButton = styled.button`
+  margin: 10px 8px 0px 0px;
+  padding: 6px 14px; 
+  background-color: #2177eb;
+  color: white; 
+  border: none; 
+  border-radius: 8px;
+  cursor: pointer;
+`;
+
+export const CancelButton = styled.button`
+  padding: 6px 12px; 
+  background-color: #76777B;
+  color: white; 
+  border: none; 
+  border-radius: 8px;
+  cursor: pointer;
 `;

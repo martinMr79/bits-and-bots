@@ -3,7 +3,7 @@ import { useCart } from '../../hooks/useCart';
 import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { CheckOutPageContainer, StyledModal } from '../../components/CheckOut/styled';
+import { CheckOutPageContainer, StyledModal, ConfirmButton, CancelButton } from '../../components/CheckOut/styled';
 
 const Checkout = () => {
   const { cart } = useCart();
@@ -362,14 +362,15 @@ const Checkout = () => {
         <button type="submit">Submit</button>
         
         <StyledModal  
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
-        style={overlayStyles}>
-          <h2>Confirm Payment</h2>
-          <p>Do you want to proceed with the payment?</p>
-          <button onClick={confirmPayment}>Confirm</button>
-          <button onClick={closeModal}>Cancel</button>
-        </StyledModal>
+    isOpen={isModalOpen}
+    onRequestClose={closeModal}
+    style={overlayStyles}>
+    <h2>Confirm Payment</h2>
+    <p>Do you want to proceed with the payment?</p>
+    <ConfirmButton onClick={confirmPayment}>Confirm</ConfirmButton>
+    <CancelButton onClick={closeModal}>Cancel</CancelButton>
+</StyledModal>
+
       </Box>
     </CheckOutPageContainer>
   );
