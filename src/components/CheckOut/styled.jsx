@@ -1,15 +1,23 @@
 import styled from 'styled-components';
 
 export const CheckOutPageContainer = styled.div`
-  max-width: 1500px;
+  max-width: 95%; 
   width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 30px auto; 
   color: white;
   min-height: 85vh;
+  background-color: #27282E;       
+  border-radius: 15px;            
+ 
+  @media (min-width: 1100px) {
+    max-width: 50%; 
+  }
+  
 
   p {
     color: white;
