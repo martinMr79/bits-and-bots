@@ -7,6 +7,7 @@ import {
   StyledInput,
   TabContainer,
   StyledParagraph,
+  ErrorMessage,
   SuccessMessage,
 } from './styles';
 import Login from './login';
@@ -73,7 +74,7 @@ const Register = () => {
       setConfirmPassword('');
     } catch (error) {
       setErrorMessage(
-        'There was an error registering your account. Please try again later.',
+        'There was an error registering your account. Please try again later.', 
       );
     }
   };
@@ -115,7 +116,7 @@ const Register = () => {
             />
           </InputWrapper>
           <SignUpButton type="submit">Sign up</SignUpButton>
-          {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
+          {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
           {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
           <StyledParagraph>
             Already have an account?{' '}

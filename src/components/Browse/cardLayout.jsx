@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
 import { mediaQueries } from '../../styles/mediaQueries';
 import { colors } from '../../styles/theme';
 
@@ -34,6 +35,8 @@ export const Card = styled.div`
   color: ${colors.white};
   padding: 1rem;
   position: relative;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ProductImageContainer = styled.div`
@@ -86,4 +89,39 @@ export const SaleBox = styled.div`
   font-weight: bold;
   font-family: 'MuseSans', sans-serif !important;
   font-weight: 500;
+`;
+
+export const ViewDetails = styled.button`
+
+  background-color: ${colors.primary};
+  color: #7BA5DC;
+  padding: 6px 5px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'MuseSans', sans-serif !important;
+  font-weight: 500;
+  display: flex; 
+  width: fit-content;
+  align-self: flex-end;
+  border: none; 
+  cursor: pointer;
+  
+  @media (max-width: 750px) {
+    align-self: center;
+    padding: 0.8rem 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+`;
+
+export const StyledLink = styled(RouterLink)`
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: flex-end;
+  
+  @media (max-width: 750px) {
+    justify-content: center;
+    width: 100%;
+  }
 `;
