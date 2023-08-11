@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useCart } from '../../hooks/useCart';
 import { useNavigate } from 'react-router-dom';
-import Modal from 'react-modal';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { CheckOutPageContainer } from '../../components/CheckOut/styled';
+import { CheckOutPageContainer, StyledModal } from '../../components/CheckOut/styled';
 
 const Checkout = () => {
   const { cart } = useCart();
@@ -122,6 +121,16 @@ const Checkout = () => {
     }
 
     return formErrors;
+  };
+
+  const overlayStyles = {
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.75)',
+      zIndex: 1000,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
   };
 
   const handleFormSubmit = (event) => {
@@ -352,12 +361,15 @@ const Checkout = () => {
 
         <button type="submit">Submit</button>
         
-        <Modal isOpen={isModalOpen} onRequestClose={closeModal}>
+        <StyledModal  
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        style={overlayStyles}>
           <h2>Confirm Payment</h2>
           <p>Do you want to proceed with the payment?</p>
           <button onClick={confirmPayment}>Confirm</button>
           <button onClick={closeModal}>Cancel</button>
-        </Modal>
+        </StyledModal>
       </Box>
     </CheckOutPageContainer>
   );
