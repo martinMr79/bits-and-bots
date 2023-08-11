@@ -89,3 +89,12 @@ export const CancelButton = styled.button`
   border-radius: 8px;
   cursor: pointer;
 `;
+
+
+export const CenteredContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+`;
