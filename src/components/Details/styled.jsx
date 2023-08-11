@@ -203,11 +203,14 @@ export const ProductSpecificationsContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 3rem;
-
+  text-align: center; 
+  
+  
 
   @media (min-width: 1100px) {
     flex-direction: row;
     justify-content: space-between;
+    text-align: start;
     
   }
 `;
