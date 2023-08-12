@@ -70,7 +70,16 @@ Gantt chart: ![Kanban board](https://github.com/martinMr79/bits-and-bots/assets/
 - **Shopping Cart**: Add or remove games and manage the cart.
 - **Checkout**: Secure and user-friendly checkout system.
 
-For more detailed information, refer to the provided Gantt chart and style guide.
+## Backend Architecture
+
+### WooCommerce:
+WooCommerce is an open-source e-commerce plugin for WordPress. It enables the user to manage and handle e-commerce functionalities
+
+### Headeless Mode:
+This plugin turns your WordPress site into a headless CMS by blocking all frontend requests and only allowing the REST API and WPGraphQL. It helps ensure that WordPress serves only as a backend.
+
+### Advanced Custom Fields (ACF):
+ACF is a WordPress plugin that allows you to add custom fields to your content. It provides an intuitive interface to add extra fields like text, images, and more. It's essential for creating custom content structures and expanding the capabilities of our headless CMS.
 
 ## Technologies Used
 
