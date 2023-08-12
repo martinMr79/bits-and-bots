@@ -92,11 +92,18 @@ This project is licensed under the MIT License.
 This project uses several dependencies for its functionality:
 
 - [React Router DOM](https://reactrouter.com/) - for handling routing: `npm install react-router-dom`
-- [Material UI](https://mui.com/) - for UI components: `npm install @mui/material @emotion/react @emotion/styled`
+- [Material UI styled](https://mui.com/material-ui/) - for UI components: `npm install @mui/material @emotion/react @emotion/styled`
+- 
+- [Material UI icons](https://mui.com/) - for UI components: `npm install @mui/material @emotion/react @emotion/styled`
+- 
 - [Zustand](https://www.npmjs.com/package/zustand) - for state management: `npm install zustand`
+
+- [immer](https://immerjs.github.io/immer/) - Allows you to work with immutable state in a more convenient way: `npm install immer`
+- 
 - [Axios](https://www.npmjs.com/package/axios) - for making HTTP requests: `npm install axios`
 - [Styled Components](https://www.npmjs.com/package/styled-components) - for styling components: `npm install styled-components`
 
----
+- [react-responsive-carousel](https://www.npmjs.com/package/react-responsive-carousel) - A responsive carousel component for React: `npm install react-responsive-carousel`
+[react-modal](https://www.npmjs.com/package/react-modal) - Accessible modal dialog component for React: `npm install react-modal`
 
 **Note**: Adhere to the suggested procedures and guidelines. For queries or issues, raise an issue in the repository or get in touch.
