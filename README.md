@@ -25,7 +25,8 @@ Welcome to the Bits & Bots project. This repository houses the code and related 
 4. [Features](#features)
 6. [Technologies Used](#technologies-used)
 7. [Contributing](#contributing)
-8. [License](#license)
+8. [Dependencies](#dependencies)
+9. [License](#license)
 
 ### Installation
 
@@ -83,10 +84,6 @@ For more detailed information, refer to the provided Gantt chart and style guide
 
 Feel free to fork this repository and submit pull requests. All contributions are welcome!
 
-## License
-
-This project is licensed under the MIT License.
-
 ## Dependencies
 
 This project uses several dependencies for its functionality:
@@ -105,5 +102,10 @@ This project uses several dependencies for its functionality:
 
 - [react-responsive-carousel](https://www.npmjs.com/package/react-responsive-carousel) - A responsive carousel component for React: `npm install react-responsive-carousel`
 [react-modal](https://www.npmjs.com/package/react-modal) - Accessible modal dialog component for React: `npm install react-modal`
+
+## License
+
+This project is licensed under the MIT License.
+
 
 **Note**: Adhere to the suggested procedures and guidelines. For queries or issues, raise an issue in the repository or get in touch.
