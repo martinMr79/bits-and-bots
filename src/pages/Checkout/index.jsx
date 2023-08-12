@@ -157,8 +157,9 @@ const Checkout = () => {
         closeModal();
         localStorage.removeItem('cart');
         navigate('/browse');
+        window.location.reload(); 
       }, 2000);
-    }, 1000);
+    }, 500);
   };
 
   return (
