@@ -3,7 +3,7 @@
 ![image](https://github.com/martinMr79/bits-and-bots/assets/80599295/b8e31c8c-b903-411a-9cba-19d008296188)
 
 
-Welcome to the Bits & Bots project. This repository houses the code and related resources for the video game store website called Bits & Bots. The primary goal of this project is to reflect a developer's capabilities in terms of development, design, and technical skills. The website offers a range of functionalities tailored to provide the best user experience to its audience.
+Welcome to the Bits & Bots project. This repository houses the code and related resources for the video game store website called Bits & Bots. The website offers a range of functionalities tailored to provide the best user experience to its audience.
 
 ## Project Overview
 
@@ -60,7 +60,7 @@ For designing the user interface and user experience, i used Adobe XD
 
 Our project planning was carried out using Trello, a web-based Kanban-style list-making application. We used a Gantt chart for project timing.
 
-Gantt chart: ![Kanban board](https://github.com/martinMr79/bits-and-bots/assets/80599295/93ae49ce-7299-4672-94ff-817a71e94448)
+Trello board: ![Kanban board](https://github.com/martinMr79/bits-and-bots/assets/80599295/93ae49ce-7299-4672-94ff-817a71e94448)
 
 ## Features
 
@@ -91,7 +91,7 @@ ACF is a WordPress plugin that allows you to add custom fields to your content. 
 
 ## Contributing
 
-Feel free to fork this repository and submit pull requests. All contributions are welcome!
+Feel free to fork this repository and submit pull requests.
 
 ## Dependencies
 
@@ -111,5 +111,3 @@ This project uses several dependencies for its functionality:
 
 This project is licensed under the MIT License.
 
-
-**Note**: Adhere to the suggested procedures and guidelines. For queries or issues, raise an issue in the repository or get in touch.
