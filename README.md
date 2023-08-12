@@ -30,9 +30,10 @@ Welcome to the Bits & Bots project. This repository houses the code and related 
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone github.com/martinMr79/bits-and-bots
+1. Clone the repository: `git clone https://github.com/martinMr79/bits-and-bots`
+2. Install the dependencies: `npm install`
+3. Start the application: `npm start`
+
 
 ## Usage
 
