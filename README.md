@@ -1,5 +1,8 @@
 # Bits & Bots: A Video Game Store Website
 
+![image](https://github.com/martinMr79/bits-and-bots/assets/80599295/b8e31c8c-b903-411a-9cba-19d008296188)
+
+
 Welcome to the Bits & Bots project. This repository houses the code and related resources for the video game store website called Bits & Bots. The primary goal of this project is to reflect a developer's capabilities in terms of development, design, and technical skills. The website offers a range of functionalities tailored to provide the best user experience to its audience.
 
 ## Project Overview
@@ -20,7 +23,6 @@ Welcome to the Bits & Bots project. This repository houses the code and related 
 2. [Usage](#usage)
 3. [Design and Planning Tools](#design-and-planning-tools)
 4. [Features](#features)
-5. [Project Structure](#project-structure)
 6. [Technologies Used](#technologies-used)
 7. [Contributing](#contributing)
 8. [License](#license)
@@ -29,7 +31,7 @@ Welcome to the Bits & Bots project. This repository houses the code and related 
 
 1. Clone the repository:
    ```bash
-   git clone [repository_link]
+   git clone github.com/martinMr79/bits-and-bots
 
 ## Usage
 
@@ -57,7 +59,7 @@ For designing the user interface and user experience, i used Adobe XD
 
 Our project planning was carried out using Trello, a web-based Kanban-style list-making application. We used a Gantt chart for project timing.
 
-Gantt chart: ![Gantt Chart](src/assets/images/Gantt-Chart.PNG)
+Gantt chart: ![Kanban board](https://github.com/martinMr79/bits-and-bots/assets/80599295/93ae49ce-7299-4672-94ff-817a71e94448)
 
 ## Features
 
@@ -75,7 +77,7 @@ For more detailed information, refer to the provided Gantt chart and style guide
 - **CSS Pre-processor**: For efficient styling.
 - **BEM Methodology**: Ensuring a scalable and maintainable CSS structure.
 - **WordPress API**: Backend operations.
-- **MUI**: (Optional) Design components.
+- **MUI**: Design components.
 
 ## Contributing
 
