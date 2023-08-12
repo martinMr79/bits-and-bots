@@ -59,7 +59,7 @@ Welcome to the Bits & Bots project. This repository houses the code and related 
 
 For designing the user interface and user experience, i used Adobe XD
 
-Our project planning was carried out using Trello, a web-based Kanban-style list-making application. We used a Gantt chart for project timing.
+Our project planning was carried out using Trello, a web-based Kanban-style list-making application. I used a Gantt chart for project timing.
 
 Trello board: ![Kanban board](https://github.com/martinMr79/bits-and-bots/assets/80599295/93ae49ce-7299-4672-94ff-817a71e94448)
 
