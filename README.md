@@ -18,12 +18,12 @@ Welcome to the Bits & Bots project. This repository houses the code and related 
 
 1. [Installation](#installation)
 2. [Usage](#usage)
-3. [Features](#features)
-4. [Project Structure](#project-structure)
-5. [Technologies Used](#technologies-used)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Design and Planning Tools](#design-and-planning-tools)
+3. [Design and Planning Tools](#design-and-planning-tools)
+4. [Features](#features)
+5. [Project Structure](#project-structure)
+6. [Technologies Used](#technologies-used)
+7. [Contributing](#contributing)
+8. [License](#license)
 
 ### Installation
 
