@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useCart } from '../../hooks/useCart';
 import { useNavigate } from 'react-router-dom';
-import Modal from 'react-modal';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { CheckOutPageContainer } from '../../components/CheckOut/styled';
+import { CheckOutPageContainer, StyledModal, ConfirmButton, CancelButton, CenteredContainer } from '../../components/CheckOut/styled';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 const Checkout = () => {
   const { cart } = useCart();
@@ -25,8 +25,12 @@ const Checkout = () => {
   const finalPrice = totalPrice - discount;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const closeModal = () => setIsModalOpen(false);
   const openModal = () => setIsModalOpen(true);
+  const [transactionCompleted, setTransactionCompleted] = useState(false);
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setTransactionCompleted(false);
+  };
 
   const [formData, setFormData] = useState({
     name: '',
@@ -124,6 +128,16 @@ const Checkout = () => {
     return formErrors;
   };
 
+  const overlayStyles = {
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.75)',
+      zIndex: 1000,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
+  };
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const formErrors = validateForm();
@@ -137,11 +151,16 @@ const Checkout = () => {
   
 
   const confirmPayment = () => {
-    closeModal();
-    localStorage.removeItem('cart');
-    navigate('/browse');
-};
-
+    setTimeout(() => {
+      setTransactionCompleted(true);
+      setTimeout(() => {
+        closeModal();
+        localStorage.removeItem('cart');
+        navigate('/browse');
+        window.location.reload(); 
+      }, 2000);
+    }, 500);
+  };
 
   return (
     <CheckOutPageContainer>
@@ -352,12 +371,27 @@ const Checkout = () => {
 
         <button type="submit">Submit</button>
         
-        <Modal isOpen={isModalOpen} onRequestClose={closeModal}>
-          <h2>Confirm Payment</h2>
-          <p>Do you want to proceed with the payment?</p>
-          <button onClick={confirmPayment}>Confirm</button>
-          <button onClick={closeModal}>Cancel</button>
-        </Modal>
+        <StyledModal  
+  isOpen={isModalOpen}
+  onRequestClose={closeModal}
+  style={overlayStyles}
+>
+  {!transactionCompleted ? (
+    <>
+      <h2>Confirm Payment</h2>
+      <p>Do you want to proceed with the payment?</p>
+      <ConfirmButton onClick={confirmPayment}>Confirm</ConfirmButton>
+      <CancelButton onClick={closeModal}>Cancel</CancelButton>
+    </>
+  ) : (
+<CenteredContainer>
+    <CheckCircleOutlineIcon color="primary" style={{ fontSize: 80 }} />
+    <p>Transaction completed</p>
+</CenteredContainer>
+  )}
+</StyledModal>
+
+
       </Box>
     </CheckOutPageContainer>
   );

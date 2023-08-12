@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Modal from 'react-modal';
 
 export const CheckOutPageContainer = styled.div`
   max-width: 95%; 
@@ -53,4 +54,47 @@ export const PriceText = styled(ItemText)`
   && {
     font-weight: bold;
   }
+`;
+
+export const StyledModal = styled(Modal)`
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 8px;
+  background: white;
+  position: relative;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    margin-top: 0;
+  }
+`;
+
+export const ConfirmButton = styled.button`
+  margin: 10px 8px 0px 0px;
+  padding: 6px 14px; 
+  background-color: #2177eb;
+  color: white; 
+  border: none; 
+  border-radius: 8px;
+  cursor: pointer;
+`;
+
+export const CancelButton = styled.button`
+  padding: 6px 12px; 
+  background-color: #76777B;
+  color: white; 
+  border: none; 
+  border-radius: 8px;
+  cursor: pointer;
+`;
+
+
+export const CenteredContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 `;
