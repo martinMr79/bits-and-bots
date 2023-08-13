@@ -21,11 +21,11 @@ Welcome to the Bits & Bots project. This repository houses the code and related 
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [Design and Planning Tools](#design-and-planning-tools)
-4. [Features](#features)
-6. [Technologies Used](#technologies-used)
-7. [Contributing](#contributing)
-8. [Dependencies](#dependencies)
-9. [License](#license)
+4. [Technologies Used](#technologies-used)
+5. [Backend Architecture](#backend-architecture)
+6. [Contributing](#contributing)
+7. [Dependencies](#dependencies)
+8. [License](#license)
 
 ### Installation
 
@@ -65,13 +65,13 @@ Trello board:
 Gant Chart:
 ![Gant](src/assets/gantChart2.PNG)
 
-## Features
+## Technologies Used
 
-- **User Authentication**: Register, log in, and log out features.
-- **Responsive Design**: Ensured smooth user experience across all device sizes.
-- **API Integration**: Dynamic fetching of game details using an API.
-- **Shopping Cart**: Add or remove games and manage the cart.
-- **Checkout**: Secure and user-friendly checkout system.
+- **React**: For building the user interface.
+- **Styled Components**: For efficient styling.
+- **BEM Methodology**: Ensuring a scalable and maintainable CSS structure.
+- **WordPress API**: Backend operations.
+- **MUI**: Design components.
 
 ## Backend Architecture
 
@@ -84,13 +84,6 @@ This plugin turns your WordPress site into a headless CMS by blocking all fronte
 ### Advanced Custom Fields (ACF):
 ACF is a WordPress plugin that allows you to add custom fields to your content. It provides an intuitive interface to add extra fields like text, images, and more. It's essential for creating custom content structures and expanding the capabilities of our headless CMS.
 
-## Technologies Used
-
-- **React**: For building the user interface.
-- **CSS Pre-processor**: For efficient styling.
-- **BEM Methodology**: Ensuring a scalable and maintainable CSS structure.
-- **WordPress API**: Backend operations.
-- **MUI**: Design components.
 
 ## Contributing
 
