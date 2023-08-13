@@ -68,7 +68,7 @@ Gant Chart:
 ## Technologies Used
 
 - **React**: For building the user interface.
-- **Styled Components**: For efficient styling.
+- **Styled Components with sass syntax**: For efficient styling.
 - **BEM Methodology**: Ensuring a scalable and maintainable CSS structure.
 - **WordPress API**: Backend operations.
 - **MUI**: Design components.
