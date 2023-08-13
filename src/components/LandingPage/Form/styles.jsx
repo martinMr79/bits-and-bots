@@ -75,11 +75,12 @@ export const StyledInput = styled.input`
     border: none !important;  
     width: auto !important; 
     padding-top: 0 !important; 
-    padding-bottom: 0 !important; 
+    
   }
 
   &:-webkit-autofill:active,
   &:-webkit-autofill:focus {
+    background-color: ${colors.primary} !important; 
     border: none !important;
     -webkit-box-shadow: none !important; 
   }
