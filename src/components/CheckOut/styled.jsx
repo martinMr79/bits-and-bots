@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Modal from 'react-modal';
+import { colors } from '../../styles/theme';
 
 export const CheckOutPageContainer = styled.div`
   max-width: 95%; 
@@ -12,7 +13,7 @@ export const CheckOutPageContainer = styled.div`
   margin: 30px auto; 
   color: white;
   min-height: 85vh;
-  background-color: #27282E;       
+  background-color: ${colors.primary};       
   border-radius: 15px;            
  
   @media (min-width: 1100px) {
