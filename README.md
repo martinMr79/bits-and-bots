@@ -60,8 +60,10 @@ For designing the user interface and user experience, i used Adobe XD
 
 Our project planning was carried out using Trello, a web-based Kanban-style list-making application. I used a Gantt chart for project timing.
 
-Trello board: ![Browse Page](src/assets/kanbanBoard.PNG)
-Gant Chart: ![Browse Page](src/assets/gantChart2.PNG)
+Trello board: 
+![Trello](src/assets/kanbanBoard.PNG)
+Gant Chart:
+![Gant](src/assets/gantChart2.PNG)
 
 ## Features
 
