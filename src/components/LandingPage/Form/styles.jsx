@@ -41,7 +41,7 @@ export const InputWrapper = styled.div`
 
 export const StyledInput = styled.input`
   border: none;
-  background-color: ${colors.primary};
+  background-color: ${colors.primary} !important;
   color: ${colors.white};
   padding-left: 1rem;
 
