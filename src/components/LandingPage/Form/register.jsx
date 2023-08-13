@@ -26,13 +26,13 @@ const Register = () => {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
     if (email.trim() === '') {
-        setErrorMessage('Email cannot be empty.');
-        return false;
+      setErrorMessage('Email cannot be empty.');
+      return false;
     }
 
     if (!emailRegex.test(email)) {
-        setErrorMessage('Please enter a valid email address.');
-        return false;
+      setErrorMessage('Please enter a valid email address.');
+      return false;
     }
 
     if (password.length < 8) {
@@ -46,7 +46,7 @@ const Register = () => {
     }
 
     return true;
-}; 
+  };
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -74,7 +74,7 @@ const Register = () => {
       setConfirmPassword('');
     } catch (error) {
       setErrorMessage(
-        'There was an error registering your account. Please try again later.', 
+        'There was an error registering your account. Please try again later.',
       );
     }
   };

@@ -54,8 +54,6 @@ const CartItemCount = styled.span`
   height: 12px;
 `;
 
-
-
 function Header() {
   const { getCartItemCount } = useCart();
   const cartItemCount = getCartItemCount();

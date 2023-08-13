@@ -81,8 +81,6 @@ export const StyledInput = styled.input`
     background-color: ${colors.primary} !important;
     -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
   }
-
-  
 `;
 
 export const TabContainer = styled.div`
@@ -122,5 +120,5 @@ export const ErrorMessage = styled.p`
 `;
 
 export const Spacer = styled.div`
-  height: 48px;  
+  height: 48px;
 `;

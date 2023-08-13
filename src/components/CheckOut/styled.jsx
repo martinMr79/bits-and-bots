@@ -2,23 +2,22 @@ import styled from 'styled-components';
 import Modal from 'react-modal';
 
 export const CheckOutPageContainer = styled.div`
-  max-width: 95%; 
+  max-width: 95%;
   width: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 30px auto; 
+  margin: 30px auto;
   color: white;
   min-height: 85vh;
-  background-color: #27282E;       
-  border-radius: 15px;            
- 
+  background-color: #27282e;
+  border-radius: 15px;
+
   @media (min-width: 1100px) {
-    max-width: 50%; 
+    max-width: 50%;
   }
-  
 
   p {
     color: white;
@@ -73,28 +72,27 @@ export const StyledModal = styled(Modal)`
 
 export const ConfirmButton = styled.button`
   margin: 10px 8px 0px 0px;
-  padding: 6px 14px; 
+  padding: 6px 14px;
   background-color: #2177eb;
-  color: white; 
-  border: none; 
+  color: white;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
 `;
 
 export const CancelButton = styled.button`
-  padding: 6px 12px; 
-  background-color: #76777B;
-  color: white; 
-  border: none; 
+  padding: 6px 12px;
+  background-color: #76777b;
+  color: white;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
 `;
 
-
 export const CenteredContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 `;

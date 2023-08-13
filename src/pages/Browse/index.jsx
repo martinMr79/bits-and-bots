@@ -10,7 +10,7 @@ import {
   SaleBox,
   ProductImageContainer,
   ViewDetails,
-  StyledLink
+  StyledLink,
 } from '../../components/Browse/cardLayout.jsx';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import CategoriesCarousel from '../../components/Browse/Carousel/CategoriesCarousel.jsx';
@@ -64,7 +64,6 @@ const Browse = () => {
           : prevProduct,
       ),
     );
-
   };
 
   return (
@@ -77,60 +76,59 @@ const Browse = () => {
         {filteredProducts.map((product) => {
           const onSale = product.sale_price !== '';
           return (
-<Card key={product.id}>
-    {product.images[0] && (
-        <ProductImageContainer>
-            <Link
-                to={`/details/${product.id}`}
-                style={{ textDecoration: 'none', color: 'inherit' }}
-            >
-                <ProductImage
-                    src={product.images[0].src}
-                    alt={product.images[0].alt || 'product'}
-                />
-            </Link>
-            {onSale && (
-                <SaleBox>
-                    -
-                    {Math.round(
+            <Card key={product.id}>
+              {product.images[0] && (
+                <ProductImageContainer>
+                  <Link
+                    to={`/details/${product.id}`}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                  >
+                    <ProductImage
+                      src={product.images[0].src}
+                      alt={product.images[0].alt || 'product'}
+                    />
+                  </Link>
+                  {onSale && (
+                    <SaleBox>
+                      -
+                      {Math.round(
                         (1 - product.sale_price / product.regular_price) * 100,
-                    )}
-                    %
-                </SaleBox>
-            )}
-        </ProductImageContainer>
-    )}
-    <h2 style={{ textAlign: 'center' }}>{product.name}</h2>
-    <ProductInfo>
-        {onSale ? (
-            <p>
-                <s
-                    style={{
+                      )}
+                      %
+                    </SaleBox>
+                  )}
+                </ProductImageContainer>
+              )}
+              <h2 style={{ textAlign: 'center' }}>{product.name}</h2>
+              <ProductInfo>
+                {onSale ? (
+                  <p>
+                    <s
+                      style={{
                         color: '#76777B',
                         marginRight: '8px',
                         fontSize: '16px',
-                    }}
-                >
-                    {product.regular_price} NOK
-                </s>
-                <span style={{ color: '#BEEB09', fontSize: '16px' }}>
-                    {product.sale_price} NOK
-                </span>
-            </p>
-        ) : (
-            <p style={{ fontSize: '16px' }}>{product.price} NOK</p>
-        )}
-        <BrowseAddToCartButton
-            product={product}
-            onToggleCart={handleToggleCart}
-        />
-    </ProductInfo>
-  
-    <StyledLink to={`/details/${product.id}`}>
-    <ViewDetails>view details</ViewDetails>
-</StyledLink>
+                      }}
+                    >
+                      {product.regular_price} NOK
+                    </s>
+                    <span style={{ color: '#BEEB09', fontSize: '16px' }}>
+                      {product.sale_price} NOK
+                    </span>
+                  </p>
+                ) : (
+                  <p style={{ fontSize: '16px' }}>{product.price} NOK</p>
+                )}
+                <BrowseAddToCartButton
+                  product={product}
+                  onToggleCart={handleToggleCart}
+                />
+              </ProductInfo>
 
-</Card>
+              <StyledLink to={`/details/${product.id}`}>
+                <ViewDetails>view details</ViewDetails>
+              </StyledLink>
+            </Card>
           );
         })}
       </ImageGrid>

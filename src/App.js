@@ -17,18 +17,18 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route 
-            path="/browse" 
+          <Route
+            path="/browse"
             element={
               <PrivateRoute>
                 <MainLayout>
                   <Browse />
                 </MainLayout>
               </PrivateRoute>
-            } 
+            }
           />
-          <Route 
-            path="/details/:id" 
+          <Route
+            path="/details/:id"
             element={
               <PrivateRoute>
                 <MainLayout>
@@ -37,8 +37,8 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route 
-            path="/cart" 
+          <Route
+            path="/cart"
             element={
               <PrivateRoute>
                 <MainLayout>
@@ -47,8 +47,8 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route 
-            path="/checkout" 
+          <Route
+            path="/checkout"
             element={
               <PrivateRoute>
                 <MainLayout>
@@ -64,4 +64,3 @@ function App() {
 }
 
 export default App;
-
