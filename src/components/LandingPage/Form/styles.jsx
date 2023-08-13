@@ -63,7 +63,6 @@ export const StyledInput = styled.input`
     background-color: ${colors.primary} !important;
     border: none !important;
     width: auto !important;
-    padding: 0 !important;
     box-shadow: none !important;
     -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
   }
