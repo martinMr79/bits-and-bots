@@ -69,7 +69,6 @@ Gant Chart:
 
 - **React**: For building the user interface.
 - **Styled Components with sass syntax**: For efficient styling.
-- **BEM Methodology**: Ensuring a scalable and maintainable CSS structure.
 - **WordPress API**: Backend operations.
 - **MUI**: Design components.
 
@@ -95,7 +94,7 @@ This project uses several dependencies for its functionality:
 
 - [React Router DOM](https://reactrouter.com/) - for handling routing: `npm install react-router-dom`
 - [Material UI styled](https://mui.com/material-ui/) - for UI components: `npm install @mui/material @emotion/react @emotion/styled` 
-- [Material UI icons](https://mui.com/) - for UI icons: `npm install @mui/material @emotion/react @emotion/styled`
+- [Material UI icons](https://mui.com/) - for UI icons: `npm install @mui/icons-material`
 - [Zustand](https://www.npmjs.com/package/zustand) - for state management: `npm install zustand`
 - [immer](https://immerjs.github.io/immer/) - Allows you to work with immutable state in a more convenient way: `npm install immer`
 - [Axios](https://www.npmjs.com/package/axios) - for making HTTP requests: `npm install axios`
