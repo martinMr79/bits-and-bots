@@ -13,7 +13,9 @@ export const CheckOutPageContainer = styled.div`
   margin: 30px auto;
   color: white;
   min-height: 85vh;
+
   background-color: ${colors.primary};
+
   border-radius: 15px;
 
   @media (min-width: 1100px) {

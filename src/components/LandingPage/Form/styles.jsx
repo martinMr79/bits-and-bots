@@ -46,18 +46,10 @@ export const StyledInput = styled.input`
   color: ${colors.white};
   padding-left: 1rem;
 
-  &::-webkit-input-placeholder {
-    color: ${colors.white};
-  }
-  &::-moz-placeholder {
-    color: ${colors.white};
-  }
-  &:-ms-input-placeholder {
-    color: ${colors.white};
-  }
-  &::-ms-input-placeholder {
-    color: ${colors.white};
-  }
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder,
+  &::-ms-input-placeholder,
   &::placeholder {
     color: ${colors.white};
   }
@@ -66,25 +58,32 @@ export const StyledInput = styled.input`
     outline: none;
   }
 
-  &:-webkit-autofill,
-  &:-webkit-autofill:hover,
-  &:-webkit-autofill:focus,
-  &:-webkit-autofill:active {
+  &:-webkit-autofill {
     -webkit-text-fill-color: ${colors.white} !important;
-    -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
-    border: none !important;
-    width: auto !important;
-    padding-top: 0 !important;
-    box-shadow: none !important;
-  }
-
-  &:-webkit-autofill:active,
-  &:-webkit-autofill:focus {
     background-color: ${colors.primary} !important;
     border: none !important;
-    -webkit-box-shadow: none !important;
+    width: auto !important;
     box-shadow: none !important;
+    -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
+
+
   }
+
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:focus:hover,
+  &:-webkit-autofill:focus:active {
+    -webkit-text-fill-color: ${colors.white} !important;
+    background-color: ${colors.primary} !important;
+
+    -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
+  }
+
+  &:-webkit-autofill:hover {
+    -webkit-text-fill-color: ${colors.white} !important;
+    background-color: ${colors.primary} !important;
+    -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
+  }
+
 `;
 
 export const TabContainer = styled.div`
