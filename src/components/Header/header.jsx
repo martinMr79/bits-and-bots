@@ -55,8 +55,6 @@ const CartItemCount = styled.span`
   height: 12px;
 `;
 
-
-
 function Header() {
   const { getCartItemCount } = useCart();
   const cartItemCount = getCartItemCount();
@@ -68,8 +66,6 @@ function Header() {
   };
 
   const userInitial = localStorage.getItem('loggedInUserInitial') || 'A';
-
-
 
   return (
     <StyledAppBar position="static">
@@ -86,34 +82,32 @@ function Header() {
               )}
             </IconButton>
           </CartLink>
-          <Box 
-            sx={{ 
-              display: 'flex', 
-              flexDirection: 'column', 
-              alignItems: 'center', 
-              marginLeft: { xs: 2, sm: 4, md: 8 },  
-              cursor: 'pointer'
-            }} 
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              marginLeft: { xs: 2, sm: 4, md: 8 },
+              cursor: 'pointer',
+            }}
             onClick={handleLogout}
           >
             <Avatar
               sx={{
-                
                 color: colors.black,
                 backgroundColor: colors.white,
               }}
             >
               {userInitial}
             </Avatar>
-            <Box mt={1}> 
-    <span>Logout</span>
-  </Box>
+            <Box mt={1}>
+              <span>Logout</span>
+            </Box>
           </Box>
         </ContentContainer>
       </Toolbar>
     </StyledAppBar>
   );
-  
 }
 
 export default Header;

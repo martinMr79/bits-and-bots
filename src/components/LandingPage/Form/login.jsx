@@ -27,17 +27,15 @@ const Login = ({ setTabValue }) => {
       storedUser.email === email &&
       storedUser.password === password
     ) {
-      localStorage.setItem('loggedInUserInitial', storedUser.initial);  // Setting the initial
+      localStorage.setItem('loggedInUserInitial', storedUser.initial); // Setting the initial
       navigate('/browse');
     } else {
-      
       setErrorMessage('Incorrect username or password');
     }
   };
 
   return (
     <RegisterForm onSubmit={handleSubmit}>
-      
       <InputWrapper>
         <StyledInput
           type="email"
@@ -46,7 +44,7 @@ const Login = ({ setTabValue }) => {
           onChange={(e) => setEmail(e.target.value)}
         />
       </InputWrapper>
-      
+
       <InputWrapper>
         <StyledInput
           type="password"

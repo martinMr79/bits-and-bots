@@ -54,7 +54,7 @@ const CategoriesCarousel = ({ setCurrentCategory }) => {
   }, []);
 
   if (loading) {
-    return <Loading />;;
+    return <Loading />;
   }
 
   if (error) {

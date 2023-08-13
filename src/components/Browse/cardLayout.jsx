@@ -92,26 +92,24 @@ export const SaleBox = styled.div`
 `;
 
 export const ViewDetails = styled.button`
-
   background-color: ${colors.primary};
-  color: #7BA5DC;
+  color: #7ba5dc;
   padding: 6px 5px;
   font-size: 16px;
   font-weight: bold;
   font-family: 'MuseSans', sans-serif !important;
   font-weight: 500;
-  display: flex; 
+  display: flex;
   width: fit-content;
   align-self: flex-end;
-  border: none; 
+  border: none;
   cursor: pointer;
-  
+
   @media (max-width: 750px) {
     align-self: center;
     padding: 0.8rem 0.8rem;
     margin-top: 0.5rem;
   }
-
 `;
 
 export const StyledLink = styled(RouterLink)`
@@ -119,7 +117,7 @@ export const StyledLink = styled(RouterLink)`
   color: inherit;
   display: flex;
   justify-content: flex-end;
-  
+
   @media (max-width: 750px) {
     justify-content: center;
     width: 100%;
