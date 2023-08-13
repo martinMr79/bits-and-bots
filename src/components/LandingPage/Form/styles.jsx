@@ -40,8 +40,9 @@ export const InputWrapper = styled.div`
 `;
 
 export const StyledInput = styled.input`
+  background: none;
   border: none;
-  background-color: ${colors.primary} !important;
+  width: 100%;
   color: ${colors.white};
   padding-left: 1rem;
 
@@ -64,7 +65,16 @@ export const StyledInput = styled.input`
   &:focus {
     outline: none;
   }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
+    color: ${colors.white} !important;
+  }
 `;
+
 
 export const TabContainer = styled.div`
   display: flex;
