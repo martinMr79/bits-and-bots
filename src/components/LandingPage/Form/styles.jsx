@@ -74,8 +74,6 @@ export const StyledInput = styled.input`
     -webkit-text-fill-color: ${colors.white} !important;
     background-color: ${colors.primary} !important;
     -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
-    box-shadow: 0 0 0 !important;
-    transition: background-color 5000s ease-in-out 0s !important;
   }
 
   &:-webkit-autofill:hover {
@@ -84,10 +82,6 @@ export const StyledInput = styled.input`
     -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
   }
 
-  &:focus {
-    box-shadow: none !important;
-    outline: none !important;
-  }
   
 `;
 
