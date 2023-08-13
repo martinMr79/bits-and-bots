@@ -80,7 +80,7 @@ export const StyledInput = styled.input`
 
   &:-webkit-autofill:active,
   &:-webkit-autofill:focus {
-    background-color: ${colors.primary} !important; 
+    background-color: ${colors.primary} !important;
     border: none !important;
     -webkit-box-shadow: none !important; 
   }
