@@ -76,7 +76,7 @@ export const StyledInput = styled.input`
     width: auto !important; 
     padding-top: 0 !important; 
     box-shadow: none !important;  
-    
+    background-color: ${colors.primary} !important;
   }
 
   &:-webkit-autofill:active,
