@@ -12,6 +12,7 @@ import {
   ArrowButtonContainer,
 } from './styled.jsx';
 import useFetch from '../../../hooks/useFetch.jsx';
+import Loading from '../../Loading/loading.js';
 
 const CategoriesCarousel = ({ setCurrentCategory }) => {
   const {
@@ -53,7 +54,7 @@ const CategoriesCarousel = ({ setCurrentCategory }) => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;;
   }
 
   if (error) {
