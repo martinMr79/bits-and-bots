@@ -73,12 +73,13 @@ export const StyledInput = styled.input`
     -webkit-text-fill-color: ${colors.white} !important;
     -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
     border: none !important;  
-    width: auto !important;
+    width: auto !important; 
   }
 
-  &:-webkit-autofill::first-line {
-    color: ${colors.white} !important;
-    font-family: 'MuseSans';  
+  &:-webkit-autofill:active,
+  &:-webkit-autofill:focus {
+    border: none !important;
+    -webkit-box-shadow: none !important; 
   }
 
 `;
