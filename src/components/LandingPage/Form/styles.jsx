@@ -70,8 +70,10 @@ export const StyledInput = styled.input`
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
+    -webkit-text-fill-color: ${colors.white} !important;
     -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
-    color: ${colors.white} !important;
+    border: none !important;  
+    width: auto !important;
   }
 
   &:-webkit-autofill::first-line {
