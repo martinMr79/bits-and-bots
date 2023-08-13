@@ -2,6 +2,7 @@
 
 ![image](https://github.com/martinMr79/bits-and-bots/assets/80599295/b8e31c8c-b903-411a-9cba-19d008296188)
 
+![Front Page](src/assets/readMeImg.PNG)
 
 Welcome to the Bits & Bots project. This repository houses the code and related resources for the video game store website called Bits & Bots. The website offers a range of functionalities tailored to provide the best user experience to its audience.
 
