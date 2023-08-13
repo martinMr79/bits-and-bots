@@ -1,7 +1,6 @@
 # Bits & Bots: A Video Game Store Website
 
-![image](https://github.com/martinMr79/bits-and-bots/assets/80599295/b8e31c8c-b903-411a-9cba-19d008296188)
-
+![Browse Page](src/assets/readMeImg.PNG)
 
 Welcome to the Bits & Bots project. This repository houses the code and related resources for the video game store website called Bits & Bots. The website offers a range of functionalities tailored to provide the best user experience to its audience.
 
@@ -61,7 +60,10 @@ For designing the user interface and user experience, i used Adobe XD
 
 Our project planning was carried out using Trello, a web-based Kanban-style list-making application. I used a Gantt chart for project timing.
 
-Trello board: ![Kanban board](https://github.com/martinMr79/bits-and-bots/assets/80599295/93ae49ce-7299-4672-94ff-817a71e94448)
+Trello board: 
+![Trello](src/assets/kanbanBoard.PNG)
+Gant Chart:
+![Gant](src/assets/gantChart2.PNG)
 
 ## Features
 
