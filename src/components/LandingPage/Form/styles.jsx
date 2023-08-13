@@ -76,7 +76,16 @@ export const StyledInput = styled.input`
     -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
     box-shadow: none !important;
   }
+
+  &:-webkit-autofill:hover {
+    -webkit-text-fill-color: ${colors.white} !important;
+    background-color: ${colors.primary} !important;
+    -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
+  }
+
 `;
+
+
 
 
 export const TabContainer = styled.div`
