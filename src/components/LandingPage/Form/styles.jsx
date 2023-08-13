@@ -43,6 +43,7 @@ export const StyledInput = styled.input`
   background: none;
   border: none;
   width: 100%;
+  background-color: ${colors.primary};
   color: ${colors.white};
   padding-left: 1rem;
 
