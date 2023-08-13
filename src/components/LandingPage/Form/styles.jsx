@@ -73,6 +73,12 @@ export const StyledInput = styled.input`
     -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
     color: ${colors.white} !important;
   }
+
+  &:-webkit-autofill::first-line {
+    color: ${colors.white} !important;
+    font-family: 'MuseSans';  
+  }
+
 `;
 
 
