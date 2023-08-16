@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { useCart } from '../../hooks/useCart';
 import { colors } from '../../styles/theme';
 import { flexCenter } from '../../styles/mix-ins';
+import Box from '@mui/material/Box';
 
 const StyledAppBar = styled(AppBar)`
   background-color: ${colors.primary} !important;
@@ -81,17 +82,28 @@ function Header() {
               )}
             </IconButton>
           </CartLink>
-          <Avatar
+          <Box
             sx={{
-              color: colors.black,
-              backgroundColor: colors.white,
-              cursor: 'pointer',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
               marginLeft: { xs: 2, sm: 4, md: 8 },
+              cursor: 'pointer',
             }}
             onClick={handleLogout}
           >
-            {userInitial}
-          </Avatar>
+            <Avatar
+              sx={{
+                color: colors.black,
+                backgroundColor: colors.white,
+              }}
+            >
+              {userInitial}
+            </Avatar>
+            <Box mt={1}>
+              <span>Logout</span>
+            </Box>
+          </Box>
         </ContentContainer>
       </Toolbar>
     </StyledAppBar>

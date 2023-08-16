@@ -65,6 +65,8 @@ export const StyledInput = styled.input`
     width: auto !important;
     box-shadow: none !important;
     -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
+
+
   }
 
   &:-webkit-autofill:focus,
@@ -72,6 +74,7 @@ export const StyledInput = styled.input`
   &:-webkit-autofill:focus:active {
     -webkit-text-fill-color: ${colors.white} !important;
     background-color: ${colors.primary} !important;
+
     -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
   }
 
@@ -80,6 +83,7 @@ export const StyledInput = styled.input`
     background-color: ${colors.primary} !important;
     -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
   }
+
 `;
 
 export const TabContainer = styled.div`

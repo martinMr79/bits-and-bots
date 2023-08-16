@@ -42,7 +42,7 @@ export const CartPageContainer = styled.div`
         display: flex;
         height: 160px;
         margin-bottom: 1rem;
-        background-color: #27282e;
+        background-color: ${colors.primary};
 
         img {
           flex-shrink: 0;
@@ -86,7 +86,7 @@ export const CartPageContainer = styled.div`
             }
 
             button {
-              background-color: #27282e;
+              background-color: ${colors.primary};
               color: #2177eb;
               border: none;
               cursor: pointer;
